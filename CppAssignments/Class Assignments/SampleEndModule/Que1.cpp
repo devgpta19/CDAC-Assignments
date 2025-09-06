@@ -1,3 +1,39 @@
+// Problem Statement 1: "Smart Billing System for a Tech Store"
+// 🎯 Objective:
+// Design a C++ program to manage customer purchases in a tech store, including item management, billing, and persistent record-keeping.
+
+// 📌 Requirements:
+// 1. OOP Design
+// Create a class Item with attributes:
+
+// itemID, itemName, price, stockQuantity
+
+// Create a class Bill with:
+
+// billID, customerName, list of purchased items
+
+// 2. Operator Overloading
+// Overload + to add an item to the bill
+
+// Overload << to display the bill details
+
+// 3. Exception Handling
+// Throw exceptions for:
+
+// Negative price or quantity
+
+// Attempt to purchase more than available stock
+
+// Empty bill generation
+
+// 4. File Handling
+// Save all bills to bills.txt
+
+// Load previous bills at startup
+
+// Append new bills without overwriting
+
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -41,9 +77,7 @@ public:
         cout << "---------------------" << endl;
 
         ofstream my_file("bill.txt", ios::app);
-        my_file << "Purchased Items" << endl;
         my_file << "-------------------------" << endl;
-
         my_file << "Item Id : " << iid << endl;
         my_file << "Item Name : " << iname << endl;
         my_file << "Item Price : " << price << endl;
@@ -73,7 +107,7 @@ public:
     Items operator+(Items &p)
     {
 
-        Items temp = swap();
+        Items temp;
 
         p.price = p.price * p.quantity;
         temp.price = this->price + p.price;
@@ -86,10 +120,9 @@ public:
     {
 
         ofstream my_file("bill.txt", ios::app);
-        my_file << "-------------------------" << endl;
         my_file << "Total Sum : " << price << endl;
         my_file << "-------------------------" << endl;
-        my_file << "-------------------------" << endl;
+        my_file << endl;
         my_file.close();
         cout << "Total Sum : " << price << endl;
     }
@@ -153,6 +186,10 @@ public:
     void printItems(Items arrItems[], int n)
     {
 
+        ofstream my_file("bill.txt", ios::app);
+        my_file << "Purchased Items" << endl;
+        my_file.close();
+
         cout << "Your Items are " << endl;
         for (int i = 0; i < n; i++)
         {
@@ -169,9 +206,9 @@ public:
         cout << "Customer Name: " << cname << endl;
 
         ofstream my_file("bill.txt", ios::app);
-        my_file << "Bill Id : " << endl;
-        my_file << "Customer Name : " << bId << endl;
-        my_file << "---------------------" << cname << endl;
+        my_file << "Bill Id : "<< bId  << endl;
+        my_file << "Customer Name : " << cname << endl;
+        my_file << "---------------------" << endl;
         my_file.close();
     }
 
@@ -182,7 +219,6 @@ public:
             sum = sum + arrItems[i]; // sum = sum + arrItems[i];  // sum.operator+(arrItems[i]);
         }
 
-        displayBill();
         sum.displaySum();
     }
 };
@@ -225,6 +261,7 @@ int main()
     Bill b1(1, "Customer1");
     b1.getarr(arrItems, n);
 
+    b1.displayBill();
     openBill();
 
     b1.printItems(arrItems, n);
