@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 
 class Items
@@ -32,12 +33,24 @@ public:
 
     void display()
     {
-        cout << "Item ID : " << iid << endl
-             << "Item Name : " << iname << endl
-             << "Price : " << price << endl
-             << "Stock : " << stock << endl
-             << "Quantity : " << quantity << endl;
+        cout << "Item ID : " << iid << endl;
+        cout << "Item Name : " << iname << endl;
+        cout << "Price : " << price << endl;
+        cout << "Stock : " << stock << endl;
+        cout << "Quantity : " << quantity << endl;
         cout << "---------------------" << endl;
+
+        ofstream my_file("bill.txt", ios::app);
+        my_file << "Purchased Items" << endl;
+        my_file << "-------------------------" << endl;
+
+        my_file << "Item Id : " << iid << endl;
+        my_file << "Item Name : " << iname << endl;
+        my_file << "Item Price : " << price << endl;
+        my_file << "Items in Stock : " << stock << endl;
+        my_file << "Items Quantity : " << quantity << endl;
+        my_file << "-------------------------" << endl;
+        my_file.close();
     }
 
     void errorhandler(Items *t)
@@ -71,6 +84,13 @@ public:
 
     void displaySum()
     {
+
+        ofstream my_file("bill.txt", ios::app);
+        my_file << "-------------------------" << endl;
+        my_file << "Total Sum : " << price << endl;
+        my_file << "-------------------------" << endl;
+        my_file << "-------------------------" << endl;
+        my_file.close();
         cout << "Total Sum : " << price << endl;
     }
 
@@ -147,6 +167,12 @@ public:
         cout << "Billing Details" << endl;
         cout << "Bill Id: " << bId << endl;
         cout << "Customer Name: " << cname << endl;
+
+        ofstream my_file("bill.txt", ios::app);
+        my_file << "Bill Id : " << endl;
+        my_file << "Customer Name : " << bId << endl;
+        my_file << "---------------------" << cname << endl;
+        my_file.close();
     }
 
     void sumPrice(Items arrItems[], int n, Items sum)
@@ -161,6 +187,26 @@ public:
     }
 };
 
+
+void openBill()
+{
+    ifstream my_file("bill.txt");
+    string line;
+    if (!my_file.is_open())
+    {
+        cout << "File can't be opened" << endl;
+    }
+    else
+    {
+        cout << "File is opened successfully" << endl;
+        if (!my_file.eof())
+        {
+            getline(my_file, line);
+            cout << line << endl;
+        }
+    }
+}
+
 int main()
 {
     int n;
@@ -171,15 +217,16 @@ int main()
     if (n == 0)
     {
         throw runtime_error("Can't generate bill due to invalid entries");
-        // exit(0);
     }
 
+    Items sum;
     Items arrItems[n];
 
     Bill b1(1, "Customer1");
     b1.getarr(arrItems, n);
 
-    Items sum;
+    openBill();
+
     b1.printItems(arrItems, n);
     b1.sumPrice(arrItems, n, sum);
 

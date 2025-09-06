@@ -1,0 +1,62 @@
+-------------------------
+-------------------------
+Purchased Items
+-------------------------
+Item Id : 1
+Item Name : abc
+Item Price : 1000
+Items in Stock : 10
+Items Quantity : 3
+-------------------------
+-------------------------
+-------------------------
+Purchased Items
+-------------------------
+Item Id : 2
+Item Name : xyz
+Item Price : 1500
+Items in Stock : 5
+Items Quantity : 3
+-------------------------
+Bill Id : 
+Customer Name : 1
+---------------------Customer1
+-------------------------
+Total Sum : 7500
+-------------------------
+-------------------------
+-------------------------
+Purchased Items
+-------------------------
+Item Id : 1
+Item Name : poi
+Item Price : 200
+Items in Stock : 8
+Items Quantity : 6
+-------------------------
+-------------------------
+-------------------------
+Purchased Items
+-------------------------
+Item Id : 7
+Item Name : lkj
+Item Price : 300
+Items in Stock : 25
+Items Quantity : 10
+-------------------------
+-------------------------
+-------------------------
+Purchased Items
+-------------------------
+Item Id : 9
+Item Name : bvc
+Item Price : 900
+Items in Stock : 7
+Items Quantity : 5
+-------------------------
+Bill Id : 
+Customer Name : 1
+---------------------Customer1
+-------------------------
+Total Sum : 8700
+-------------------------
