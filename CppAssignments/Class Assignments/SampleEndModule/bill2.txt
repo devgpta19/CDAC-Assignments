@@ -1,0 +1,21 @@
+Bill Id : 8
+Customer Name : Aman
+---------------------
+Purchased Items
+-------------------------
+Item Id : 1
+Item Name : Dev
+Item Price : 2000
+Items in Stock : 8
+Items Quantity : 4
+-------------------------
+-------------------------
+Item Id : 7
+Item Name : poi
+Item Price : 9000
+Items in Stock : 4
+Items Quantity : 2
+-------------------------
+Total Sum : 26000
+-------------------------
+
