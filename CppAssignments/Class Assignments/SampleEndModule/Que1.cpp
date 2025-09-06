@@ -126,18 +126,6 @@ public:
         my_file.close();
         cout << "Total Sum : " << price << endl;
     }
-
-    Items swap()
-    {
-        Items p;
-        p.iid = this->iid;
-        p.iname = this->iname;
-        p.price = this->price;
-        p.stock = this->stock;
-        p.quantity = this->quantity;
-
-        return p;
-    }
 };
 
 class Bill : public Items

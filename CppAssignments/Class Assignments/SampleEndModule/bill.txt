@@ -63,3 +63,24 @@ Items Quantity : 5
 Total Sum : 5000
 -------------------------
 
+Bill Id : 1
+Customer Name : Customer1
+---------------------
+Purchased Items
+-------------------------
+Item Id : 1
+Item Name : qwe
+Item Price : 2000
+Items in Stock : 5
+Items Quantity : 2
+-------------------------
+-------------------------
+Item Id : 6
+Item Name : hdf
+Item Price : 100
+Items in Stock : 50
+Items Quantity : 12
+-------------------------
+Total Sum : 5200
+-------------------------
+
