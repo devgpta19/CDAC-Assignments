@@ -232,19 +232,21 @@ public:
 void openBill()
 {
     ifstream my_file("bill2.txt");
-    string line;
     if (!my_file.is_open())
     {
         cout << "File can't be opened" << endl;
     }
     else
     {
+        string line;
         cout << "File is opened successfully" << endl;
-        if (!my_file.eof())
+        while (!my_file.eof())
         {
             getline(my_file, line);
             cout << line << endl;
         }
+        my_file.close();
+        cout<<"Previous Bills"<<endl;
     }
 }
 
@@ -260,6 +262,8 @@ int main()
         throw runtime_error("Can't generate bill due to invalid entries");
     }
 
+    openBill();
+
     Items sum;
     Items arrItems[n];
 
@@ -270,7 +274,6 @@ int main()
     Bill b1(8, "Aman", n, obj);
 
     b1.displayBill();
-    openBill();
 
     b1.printItems(arrItems, n);
     b1.sumPrice(arrItems, n, sum);

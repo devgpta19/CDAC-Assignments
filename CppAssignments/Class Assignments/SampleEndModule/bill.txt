@@ -84,3 +84,17 @@ Items Quantity : 12
 Total Sum : 5200
 -------------------------
 
+Bill Id : 1
+Customer Name : Customer1
+---------------------
+Purchased Items
+-------------------------
+Item Id : 4
+Item Name : gtr
+Item Price : 1000
+Items in Stock : 5
+Items Quantity : 1
+-------------------------
+Total Sum : 1000
+-------------------------
+
