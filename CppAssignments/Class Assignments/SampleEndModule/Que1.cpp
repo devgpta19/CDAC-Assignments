@@ -34,6 +34,9 @@
 // Append new bills without overwriting
 
 
+
+// More accurate code after fixing issues
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -67,6 +70,31 @@ public:
         this->quantity = quantity;
     }
 
+    void getarr(Items arrItems[], int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            int iid;
+            string name;
+            float price;
+            int stock;
+            int quantity;
+
+            cout << "Enter Your " << i + 1 << " item " << endl;
+            cout << "Enter Item Id : ";
+            cin >> iid;
+            cout << "Enter Item Name : ";
+            cin >> name;
+            cout << "Enter Item Price : ";
+            cin >> price;
+            cout << "Enter Items InStock : ";
+            cin >> stock;
+            cout << "Enter Items Quantity : ";
+            cin >> quantity;
+            arrItems[i] = Items(iid, name, price, stock, quantity);
+        }
+    }
+
     void display()
     {
         cout << "Item ID : " << iid << endl;
@@ -76,7 +104,7 @@ public:
         cout << "Quantity : " << quantity << endl;
         cout << "---------------------" << endl;
 
-        ofstream my_file("bill.txt", ios::app);
+        ofstream my_file("bill2.txt", ios::app);
         my_file << "-------------------------" << endl;
         my_file << "Item Id : " << iid << endl;
         my_file << "Item Name : " << iname << endl;
@@ -119,7 +147,7 @@ public:
     void displaySum()
     {
 
-        ofstream my_file("bill.txt", ios::app);
+        ofstream my_file("bill2.txt", ios::app);
         my_file << "Total Sum : " << price << endl;
         my_file << "-------------------------" << endl;
         my_file << endl;
@@ -130,51 +158,41 @@ public:
 
 class Bill : public Items
 {
-
     int bId;
     string cname;
+    int n;
+    Items *array[];
 
 public:
     Bill()
     {
         bId = 0;
         cname = "";
+        n = 0;
+        *array = new Items[n];
+        for (int i = 0; i < n; i++)
+        {
+            *array[i] = Items();
+        }
     }
 
-    Bill(int bId, string cname)
+    Bill(int bId, string cname, int n, Items *obj)
     {
         this->bId = bId;
         this->cname = cname;
-    }
-
-    void getarr(Items arrItems[], int n)
-    {
+        this->n = n;
+        *array = new Items[n];
         for (int i = 0; i < n; i++)
         {
-            int iid;
-            string name;
-            float price;
-            int stock;
-            int quantity;
-
-            cout << "Enter Your " << i + 1 << " item " << endl;
-            cout << "Enter Item Id : ";
-            cin >> iid;
-            cout << "Enter Item Name : ";
-            cin >> name;
-            cout << "Enter Item Price : ";
-            cin >> price;
-            cout << "Enter Items InStock : ";
-            cin >> stock;
-            cout << "Enter Items Quantity : ";
-            cin >> quantity;
-            arrItems[i] = Items(iid, name, price, stock, quantity);
+            array[i] = new Items();
+            array[i] = obj;
         }
     }
+
     void printItems(Items arrItems[], int n)
     {
 
-        ofstream my_file("bill.txt", ios::app);
+        ofstream my_file("bill2.txt", ios::app);
         my_file << "Purchased Items" << endl;
         my_file.close();
 
@@ -193,8 +211,8 @@ public:
         cout << "Bill Id: " << bId << endl;
         cout << "Customer Name: " << cname << endl;
 
-        ofstream my_file("bill.txt", ios::app);
-        my_file << "Bill Id : "<< bId  << endl;
+        ofstream my_file("bill2.txt", ios::app);
+        my_file << "Bill Id : " << bId << endl;
         my_file << "Customer Name : " << cname << endl;
         my_file << "---------------------" << endl;
         my_file.close();
@@ -204,30 +222,31 @@ public:
     {
         for (int i = 0; i < n; i++)
         {
-            sum = sum + arrItems[i]; // sum = sum + arrItems[i];  // sum.operator+(arrItems[i]);
+            sum = sum + arrItems[i];        // sum = sum + arrItems[i];  // sum.operator+(arrItems[i]);
         }
 
         sum.displaySum();
     }
 };
 
-
 void openBill()
 {
-    ifstream my_file("bill.txt");
-    string line;
+    ifstream my_file("bill2.txt");
     if (!my_file.is_open())
     {
         cout << "File can't be opened" << endl;
     }
     else
     {
+        string line;
         cout << "File is opened successfully" << endl;
-        if (!my_file.eof())
+        while (!my_file.eof())
         {
             getline(my_file, line);
             cout << line << endl;
         }
+        my_file.close();
+        cout<<"Previous Bills"<<endl;
     }
 }
 
@@ -243,14 +262,18 @@ int main()
         throw runtime_error("Can't generate bill due to invalid entries");
     }
 
+    openBill();
+
     Items sum;
     Items arrItems[n];
 
-    Bill b1(1, "Customer1");
-    b1.getarr(arrItems, n);
+    Items *obj;
+    obj = new Items();
+    obj->getarr(arrItems, n);
+
+    Bill b1(8, "Aman", n, obj);
 
     b1.displayBill();
-    openBill();
 
     b1.printItems(arrItems, n);
     b1.sumPrice(arrItems, n, sum);
