@@ -1,0 +1,16 @@
+.moderate {
+    border: 5px solid rgb(122, 16, 16);
+    margin: 10px;
+    padding: 5px;
+
+}
+
+.gaudy {
+    background: #ec6161;
+
+}
+
+p {
+    font-family: cursive;
+    color: #448a8a;
+}

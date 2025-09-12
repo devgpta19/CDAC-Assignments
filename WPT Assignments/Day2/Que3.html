@@ -1,0 +1,78 @@
+<!-- 
+ 3) Write an HTML using internal CSS that has 3 Text Input Fields
+All should shown in one line
+Set the left and right margins to appropriate space
+Set the border to solid blue
+Set border size properly
+Below this show an image , show a rounded border in red color to image
+Adjust the top margin of image to have proper distance from texfields
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .parent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border: 2px solid rgb(104, 104, 104);
+            margin: 0, 10vh;
+            padding: 10px 3px;
+            width: 100%;
+        }
+
+        .textField {
+            border: 2px solid blue;
+        }
+
+        .image {
+            background-image: url(https://png.pngtree.com/png-clipart/20230508/original/pngtree-big-lion-walking-wild-cat-png-image_9153481.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 5vh;
+            border: 5px solid red;
+            border-radius: 20px;
+
+            height: 500px;
+            width: 500px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="main">
+        <div class="parent">
+            <div>
+                <label for="">First Name</label>
+                <input class="textField" type="text">
+            </div>
+            <div>
+                <label for="">Middle Name</label>
+                <input class="textField" type="text">
+            </div>
+            <div>
+                <label for="">Last Name</label>
+                <input class="textField" type="text">
+            </div>
+        </div>
+        <div class="image">
+        </div>
+    </div>
+</body>
+
+</html>
