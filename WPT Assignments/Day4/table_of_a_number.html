@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get table</title>
+    <style>
+         table {
+      border-collapse: collapse;
+      margin: 20px;
+    }
+    th, td {
+      border: 2px solid black;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <h3>Enter a number to get Table</h3>
+    <input type="number" id="userNumber" placeholder="Enter Number">
+    <button onclick="GetTable()">Table</button>
+    <div id="tableContainer"></div>
+
+    <script>
+        function GetTable() {
+            const n = parseInt(document.getElementById("userNumber").value);
+            const container = document.getElementById("tableContainer");
+
+            if (isNaN(n)) {
+                container.innerHTML = "<p>Please enter a valid number</p>";
+                return;
+            }
+            let tableHTML = "<table><tr><th>Multiplier</th><th>Result</th></tr>";
+            for (let i = 1; i <= 10; i++) {
+                tableHTML += `<tr><td>${n}🤞${i}</td><td>👉${n * i}</td></tr>`;
+            }
+            tableHTML += "</table>";
+            container.innerHTML = tableHTML;
+        }
+    </script>
+
+</body>
+
+</html>

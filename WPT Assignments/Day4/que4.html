@@ -1,0 +1,124 @@
+<!-- 3) create html page -  with 
+	1 textfield and multiple buttons 
+	
+button captions are - 1)Add at End 
+		 2) Add at Start
+		3) delete from end 
+		4) delete from start
+		5) display odd numbers 
+		6) display even numbers
+hint -  use Array predined methods -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que4</title>
+</head>
+
+<body>
+
+    <textarea id="area"></textarea>
+
+    <button class="btn" onclick="EnterArray()">
+        Enter Array</button>
+
+    <button class="btn" onclick="addAtStart()">
+        Add at Start</button>
+
+    <button class="btn" onclick="addAtEnd()">
+        Add at End</button>
+
+    <button class="btn" onclick="DeleteAtStart()">
+        Delete at Start</button>
+
+    <button class="btn" onclick="DeleteAtEnd()">
+        Delete At End</button>
+
+    <button class="btn" onclick="EvenNo()">
+        Even Number</button>
+
+    <button class="btn" onclick="OddNo()">
+        Odd Number</button>
+
+    <button class="btn" onclick="resetArray()">
+        Reset</button>
+
+
+    <script>
+
+        a = [1, 2, 3, 4, 5, 6, 7]
+        i = 7;
+
+        function EnterArray() {
+            return document.getElementById("area").value = a;
+        }
+
+        function addAtStart() {
+            i++;
+            a.unshift(i)
+            return document.getElementById("area").value = a;
+        }
+
+        function addAtEnd() {
+            i++;
+            a.push(i)
+            return document.getElementById("area").value = a;
+        }
+
+        function DeleteAtEnd() {
+            a.pop();
+            return document.getElementById("area").value = a;
+        }
+
+        function DeleteAtStart() {
+            a.shift()
+            return document.getElementById("area").value = a;
+        }
+
+
+        function EvenNo() {
+
+            let evenArray=a.filter((num=>num%2 === 0))
+                return document.getElementById("area").value = evenArray;
+            
+        }
+        function OddNo() {
+            let oddArray=a.filter(num=>num%2!==0)
+                return document.getElementById("area").value = oddArray;
+
+        }
+        function resetArray(){
+            a=[1,2,3,4,5,6,7];
+            i=7;
+            document.getElementById("area").value="";
+        }
+
+
+        // function addAtEnd(...a){
+        //     document.getElementById("area").innerHTML=a.unshift(a[i]);
+        //     i++;
+        //     return a[i];
+        // }
+        // function addAtStart(...a){
+        //     document.getElementById("area").innerHTML=a.unshift(a[i]);
+        //     i++;
+        //     return a[i];
+        // }
+        // function addAtStart(...a){
+        //     document.getElementById("area").innerHTML=a.unshift(a[i]);
+        //     i++;
+        //     return a[i];
+        // }
+        // function addAtStart(...a){
+        //     document.getElementById("area").innerHTML=a.unshift(a[i]);
+        //     i++;
+        //     return a[i];
+        // }
+
+    </script>
+
+</body>
+
+</html>
