@@ -1,0 +1,87 @@
+pwd         - path of current location/dir
+ls          - show all files /list down all the dir or files in the current dir
+mkdir       - make new dir
+rmdir       - remove only an empty dir 
+clear       - to clear the screen
+
+whoami      - Gives the present user_name
+
+cd          - navigate into the specific dir
+cd ..       - get out of the current dir and return to the previous one.
+
+date        - present date Eg: Wed Sep 3 22:38:34 PDT 2025
+HERE WE'RE COUSTOMIZING THE DATE FORMATES
+date +%D    - only gives the date Eg: 09/03/25
+date +%T    - only gives ther time Eg: 22:40:58
+date +%H:%M - only gives the Hours and time in the same formate Eg: 22:42
+
+ls -lt      - All the details like time of creation, size, more... in the latest creation order
+ls -ltr     - same as ls -lt but in the reverse order
+ls --help   - to show all ls commands
+
+drwxr-xr-x 1 user_name user_name Sep 3 22:47 dir_name
+here 'd' is for dir and rest 9 are permissions
+-rw-r--r-- 1 user_name user_name Sep 3 22:58 file_name
+'-rw-r--r--'these are the permissions given to the file
+
+touch file_name.extention - Create a new file in the current dir
+nano file_name.extention  - To open the file and File will one in new window
+cat file_name.extention   - It will show the content of the file
+rm file_name.extention    - It will remove the file.
+
+mv file_name.extention <Destination Folder_name> - movefile into the directory 
+mv dir/file_name <Destinastion Folder> - move the file from a perticular dir to another location/dir
+cp file_name.extention <Destination Folder> - copy the file to a perticular location/dir
+cp dir/file_name.extention <Destination Folder> - copy the file from a perticular dir to another location/dir
+
+chmod permision1 permision2 permision3 Directory/file_name - Change r,w,x permissions
+	User	   Group      Others
+
+Permission formate [ 000 ]
+nothing for user, nothing for Group, nothing for Others
+
+0 - Nothing
+1 - X            {---- + ----- + Execute}
+2 - W            {---- + Write + -------}
+3 - W + X        {---- + Write + Execute}
+4 - R            {Read + ----- + -------}
+5 - R + X        {Read + ----- + Exexute}
+6 - W + R 	 {Read + Write + -------}
+7 - R + W + X 	 {Read + Write + Execute}
+
+
+
+
+Make a file with '.sh' extention then include this line 
+
+#!/bin/sh OR #!/bin/bash     -   sh/bash line
+name=Dev                     -   Don't give any spaces anywhere
+echo $name                   -   to print on the terminal (Write this inside the file after nano File_Name)
+readonly <var_name>  	     -   We can't over-right this file beause the file ios readonly
+unset <var_name>             -   It will unset the value of the variable    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
