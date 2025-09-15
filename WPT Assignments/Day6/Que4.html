@@ -1,0 +1,98 @@
+<!-- addition 
+	subtraction
+	multiply
+	division  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Diffrent Functions</h1>
+        <div class="main">
+            <label for="Fnumber">Enter First Number</label>
+            <input type="number" id="num1"><br>
+            <label for="Lnumber">Enter Second Number</label>
+            <input type="number" id="num2">
+        </div><br>
+        <div id="main2">
+            <select id="opt">
+                <option value="add">Addition</option>
+                <option value="sub">Subtraction</option>
+                <option value="mul">Multiplication</option>
+                <option value="div">Division</option>
+            </select>
+            <button onclick="Calculate1()">calculate</button>
+        </div>
+        <div>
+            <p>Result is: <span id="p1"> </span></p>
+        </div>
+    </div>
+
+    <script>
+
+        function display(show) {
+            document.getElementById("p1").innerHTML = show;
+        }
+
+        function addition(n1, n2, callBack) {
+            let add = n1 + n2;
+            callBack(add);
+        }
+        function subtraction(n1, n2, callBack) {
+            let add = n1 - n2;
+            callBack(add);
+        }
+        function multiplication(n1, n2, callBack) {
+            let add = n1 * n2;
+            callBack(add);
+        }
+        function division(n1, n2, callBack) {
+            if (n2 == 0) {
+                callBack("Can't divide by zero")
+            }
+            else {
+                let add = n1 / n2;
+                callBack(add);
+            }
+        }
+        function Calculate1() {
+            let n1 = document.getElementById("num1").valueAsNumber;
+            let n2 = document.getElementById("num2").valueAsNumber;
+            let op = document.getElementById("opt").value
+            switch (op) {
+                case "add":
+                    addition(n1, n2, display);
+                    break;
+                case "sub":
+                    subtraction(n1, n2, display);
+                    break;
+                case "mul":
+                    multiplication(n1, n2, display);
+                    break;
+                case "div":
+                    division(n1, n2, display);
+                    break;
+                default:
+                    display("Invalid operation");
+            }
+        }   
+    </script>
+</body>
+
+</html>
