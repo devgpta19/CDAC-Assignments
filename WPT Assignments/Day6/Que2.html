@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+
+        <h1>
+            Time :
+        </h1>
+
+        <h1 id="time">
+
+        </h1>
+    </div>
+
+    <script>
+        setInterval(callBack, 1000);
+
+        function callBack() {
+            var date = new Date;
+            let time = document.getElementById("time").innerHTML =
+              date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        }
+
+        console.log("rtyruru")
+
+    </script>
+</body>
+
+</html>
