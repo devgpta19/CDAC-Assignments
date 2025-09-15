@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <button id="btn">
+            Count++
+        </button>
+        <div id="hehe">
+
+        </div>
+        <p class="para">
+            The button is clicked <span id="countt">
+                 <b>0</b>
+            </span> times.
+        </p>
+    </div>
+
+    <script>
+        count = 0;
+        document.getElementById("btn").addEventListener('click', () => {
+            count++;
+            console.log(count);
+            var para = document.createElement('p');
+            
+            var add = document.getElementById("countt").textContent = count;
+            var data = document.createTextNode(add);
+            para.appendChild(data);
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        #main_container {
+            border: 1px dotted black;
+            padding: 50px;
+        }
+
+        #main_container_heading {
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 70px;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        #errorMessagef {
+            color: red;
+            visibility: hidden;
+        }
+
+        #errorMessagel {
+            color: red;
+            visibility: hidden;
+        }
+
+        #errorMessagee {
+            color: red;
+            visibility: hidden;
+        }
+
+        #errorMessagea {
+            color: red;
+            visibility: hidden;
+        }
+
+        #errorMessaged {
+            color: red;
+            visibility: hidden;
+        }
+
+        #btn {
+            text-align: right;
+        }
+
+        #main_container2 {
+            width: 100%;
+        }
+
+        #main_container2_table {
+            width: 100%;
+            border: 1px double black;
+            text-align: center;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+
+        }
+
+        #main_container2_table_row1{
+            margin-bottom: 10px;
+        }
+
+        .btn{
+            background-color: chartreuse;
+            padding: 25px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #actions{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="main_container">
+            <H1 id="main_container_heading">Employee Details</H1>
+            <div id="main_container_inputs">
+                <label for="fName">Enter FirstName : </label>
+                <input type="text" id="fname">
+                <h5 id="errorMessagef">
+                    Field Must not be empty
+                </h5>
+                <br>
+                <label for="lName">Enter LastName : </label>
+                <input type="text" id="lname">
+                <h5 id="errorMessagel">
+                    Field Must not be empty
+                </h5>
+                <br>
+                <label for="email">Enter email : </label>
+                <input type="email" id="email">
+                <h5 id="errorMessagee">
+                    Field Must not be empty
+                </h5>
+                <br>
+                <label for="address">Enter Employee's Address</label>
+                <textarea rows="5" cols="20" type="text" id="address"> </textarea>
+                <h5 id="errorMessagea">
+                    Field Must not be empty
+                </h5>
+                <br>
+                <label for="DOB">Enter Employee DOB : </label>
+                <input type="date" id="date">
+                <h5 id="errorMessaged">
+                    Field Must not be empty
+                </h5>
+                <br>
+            </div>
+            <div>
+                <button id="b1" class="btn">Add Employee</button>
+            </div>
+        </div>
+        
+        <div id="main_container2">
+            <table border="1" id="main_container2_table">
+                <thead id="main_container2_table_row1">
+                    <th>F_name</th>
+                    <th>L_name</th>
+                    <th>E-mail</th>
+                    <th>Address</th>
+                    <th>Dob</th>
+                    <th>Actions</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <!-- -------------------------------JAVA SCRIPT ------------------------------------>
+    <script>
+        document.getElementById("b1").addEventListener("click", () => Validation());
+        function Validation() {
+            let f = document.getElementById("fname").value;
+            let l = document.getElementById("lname").value;
+            let e = document.getElementById("email").value;
+            let a = document.getElementById("address").value;
+            let d = document.getElementById("date").value;
+            let actionBtn = '<div id="actions"><button class="btn" onclick="deleteEmployee(this)">Delete</button><button class="btn" onclick="editEmloyee(this)">Edit</button></div>'
+            let errorf = document.getElementById("errorMessagef")
+            let errorl = document.getElementById("errorMessagel")
+            let errore = document.getElementById("errorMessagee")
+            console.log("Working");
+            if (f.trim() == "") {
+                errorf.style.visibility = "visible"
+            } else {
+                errorf.style.visibility = "hidden"
+            }
+            if (l.trim() == "") {
+                errorl.style.visibility = "visible"
+            } else {
+                errorl.style.visibility = "hidden"
+            }
+            if (e.trim() == "") {
+                errore.style.visibility = "visible"
+            } else {
+                errore.style.visibility = "hidden"
+            }
+            let table = document.getElementById("main_container2_table");
+            let newRow = table.insertRow(table.rows.length)
+            newRow.insertCell(0).innerHTML = f;
+            newRow.insertCell(1).innerHTML = l;
+            newRow.insertCell(2).innerHTML = e;
+            newRow.insertCell(3).innerHTML = a;
+            newRow.insertCell(4).innerHTML = d;
+            newRow.insertCell(5).innerHTML = actionBtn;
+
+            clearFields();
+        }
+
+       function deleteEmployee(button) {
+
+            let currRow = button.parentNode.parentNode.parentNode;
+            currRow.parentNode.removeChild(currRow);
+        }
+        
+        function editEmloyee(button){
+            let currRow = button.parentNode.parentNode.parentNode;
+            let fname = currRow.cells[0]
+            let lname = currRow.cells[1]
+            let email = currRow.cells[2]
+            let address = currRow.cells[3]
+            let dob = currRow.cells[4]
+
+            let fnameInput =
+                prompt("Enter the updated first name:",
+                    fname.innerHTML);
+            let lnameInput =
+                prompt("Enter the updated last name:",
+                    lname.innerHTML);
+            let emailInput =
+                prompt("Enter the updated email:",
+                    email.innerHTML);
+            let addressInput =
+                prompt("Enter the updated addesss:",
+                    address.innerHTML
+                );
+            let dobInput =
+                prompt("Enter the dob:",
+                    dob.innerHTML
+                );
+
+                fname.innerHTML=fnameInput;
+                lname.innerHTML=lnameInput;
+                email.innerHTML=emailInput;
+                address.innerHTML=addressInput;
+                dob.innerHTML=dobInput;
+
+        }
+        function clearFields(){
+            let f = document.getElementById("fname").value="";
+            let l = document.getElementById("lname").value="";
+            let e = document.getElementById("email").value="";
+            let a = document.getElementById("address").value="";
+            let d = document.getElementById("date").value="";
+        }
+    </script>
+</body>
+</html>
