@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div class="InputFromUser">
+            <label for="Fname">Enter First_Name : </label>
+            <input id="f" type="text" name="Fname"><br>
+            <label for="Lname">Enter Last_Name : </label>
+            <input id="l" type="text" name="Lname"><br>
+            <label for="Age">Enter Age : </label>
+            <input id="a" type="number" name="Age"><br>
+
+            <br>
+            <button id="btn" onclick="accepted()">Submit</button>
+        </div>
+
+        <br><br><br>
+
+        <div id="d1">
+
+        </div>
+        <div id="d2">
+
+        </div>
+        <div id="d3">
+
+        </div>
+        <div id="d4">
+
+        </div>
+        <br><br><br>
+        <div id="d11">
+
+        </div>
+        <div id="d21">
+
+        </div>
+        <div id="d31">
+
+        </div>
+        <div id="d41">
+
+        </div>
+        <br><br><br>
+        <div id="d111">
+
+        </div>
+        <div id="d211">
+
+        </div>
+        <div id="d311">
+
+        </div>
+        <div id="d411">
+
+        </div>
+    </div>
+
+    <script>
+
+        let officialArr = [];
+        function accepted() {
+
+
+            let obj = null;
+            let f = document.getElementById("f").value;
+            let l = document.getElementById("l").value;
+            let a = document.getElementById("a").value;
+
+            obj = {
+                f_name: f,
+                l_name: l,
+                age: a
+            }
+            officialArr.push(obj);
+            console.log(obj)
+
+            let objJSON3 = JSON.stringify(officialArr);
+            let apiCall3 = JSON.parse(objJSON3);
+
+            document.getElementById("d111").innerHTML = officialArr;
+            document.getElementById("d211").innerHTML = objJSON3;
+            document.getElementById("d311").innerHTML = apiCall3;
+            document.getElementById("d411").innerHTML = show3(apiCall3);
+
+            function show3(apiCall3) {
+                let data = '<table border="2px">';
+                for (i of apiCall3) {
+                    data = data + '<tr><td>' + i.f_name + '</td></tr>';
+                }
+
+                return data;
+            }
+
+        }
+
+
+
+
+        let arr = ["Dev", "Chinmay", "Hrishiu"];
+        let mainObj = [
+            {
+                EmpName: "Dev",
+                EmpAge: 30,
+                EmpSala: 80000
+            },
+
+            {
+                EmpName: "Chinmay",
+                EmpAge: 30,
+                EmpSala: 100000
+            },
+
+            {
+                EmpName: "Hrishiu",
+                EmpAge: 30,
+                EmpSala: 70000
+            }
+        ]
+
+
+        // From Object to JSON
+        let objJSON = JSON.stringify(mainObj);
+        let objJSON2 = JSON.stringify(arr);
+
+        // From JSON to Object
+        const apiCall = JSON.parse(objJSON);
+        const apiCall2 = JSON.parse(objJSON2);
+
+        // Adding HTML in each div
+        document.getElementById("d1").innerHTML = mainObj;
+        document.getElementById("d2").innerHTML = objJSON;
+        document.getElementById("d3").innerHTML = apiCall;
+        document.getElementById("d4").innerHTML = show(apiCall);
+
+
+        document.getElementById("d11").innerHTML = arr;
+        document.getElementById("d21").innerHTML = objJSON2;
+        document.getElementById("d31").innerHTML = apiCall2;
+        document.getElementById("d41").innerHTML = show2(apiCall2);
+
+
+
+
+
+        // Adding data in the form of table
+        function show(apiCall) {
+            let data = '<table border="2px">';
+            for (i of apiCall) {
+                data = data + '<tr><td>' + i.EmpName + '</td></tr>';
+            }
+
+            return data;
+        }
+        function show2(apiCall2) {
+            let data = '<table border="2px">';
+            for (i of apiCall2) {
+                data = data + '<tr><td>' + i + '</td></tr>';
+            }
+
+            return data;
+        }
+
+
+    </script>
+</body>
+
+</html>
