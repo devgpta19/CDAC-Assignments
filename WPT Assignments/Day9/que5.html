@@ -1,0 +1,38 @@
+<!-- 
+5) use try and catch and finally block in JavaScript 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que5</title>
+</head>
+
+<body>
+    <div id="dv1">
+
+        <p id="p1"> </p>
+
+    </div>
+    <br><br><br>
+    <button id="btn" onclick="showData()"> SHOW </button>
+</body>
+<script>
+    function showData() {
+        try {
+            data = "Somthing just not happend properly!"
+            let data;
+            document.getElementById("p1").innerHTML = data;
+        } catch (err) {
+            document.getElementById("p1").innerHTML = err;
+        }
+        finally {
+            document.getElementById("p1").innerText = " Oops!!! 😞"
+        }
+    }
+</script>
+
+</html>

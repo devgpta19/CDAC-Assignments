@@ -1,0 +1,32 @@
+<!-- 
+ 1) 
+use ajax concept and display data in html
+page on button click from text file
+-->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que1</title>
+    <script>
+        function loadData(){
+            let data = new XMLHttpRequest();
+            data.open("GET","data.txt",true);
+            data.send();
+            data.onload = ()=>{
+                if(data.status === 200){
+                    document.getElementById("result").innerHTML = data.responseText
+                }
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <button onclick="loadData()"> Display </button><br><br><br>
+    <div id="result">
+
+    </div>
+  </body>
+  </html>

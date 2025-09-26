@@ -1,0 +1,49 @@
+<!-- 1) Demonstrate Ajax with JQuery Syntax 
+	$("").load()
+	$.get() -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div1">
+
+    </div>
+
+    <h1>
+
+    </h1>
+    <script>
+
+        // Fetch JSON data using $.get when button is clicked
+        $("#fetchBtn").click(function () {
+            $.get("https://jsonplaceholder.typicode.com/posts", function (data, status) {
+                if (status === "success") {
+                    let output = "<h2>Posts Preview</h2><ul>";
+                    data.slice(0, 5).forEach(post => {
+                        output += `<li><strong>${post.title}</strong><br>${post.body}</li>`;
+                    });
+                    output += "</ul>";
+                    $("#content").html(output);
+                } else {
+                    alert("Failed to fetch data. Status: " + status);
+                }
+            });
+        });
+        // $("div").load("https://jsonplaceholder.typicode.com/posts")
+
+        // $.get("https://jsonplaceholder.typicode.com/posts",function(data, status){
+        //     alert("data : "+data+"\n status : "+status)
+        // })
+    </script>
+
+</body>
+
+</html>

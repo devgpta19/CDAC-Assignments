@@ -1,0 +1,64 @@
+<!-- 
+ 6) apply the css to html elements with help of methods 
+
+	addClass()
+	removeClass()
+	toggleClass() -->
+
+    
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que6</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .css {
+            background-color: crimson;
+            height: 200px;
+            width: 400px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: inline-block;
+            color: yellow;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            $("#btn").click(() => {
+                // $("#d1").css(
+                //     {
+                //         backgroundColor: "lightblue",
+                //         color: "white"
+                //     }
+                // )
+
+                $("#d1").addClass("css");
+            })
+            $("#btn2").click(() => {
+                $("#d1").removeClass("css")
+            })
+            $("#btn3").click(() => {
+                $("#d1").toggleClass("css")
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn"> Div </button>
+    <button id="btn2">Paragraph</button>
+    <button id="btn3"> Span</button> <br><br><br>
+    <div id="d1" class="css">
+        <p id="p1"> Paragraph content <br><br>
+            <span id="s1"> SPAN Data </span>
+        </p>
+    </div>
+
+</body>
+
+</html>

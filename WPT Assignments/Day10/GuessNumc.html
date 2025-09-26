@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a Number</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .ans {
+            color: #692d2d;
+            position: absolute;
+        }
+
+        #main {
+            height: 100vh;
+            width: 100vw;
+            background: #572020;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            color: wheat;
+
+            padding: 20vh;
+            flex-direction: column;
+
+            gap: 60px;
+        }
+
+        #container1 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #container2 {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 5vh;
+        }
+
+        label {
+            font-weight: 400;
+            font-size: 3.5vh;
+        }
+
+        input {
+            color: black;
+            font-size: 2.5vh;
+        }
+
+        .abc {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        #success {
+            color: chartreuse;
+            /* display: none; */
+        }
+
+        #badRequest {
+            color: yellow;
+            /* display: none; */
+        }
+
+        #failed {
+            color: red;
+            /* display: none; */
+        }
+
+        button {
+            height: 7vh;
+            width: 10vw;
+            background: chartreuse;
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <p class="ans"></p>
+
+    <div id="main">
+        <div id="container1">
+
+            <h1 id="heading">Guess a Number</h1>
+            <p id="description">FROM 1 to 10</p>
+        </div>
+        <div id="cointainer2">
+            <label>Enter your Number</label>
+            <input id="input1" type="number">
+        </div>
+        <div id="message">
+            <p id="success" class="abc"></p>
+            <p id="badRequest" class="abc"></p>
+            <p id="failed" class="abc"></p>
+        </div>
+        <div id="button">
+            <button id="btn1">
+                Submit
+            </button>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        let random = Math.floor((Math.random() * 10) + 1);
+        console.log(random);
+
+        document.querySelector(".ans").innerText = random;
+
+
+        let success = document.getElementById("success");
+        let badRequest = document.getElementById("badRequest");
+        let failed = document.getElementById("failed");
+
+        document.querySelector("#btn1").addEventListener('click', function () {
+            let x = document.getElementById("input1").value;
+            let myPromise = new Promise(function (resolve, request) {
+                console.log(x);
+                if (random == x) {
+                    success.style.display = "block";
+                    // badRequest.style.display = "none";
+                    // failed.style.display = "none";
+
+                    success.innerText = "🎉🎉Boo Yahh!! You Got it right.";
+                    resolve();
+                }
+                else if (x > 10) {
+                    // success.style.display = "none";
+                    badRequest.style.display = "block";
+                    // failed.style.display = "none";
+
+                    success.innerText = "🥴🥴Too Big to handle.";
+                } else {
+                    // success.style.display = "none";
+                    // badRequest.style.display = "none";
+                    failed.style.display = "block";
+
+                    success.innerText = "🤔🤔Wrong Answer please re-enter.";
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

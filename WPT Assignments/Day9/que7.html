@@ -1,0 +1,101 @@
+<!-- 
+7)	Take TextField and Multiple Buttons 
+	Create Calculator using all concepts 
+	from HTML , css , JavaScript , JQuery 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que7</title>
+    <style>
+        #btn {
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main_Div">
+        <textarea name="textarea" id="txtr">  </textarea>
+        <br>
+        <button id="btn" name="per">%</button>
+        <button id="btn" name="cancel">CE</button>
+        <button id="btn" name="clear">C</button>
+        <button id="btn" name="delete">⌫</button><br>
+        <button id="btn" name="seven">7</button>
+        <button id="btn" name="eight">8</button>
+        <button id="btn" name="nine">9</button>
+        <button id="btn" name="mult">×</button><br>
+        <button id="btn" name="four">4</button>
+        <button id="btn" name="five">5</button>
+        <button id="btn" name="six">6</button>
+        <button id="btn" name="sub">-</button><br>
+        <button id="btn" name="one">1</button>
+        <button id="btn" name="two">2</button>
+        <button id="btn" name="three">3</button>
+        <button id="btn" name="add">+</button><br>
+        <button id="btn" name="double_zero">00</button>
+        <button id="btn" name="zero">0</button>
+        <button id="btn" name="dot">.</button>
+        <button id="btn" name="equal">=</button>
+    </div>
+</body>
+<script>
+    let data = document.getElementById("txtr");
+    let buttons = document.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            let name = button.getAttribute("name");
+
+            switch (name) {
+                case "clear":
+                    data.value = "";
+                    break;
+                case "cancel":
+                    data.value = "";
+                    break;
+                case "delete":
+                    data.value = data.value.slice(0, -1);
+                    break;
+                case "equal":
+                    try {
+                        data.value = eval(data.value.replace(/×/g, "*")
+                        .replace(/÷/g, "/"));
+                    } catch {
+                        data.value = "Error";
+                    }
+                    break;
+                case "per":
+                    data.value += "%";
+                    break;
+                case "add":
+                    data.value += "+";
+                    break;
+                case "sub":
+                    data.value += "-";
+                    break;
+                case "mult":
+                    data.value += "*";
+                    break;
+                case "dot":
+                    data.value += ".";
+                    break;
+                case "zero":
+                    data.value += "0";
+                    break;
+                case "double_zero":
+                    data.value += "00";
+                    break;
+                default:
+                    data.value += button.textContent;
+            }
+        });
+    });
+</script>
+
+</html>

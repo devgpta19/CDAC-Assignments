@@ -1,0 +1,65 @@
+<!-- 
+ 2) 2) in Ajax Concept get Data From url
+     https://jsonplaceholder.typicode.com/posts
+
+	From Data display 
+	id and Title in Table Format on html page 
+
+3) in 2nd Assignment -  display data depends on parameter
+   Accept id from user 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que3</title>
+</head>
+
+<body>
+    <label for="t1">Enter Id</label>
+    <input type="number" id="t1">
+
+    <button onclick="getData()"> Show Data </button>
+    <br><br><br>
+    <div id="d1">
+
+    </div>
+
+</body>
+<script>
+    function getData() {
+        let data = new XMLHttpRequest();
+        let linkk = "https://jsonplaceholder.typicode.com/posts"
+        data.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+        data.send();
+        data.onload = () => {
+            if (data.status === 200) {
+                let obj = JSON.parse(data.responseText)
+                console.log(data.responseText)
+                console.log(obj[0].id)
+
+
+
+                let text = '<table border="2px"><tr><th>Id</th><th>Title</th></tr>';
+                for (i of obj) {
+                    if (document.querySelector("#t1").value == i.id) {
+
+                        text = text + '<tr><td>' + i.id + '</td><td>' + i.title + '</td></tr>';
+                        document.getElementById("d1").innerHTML = text;
+                        break;
+                    }
+                    else {
+                        document.getElementById("d1").innerText= "text";
+                    }
+                }
+
+
+            }
+        }
+    }
+</script>
+
+</html>

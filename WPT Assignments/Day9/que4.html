@@ -1,0 +1,43 @@
+<!-- 
+ 4) use HTML predefined Validations 
+    required  , minlength , maxlength 
+    and display error message if data is
+    not properly entered -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que4</title>
+</head>
+
+<body>
+    <div id="dv1">
+        <label for="name">Enter Name</label>
+        <input type="text" id="txt1" minlength="15" maxlength="25" required><br> <span id="sp1"></span><br>
+        <label for="Password">Enter Password</label>
+        <input type="password" id="psd1" minlength="8" maxlength="12" required><br><span id="sp2"></span>
+
+        <br><br><br>
+        <div id="dv2">
+            <button id="btn1" onclick="validate()"> Submit </button>
+        </div>
+
+    </div>
+</body>
+<script>
+    function validate() {
+        let name = document.getElementById("txt1");
+        let pass = document.getElementById("psd1");
+        if (!name.checkValidity()) {
+            document.getElementById("sp1").innerText = name.validationMessage;
+        }
+        if (!pass.checkValidity()) {
+            document.getElementById("sp2").innerText = pass.validationMessage;
+        }
+    }
+</script>
+
+</html>
