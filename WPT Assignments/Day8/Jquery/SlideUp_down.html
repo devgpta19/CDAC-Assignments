@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#d1").slideDown(3000)
+            })
+            $("#d1").mouseover(function(){
+                $("#d1").slideUp(3000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn1"> slideDown </button><br><br><br>
+    <div id="d1" style="display: none; position: relative; background-color: blueviolet; border: 2px; height:  100px; width: 100px; ">
+        <p>DIV 1</p>
+    </div>
+
+
+</body>
+</html>

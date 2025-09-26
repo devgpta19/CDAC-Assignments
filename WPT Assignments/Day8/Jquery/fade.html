@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                // $("#d1").mouseover(function(){
+                $("#d1").fadeIn(500)
+            })
+            $("#btn2").click(function () {
+                // $("#d1").mouseover(function(){
+                    $("#d1").fadeOut(1000)
+                })
+                $("#btn3").click(function(){
+                $("#d1").css(" background-color: black;")
+                $("#d1").fadeToggle(3000)
+            })
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="btn1">fadeIN</button>
+        <button id="btn2">fadeOut</button>
+        <button id="btn3">fadeIn/Out</button>
+    </div>
+    <br><br><br>
+    </div>
+    <div id="d1"
+        style="display: none; background-color: red; border-radius: 20px; border: 2px solid black; height: 100px; width: 200px;">
+
+</body>
+
+</html>

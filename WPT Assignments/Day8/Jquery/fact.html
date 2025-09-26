@@ -1,0 +1,45 @@
+<!-- Using Jquery accept a number from the user in a textfield -on change show the factorial of that number in a <p> tag -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function display() {
+            let a = document.getElementById("t1").valueAsNumber;
+            console.log(a)
+            
+            function factorial() {
+                console.log(a)
+                let x = 1;
+                for (let i = 1; i < a; i++) {
+                    x = i * x;
+                    console.log(x)
+                }
+                return x;
+            }
+            let p = document.createElement("p");
+            document.body.appendChild(p);
+
+            document.getElementsByTagName("p").textContent = factorial();
+
+        }
+    </script>
+    <div id="d1">
+        <label for="number"> Enter a number</label>
+        <input type="number" id="t1" placeholder="Enter any number">
+
+        <button onclick="display()">X</button>
+
+    </div>
+    <!-- <p id="p1"></p> -->
+</body>
+
+</html>

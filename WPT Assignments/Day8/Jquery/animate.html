@@ -1,0 +1,43 @@
+<!-- 
+ 4. Using Jquery animate() API , write a div that has a nice quote in a nice font , color and size . 
+Run the scroller from left to right 4 times , then R to L On click of the button 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+
+                $("#d1").css({
+                        "background-color": "red",
+                    }) 
+                $("#d1").animate(
+                    {
+                        "backgroundColor": "red",
+                        left: '200px',
+                        height: '200px'
+                    }, 2000)
+            })
+            $("#btn2").click(()=>{
+                $("#d1").stop()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn1"> Animate</button>
+    <button id="btn2"> Stop </button> <br><br><br><br>
+    <div id="d1"
+        style="position: absolute; display:block; height: 100px; width: 100px; background-color: aquamarine; border: 2px solid black;">
+
+    </div>
+</body>
+
+</html>

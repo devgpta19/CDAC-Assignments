@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                let data = $("#tat1").val()
+                console.log(data + data.length)
+                let l = data.length;
+                let c = l/2;
+                console.log(data.slice(0,c));
+                console.log(data.slice(c+1,l));
+
+                let a = data.slice(0,c)
+                let b = data.slice(c+1,l)
+                let d = a + b;
+                $("#tat2").val(d);
+                $("#tat3").html(
+                    function(){
+                        return a+'<br/>'+b;
+                    }
+                );
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <textarea name="text" id="tat1" cols="5" rows="5"></textarea>
+    <textarea name="text" id="tat2" cols="5" rows="5"></textarea>
+    <p id="tat3"></p>
+    <button>Get Data</button>
+
+</body>
+</html>
