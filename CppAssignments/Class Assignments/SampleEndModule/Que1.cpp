@@ -152,6 +152,7 @@ public:
         my_file << "-------------------------" << endl;
         my_file << endl;
         my_file.close();
+
         cout << "Total Sum : " << price << endl;
     }
 };
