@@ -1,0 +1,58 @@
+<!-- 3) accept data from user using input fields 
+      firstName LastName age 	  
+	  create username of User dynamically 
+      take 1st 2 characters from firstName
+	  take last 2 characters from lastName
+	  and age 
+	  
+	  eg Amit Patil 30 === amil30 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      First Name :
+      <input type="text" id="fName" placeholder="Enter First Name" /> <br />
+      Last Name :
+      <input type="text" id="lName" placeholder="Enter Last Name" /> <br />
+      Age :
+      <input type="text" id="age" placeholder="Enter Age" /> <br />
+
+      <button onclick="show()">Submit</button>
+
+      <p>Result :</p>
+      <p class="result"></p>
+
+      <script>
+        function show() {
+          let f = document.getElementById("fName").value;
+          let l = document.getElementById("lName").value;
+          let a = document.getElementById("age").value;
+
+          if (f.trim() == "" || l.trim() == "" || a.trim() == "") {
+            alert("Please fill all the fields");
+            return;
+          }
+          if (isNaN(Number(a))) {
+            alert("Please Enter Number in Age Field");
+            return;
+          }
+
+          let u_name = f.substring(0, 2) + l.substring(l.length - 2) + a;
+          document.querySelector(
+            ".result"
+          ).innerHTML = `Username : <b>${u_name}</b>`;
+          document.getElementById("fName").value = " ";
+          document.getElementById("lName").value = " ";
+          document.getElementById("age").value = " ";
+          console.log(u_name);
+        }
+      </script>
+    </div>
+  </body>
+</html>

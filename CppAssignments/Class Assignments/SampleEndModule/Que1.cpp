@@ -61,9 +61,9 @@ public:
         quantity = 0;
     }
 
-    Items(int iid, string iname, float price, int stock, int quantity)
+    Items(int i, string iname, float price, int stock, int quantity)
     {
-        this->iid = iid;
+        iid = i;
         this->iname = iname;
         this->price = price;
         this->stock = stock;
