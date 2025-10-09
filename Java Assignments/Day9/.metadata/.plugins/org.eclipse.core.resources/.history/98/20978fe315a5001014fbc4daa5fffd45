@@ -1,0 +1,114 @@
+package com.demo.dao;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.demo.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	static List<Employee> elist;
+	static {
+		elist = new ArrayList<>();
+		elist.add(new Employee(108, "Godhar", 98780, LocalDate.of(2025, 05, 03)));
+		elist.add(new Employee(103, "Bu", 38770, LocalDate.of(2025, 06, 02)));
+		elist.add(new Employee(102, "Gajodr", 98780, LocalDate.of(2025, 05, 03)));
+		elist.add(new Employee(109, "Biju", 38770, LocalDate.of(2025, 06, 02)));
+		elist.add(new Employee(107, "Raju", 78780, LocalDate.of(2025, 04, 03)));
+		elist.add(new Employee(104, "Raju", 78780, LocalDate.of(2025, 04, 03)));
+		elist.add(new Employee(106, "Birj", 38770, LocalDate.of(2025, 06, 02)));
+		elist.add(new Employee(105, "Gajodhar", 98780, LocalDate.of(2025, 05, 03)));
+		elist.add(new Employee(101, "Raju", 78780, LocalDate.of(2025, 04, 03)));
+	}
+
+	@Override
+	public boolean save(Employee e) {
+
+		elist.add(e);
+
+		return true;
+	}
+
+	@Override
+	public void displayAll() {
+		elist.forEach(System.out::println);
+
+	}
+
+	@Override
+	public Employee searchById(int id) {
+		int pos = elist.indexOf(new Employee(id));
+		if (pos != -1) {
+			return elist.get(pos);
+		} else {
+			return null;
+		}
+
+	}
+
+	@Override
+	public void displayEmp(Employee e) {
+		System.out.println(e);
+
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		Employee e = searchById(id);
+		elist.remove(e);
+		return true;
+	}
+
+	@Override
+	public List<Employee> searchByName(String name) {
+		List<Employee> temp = elist.stream().filter(emp -> emp.getEmpName().equals(name)).collect(Collectors.toList());
+		if (temp.size() != 0) {
+			return temp;
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Employee> searchBySalary(double sal) {
+		List<Employee> temp = elist.stream().filter(emp -> emp.getEmpSal() == sal).collect(Collectors.toList());
+		if (temp.size() != 0) {
+			return temp;
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public boolean updateSalary(int id, double sal) {
+		Employee emp = searchById(id);
+		emp.setEmpSal(sal);
+		return true;
+	}
+
+	@Override
+	public boolean deleteAllBySalary(double sal) {
+		List<Employee> temp = searchBySalary(sal);
+		elist.removeAll(temp);
+		return true;
+	}
+
+	@Override
+	public List<Employee> sortBySalary() {
+		List<Employee> sortList = new ArrayList<>();
+		for (Employee e : elist) {
+			sortList.add(e);
+		}
+		sortList.sort(null);
+		return sortList;
+	}
+
+	@Override
+	public List<Employee> sortById() {
+		List<Employee> sortList = 
+		return null;
+	}
+
+}
