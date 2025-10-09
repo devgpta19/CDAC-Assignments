@@ -1,0 +1,9 @@
+
+public class Student_Service {
+
+	public static boolean addNewStud() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

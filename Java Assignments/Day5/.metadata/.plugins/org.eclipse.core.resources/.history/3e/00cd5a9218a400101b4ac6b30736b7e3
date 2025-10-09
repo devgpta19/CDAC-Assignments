@@ -1,0 +1,55 @@
+package com.demo.beans;
+import java.util.Scanner;
+import com.demo.service.Account;
+import com.demo.service.AccountService;
+
+public class Saving extends Account {
+	
+	static Scanner sc = new Scanner(System.in);
+
+	static AccountService account;
+	static AccountService a = new AccountService();
+
+	static {
+		AccountService.mini = 20000;
+		AccountService.interest = 0.04 * account.getBal();
+	}
+
+	public Saving() {
+		super();
+	}
+
+	public Saving(String accType, String fName, String lName, long mob, String email, double bal) {
+		super("s", fName, lName, mob, email, bal);
+
+	}
+
+	
+
+	@Override
+	public int withdrawMoney(double bal, double wm) {
+		double sum;
+		int check = 0;
+		double mini = AccountService.mini;
+		if ((bal - wm) >= mini) {
+			sum = bal - wm;
+			a.setBal(sum);
+			check = 1;
+			return check;
+		} else {
+			check = 2;
+			if (bal > mini) {
+				check = 3;
+				return check;
+			}
+			return check;
+		}
+	}
+
+	@Override
+	public int depositMoney() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

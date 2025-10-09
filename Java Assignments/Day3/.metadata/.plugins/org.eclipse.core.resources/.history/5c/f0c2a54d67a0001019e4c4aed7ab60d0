@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Student_Service {
+
+	public static boolean addNewStud() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Student ID");
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,99 @@
+import java.util.Arrays;
+import java.util.Date;
+
+public class Test {
+
+//	public Test(int tid2, String t_name, Date dot2, int n, String s, String[] opt, String ans) {
+//		super();
+//		
+//	}
+
+	private int tid;
+	private String tname;
+	private Date dot;
+	private Question list[];
+	
+	
+	
+	class Question{
+
+		private int qn;
+		private String question;
+		private String[] opt;
+		private String answer;
+		
+		public Question() {
+			super();
+		}
+		
+		public Question(int qn, String question, String[] opt, String answer) {
+			super();
+			this.qn = qn;
+			this.question = question;
+			this.opt = opt;
+			this.answer = answer;
+		}
+
+		@Override
+		public String toString() {
+			return "Question [qn=" + qn + ", question=" + question + ", opt=" + Arrays.toString(opt) + ", answer="
+					+ answer + "]";
+		}
+
+		
+			
+	}
+	
+	
+	public Test(int tid, String tname, Date dot, Test.Question[] list) {
+		super();
+		this.tid = tid;
+		this.tname = tname;
+		this.dot = dot;
+		this.list = list;
+	}
+
+	public Test() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getTid() {
+		return tid;
+	}
+
+	public void setTid(int tid) {
+		this.tid = tid;
+	}
+
+	public String getTname() {
+		return tname;
+	}
+
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	public Date getDot() {
+		return dot;
+	}
+
+	public void setDot(Date dot) {
+		this.dot = dot;
+	}
+
+	public Question[] getList() {
+		return list;
+	}
+
+	public void setList(Question[] list) {
+		this.list = list;
+	}
+
+	@Override
+	public String toString() {
+		return "Test [tid=" + tid + ", tname=" + tname + ", dot=" + dot + ", list=" + Arrays.toString(list) + "]";
+	}
+
+	
+	
+}

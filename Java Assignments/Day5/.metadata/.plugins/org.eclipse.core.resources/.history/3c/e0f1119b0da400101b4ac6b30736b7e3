@@ -1,0 +1,84 @@
+package com.demo.service;
+
+import java.util.Scanner;
+
+public class AccountDetails {
+
+	static Scanner sc = new Scanner(System.in);
+
+	static Account account;
+	static Account a = new Account();
+
+	public static Account getAccountById(String accId, Account[] custArr) {
+
+		for (Account a : custArr) {
+			if (a != null && a.getId() == accId) {
+				account = a;
+				return a;
+			}
+		}
+
+		return null;
+	}
+
+	public static void services() {
+
+		System.out.println("1. Check Balance\n" + "2. Withdraw Money\n" + "3. Deposit Money\n" + "4. Exit\n");
+
+		int ch = sc.nextInt();
+
+		do {
+			switch (ch) {
+			case 1:
+				System.out.println("Current Balance is : " + account.getBal());
+				break;
+			case 2:
+				System.out.println("Enter Withdraw Ammount...");
+				double wm = sc.nextInt();
+				int check = withdrawMoney(account.getBal(), wm);
+				if (check == 1) {
+					System.out.println("You SuccessFully Withdraw Money...");
+				} else if (check == 2) {
+					System.out.println("Sorry, but youe have to maintain the Minimum Balance...\n"
+							+ "You can't withdraw this amount");
+				} else if (check == 3) {
+					System.out.println("You can only withdraw " + ((account.getBal()) - (Account.mini)) + " money.");
+				}
+
+			case 4:
+				System.out.println("Thanks for Choosing Our Services");
+				System.exit(0);
+
+			default:
+				System.out.println("Wrong Entery...");
+				System.exit(1);
+
+			}
+
+		} while (!(ch == 4));
+
+	}
+
+	private static int withdrawMoney(double bal, double wm) {
+		double sum;
+		int check = 0;
+		double mini = Account.mini;
+		if ((bal - wm) >= mini) {
+			sum = bal - wm;
+			a.setBal(sum);
+			check = 1;
+			return check;
+		} else {
+
+			check = 2;
+			if (bal > mini) {
+				check = 3;
+				return check;
+
+			}
+			return check;
+		}
+//		return 0;
+	}
+
+}

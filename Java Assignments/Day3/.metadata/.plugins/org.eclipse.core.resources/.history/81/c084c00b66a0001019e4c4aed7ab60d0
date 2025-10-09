@@ -1,0 +1,19 @@
+import java.util.*;
+public class Test_Student {
+
+	
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 int choice = 0;
+		 do {
+			 System.out.println("");
+			 choice = sc.nextInt();
+			 switch(choice) {
+			 case 1:
+				 
+			 }
+		 }while(!choice == 9);
+
+	}
+
+}

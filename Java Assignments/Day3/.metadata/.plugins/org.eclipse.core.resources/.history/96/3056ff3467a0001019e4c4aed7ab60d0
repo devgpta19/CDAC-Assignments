@@ -1,0 +1,10 @@
+import 
+public class Student_Service {
+
+	public static boolean addNewStud() {
+		Scanner sc = new Scanner(System.in);
+		
+		return false;
+	}
+
+}

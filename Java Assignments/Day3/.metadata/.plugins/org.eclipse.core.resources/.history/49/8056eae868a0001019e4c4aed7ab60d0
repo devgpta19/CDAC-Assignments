@@ -1,0 +1,13 @@
+
+public class Student {
+	
+	private int sid;
+	private String name;
+	private float m1;
+	private float m2;
+	private Date bdt;
+
+	public Student()
+	{
+
+}

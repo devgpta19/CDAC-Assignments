@@ -1,0 +1,14 @@
+import java.util.Date;
+
+public class Test {
+	private int tid;
+	private String tname;
+	private Date dot;
+	private Question list;
+	
+	class Question{
+		Question(){
+			
+		}
+	}
+}

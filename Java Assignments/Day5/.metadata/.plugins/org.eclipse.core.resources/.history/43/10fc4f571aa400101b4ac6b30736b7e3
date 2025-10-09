@@ -1,0 +1,105 @@
+package com.demo.beans;
+import java.util.Scanner;
+import com.demo.service.Account;
+import com.demo.service.AccountService;
+
+public class Saving extends Account {
+	
+	static Scanner sc = new Scanner(System.in);
+	static public int mini;
+	
+	static Account()
+	
+	static {
+		mini = 20000;
+		interest = 0.04*account.getBal();
+	}
+	
+//	static AccountService account;
+//	static AccountService a = new AccountService();
+//
+//	static {
+//		AccountService.mini = 20000;
+//		AccountService.interest = 0.04 * account.getBal();
+//	}
+
+	public Saving() {
+		super();
+	}
+
+	public Saving(String accType, String fName, String lName, long mob, String email, double bal) {
+		super("s", fName, lName, mob, email, bal);
+
+	}
+
+//	public void services() {
+//
+//		System.out.println("1. Check Balance\n" + "2. Withdraw Money\n" + "3. Deposit Money\n" + "4. Exit\n");
+//
+//		int ch = sc.nextInt();
+//
+//		do {
+//			switch (ch) {
+//			case 1:
+//				System.out.println("Current Balance is : " + account.getBal());
+//				break;
+//			case 2:
+//				System.out.println("Enter Withdraw Ammount...");
+//				double wm = sc.nextDouble();
+//				int check = withdrawMoney(account.getBal(), wm);
+//				if (check == 1) {
+//					System.out.println("You SuccessFully Withdraw Money...");
+//				} else if (check == 2) {
+//					System.out.println("Sorry, but you have to maintain the Minimum Balance...\n"
+//							+ "You can't withdraw this amount");
+//				} else if (check == 3) {
+//					System.out.println("You can only withdraw " + ((account.getBal()) - (Account.mini)) + " money.");
+//				} else {
+//					break;
+//				}
+//				break;
+//
+//			case 3:
+//				break;
+//
+//			case 4:
+//				System.out.println("Thanks for Choosing Our Services");
+//				System.exit(0);
+//
+//			default:
+//				System.out.println("Wrong Entery...");
+//				System.exit(1);
+//
+//			}
+//
+//		} while (!(ch == 4));
+//
+//	}
+
+	@Override
+	public int withdrawMoney(double bal, double wm) {
+		double sum;
+		int check = 0;
+		double mini = AccountService.mini;
+		if ((bal - wm) >= mini) {
+			sum = bal - wm;
+			a.setBal(sum);
+			check = 1;
+			return check;
+		} else {
+			check = 2;
+			if (bal > mini) {
+				check = 3;
+				return check;
+			}
+			return check;
+		}
+	}
+
+	@Override
+	public int depositMoney() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

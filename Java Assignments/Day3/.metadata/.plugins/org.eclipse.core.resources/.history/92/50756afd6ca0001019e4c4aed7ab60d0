@@ -1,0 +1,44 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Student_Service {
+
+	static Student[] studarr;
+	static int cnt;
+	static {
+		studarr = new Student[100];
+		studarr[0] = new Student(11,"Dev", 97, 82, new Date(2001-9-19));
+		studarr[1] = new Student(12,"Deva", 97, 82, new Date(2002-7-20));
+		studarr[2] = new Student(13,"Devendar", 97, 82, new Date(2001-9-20));
+		cnt = 3;
+	}
+	
+	public static boolean addNewStud() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Student ID:");
+		int sid = sc.nextInt();
+		sc.nextLine();
+		System.out.print("Enter Student Name:");
+		String name = sc.nextLine();
+		System.out.print("Enter Student Mark1:");
+		float m1 = sc.nextFloat();
+		System.out.print("Enter Student Mark2:");
+		float m2 = sc.nextFloat();
+		System.out.print("Enter Student Date Of Birth:");
+		String dt = sc.next();
+		SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
+		Date bdt = null;
+		try {
+			bdt = sdf.parse(dt);
+		
+		}catch(ParseException e) {
+			e.printStackTrace();
+		}
+		
+		Student s = new Student(sid,name,m1,m2,bdt);
+		if(cnt == )
+		return false;
+	}
+
+}

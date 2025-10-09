@@ -1,0 +1,29 @@
+import java.sql.Date;
+
+public class Student {
+	
+	private int sid;
+	private String name;
+	private float m1;
+	private float m2;
+	private Date bdt;
+
+	public Student() {
+		sid = 0;
+		name = "";
+		m1 = 0.0f;
+		m2 = 0.0f;
+		bdt = null;
+	}
+	
+	public Student(int n, String name, float m, float m2, Date date) {
+		sid = n;
+		this.name = name;
+		m1 = m;
+		this.m2 = m2;
+		this.bdt = date;
+	}
+	
+	// 
+
+}

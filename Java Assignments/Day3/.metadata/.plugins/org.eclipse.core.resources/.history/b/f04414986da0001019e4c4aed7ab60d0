@@ -1,0 +1,32 @@
+import java.util.*;
+public class Test_Student {
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 Student_Service s = new Student_Service();
+		 int choice = 0;
+		 do {
+			 System.out.println("1. Add New Student\n"
+			 		+ "2. Display All\n"
+			 		+ "3. Seach By ID\n"
+			 		+ "4. Search By Name\n"
+			 		+ "5.Update Marks\n"
+			 		+ "6. Exit");
+			 choice = sc.nextInt();
+			 switch(choice) {
+			 case 1:
+				 boolean status = Student_Service.addNewStud();
+				 if(status) {
+					 System.out.println("Student Added Successfully...");
+				 }else {
+					 System.out.println("Error: Something Went Wrong!");
+				 }
+				 break;
+			 case 2:
+				 System.out.println((s));
+				 
+			 }
+		 }while(!(choice == 9));
+
+	}
+
+}

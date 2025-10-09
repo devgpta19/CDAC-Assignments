@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class TestService {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Test t = new Test();
+		TestManipulation tm = new TestManipulation();
+		
+		int choice;
+		do {
+
+			System.out.println("1. Add a Test");
+			System.out.println("2. Display Test");
+			
+			choice = sc.nextInt();
+			switch(choice) {
+			
+			case 1:
+				t = tm.addTest();
+				if(t!=null)
+					System.out.println("Successfully Added...");
+				else
+					System.out.println("Something went Wrong...");
+				
+			case 2:
+				if(t!=null) {
+					System.out.println();
+					System.out.println(t);
+					System.out.println();
+				}
+				else {
+					System.out.println();
+					System.out.println("Something went Wrong...");
+					System.out.println();
+				}
+				
+			case 3:
+				System.out.println("Thanks For Visiting Hehe...");
+				sc.close();
+				System.exit(0);
+				
+			default:
+				System.out.print("You've Selected the wrong input. Please Try Again...");
+			}
+			
+		}while(!(choice == 3));
+		
+	}
+
+}

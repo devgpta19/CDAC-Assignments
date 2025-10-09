@@ -1,0 +1,15 @@
+package com.demo.service;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeService {
+
+	boolean addNewEmployee();
+
+	void displayAll();
+
+	Employee searchById(int id);
+
+	void displayEmp(Employee e);
+
+}

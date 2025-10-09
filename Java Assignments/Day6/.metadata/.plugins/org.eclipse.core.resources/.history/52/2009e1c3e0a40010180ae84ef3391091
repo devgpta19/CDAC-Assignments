@@ -1,0 +1,127 @@
+package com.demo.test;
+
+import java.util.List;
+import java.util.Scanner;
+import com.demo.beans.Employee;
+import com.demo.service.EmployeeService;
+import com.demo.service.EmployeeServiceImpl;
+
+public class TestEmployeeManagementSystem {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		EmployeeService eservice = new EmployeeServiceImpl();
+		int choice;
+		do {
+			System.out.println("1. Add New Employee\n" + "2. Display All\n" + "3. Search By ID\n"
+					+ "4. Search by Name\n" + "5. Search By Salary\n" + "6. Update Salary\n" + "7. Delete By ID\n"
+					+ "8. Delete By Salary\n" + "9. Sort By Salary\n" + "10.Exit\n Enter Choce: ");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1 -> {
+				boolean status = eservice.addNewEmployee();
+				if (status) {
+					System.out.println("Employee Added Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong....!!!");
+				}
+			}
+			case 2 -> {
+//				List<Employee> eli = new ArrayList<>();
+				eservice.displayAll();
+			}
+			case 3 -> {
+				System.out.println("Entre ID for Search:");
+				int id = sc.nextInt();
+				sc.nextLine();
+				Employee e = eservice.searchById(id);
+				if (e != null) {
+					eservice.displayEmp(e);
+				} else {
+					System.out.println("Not Found...!!!");
+				}
+
+			}
+			case 4 -> {
+				sc.nextLine();
+				System.out.println("Enter Name for Search:");
+				String name = sc.nextLine();
+				List<Employee> e = eservice.searchByName(name);
+				if (e != null) {
+					for (Employee emp : e) {
+						System.out.println(emp);
+					}
+				} else {
+					System.out.println("Not Found...!!!");
+				}
+			}
+			case 5 -> {
+				System.out.print("Enter Salary for Search : ");
+				double sal = sc.nextDouble();
+
+				List<Employee> e = eservice.searchBySalary(sal);
+				if (e != null) {
+					e.forEach(System.out::println);
+				} else {
+					System.out.println("Not Found...!!!");
+				}
+
+			}
+			case 6->{
+				sc.nextLine();
+				System.out.println("Enter ID for Update salary");
+				int id = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Enter Salary for Update:");
+				double sal= sc.nextDouble();
+				boolean status = eservice.updateSalary(id,sal);
+				if (status) {
+					System.out.println("Employee Salary Updated Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong....!!!");
+				}
+			}
+			case 7 -> {
+				System.out.println("Enter ID for Delete:");
+				int id = sc.nextInt();
+				boolean status = eservice.deleteById(id);
+				if (status) {
+					System.out.println("Employee Deleted Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong....!!!");
+				}
+
+			}
+			
+			case 8->{
+				System.out.println("Enter a salary to delete all Employees with that salary...");
+				double sal = sc.nextDouble();
+				
+				boolean status = eservice.deleteAllBySalary(sal);
+				if (status) {
+					System.out.println("All Employees With "+sal+" Salary are Deleted Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong....!!!");
+				}
+			}
+
+			case 10 -> {
+				System.out.println("---------------------------------------");
+				System.out.println("ThankYou for Choosing Us...");
+				System.exit(0);
+				sc.close();
+			}
+
+			default -> {
+				System.out.println("---------------------------------------");
+				System.out.println("Please Choose Correct Choice... ");
+				System.out.println("---------------------------------------");
+
+			}
+			}
+
+		} while (choice != 10);
+	}
+
+}

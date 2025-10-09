@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Student_Service {
+
+	static Student[] studarr;
+	static int cnt;
+	static {
+		Studarr = new Student[100];
+		Studarr[0] = new Student(12,"Dev", 97, 82, new Date)
+	}
+	
+	public static boolean addNewStud() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Student ID:");
+		
+		
+		return false;
+	}
+
+}

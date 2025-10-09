@@ -1,0 +1,72 @@
+package com.demo.service;
+
+import java.util.Scanner;
+
+import com.demo.beans.Saving;
+
+public class AccountService2 {
+	public static void main(String[] args) {
+		Saving sObj = new Saving();
+		Scanner sc = new Scanner(System.in);
+		Account[] a = new Account[2];
+		Account[] custArr = new Account[a.length];
+
+		int choice;
+		do {
+			System.out.println("Please Choose an option from below...");
+			System.out.println("1. Add Coustomer\n" + "2. Display All Customers\n" + "3. Search Customer by Name\n"
+					+ "4. Open Existing Account using AccID\n" + "5. Exit\n"
+					+ "-------------------------------------\n");
+
+			choice = sc.nextInt();
+
+			switch (choice) {
+			case 1:
+				a = Account.addCustomer();
+				break;
+
+			case 2:
+				System.out.println("Here are Coustomer Details");
+				for (Account i : a) {
+					if (i != null)
+						System.out.println(i);
+					else {
+						break;
+					}
+				}
+//				Account.displayCusts(a);
+				break;
+			case 3:
+
+				System.out.println("Enter Customer First Name:");
+				String fName = sc.next();
+				sc.nextLine();
+				custArr = Account.searchCustomer(a, fName);
+				Account.displayCusts(custArr);
+				break;
+
+			case 4:
+				System.out.println("-------------------------------");
+				System.out.println("For Fatching your Account Details");
+				System.out.println("Please Enter Your AccID...");
+				String accId = sc.nextLine();
+				Account acc = AccountDetails.getAccountById(accId, a);
+				if (acc != null)
+					System.out.println("Account found Successfully...");
+				AccountDetails.services();
+				else {
+					System.out.println("No Account found using " + accId);
+					break;
+				}
+
+				System.out.println("------------------------------");
+
+
+				break;
+			}
+
+		} while (!(choice == 5));
+		sc.close();
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class Student {
+	
+	private int sid;
+	
+
+	public static void main(String[] args) {
+		
+	}
+
+}

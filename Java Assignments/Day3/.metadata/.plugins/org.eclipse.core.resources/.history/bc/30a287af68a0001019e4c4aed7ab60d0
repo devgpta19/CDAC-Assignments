@@ -1,0 +1,9 @@
+import java.util.Date;
+
+public class Student {
+
+	public static void main(String[] args) {
+		Studarr[0] = new Student(12,"Dev", 97, 82, new Date(2001-9-19));
+	}
+
+}

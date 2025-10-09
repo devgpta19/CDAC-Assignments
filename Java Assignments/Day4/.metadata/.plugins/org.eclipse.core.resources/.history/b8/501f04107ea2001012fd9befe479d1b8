@@ -1,0 +1,89 @@
+import java.util.Date;
+
+public class Test {
+
+	public Test() {
+		super();
+	}
+
+	private int tid;
+	private String tname;
+	private Date dot;
+	private Question list;
+	
+	
+	
+	class Question{
+
+		private int qn;
+		private String question;
+		private String op;
+		private String answer;
+		
+		public Question() {
+			super();
+		}
+		
+		public Question(int qn, String question, String[] op1, String op2, String op3, String op4, String answer) {
+			super();
+			this.qn = qn;
+			this.question = question;
+			this.op1 = op1;
+			this.answer = answer;
+		}
+
+		@Override
+		public String toString() {
+			return "Question [qn=" + qn + ", question=" + question + ", op1=" + op1 + ", op2=" + op2 + ", op3=" + op3
+					+ ", op4=" + op4 + ", answer=" + answer + "]";
+		}
+			
+	}
+	
+	public Test(int tid, String tname, Date dot, Test.Question list) {
+		super();
+		this.tid = tid;
+		this.tname = tname;
+		this.dot = dot;
+		this.list = list;
+	}
+	
+	public int getTid() {
+		return tid;
+	}
+
+	public void setTid(int tid) {
+		this.tid = tid;
+	}
+
+	public String getTname() {
+		return tname;
+	}
+
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	public Date getDot() {
+		return dot;
+	}
+
+	public void setDot(Date dot) {
+		this.dot = dot;
+	}
+
+	public Question getList() {
+		return list;
+	}
+
+	public void setList(Question list) {
+		this.list = list;
+	}
+
+	@Override
+	public String toString() {
+		return "Test [tid=" + tid + ", tname=" + tname + ", dot=" + dot + ", list=" + list + "]";
+	}
+	
+	
+}

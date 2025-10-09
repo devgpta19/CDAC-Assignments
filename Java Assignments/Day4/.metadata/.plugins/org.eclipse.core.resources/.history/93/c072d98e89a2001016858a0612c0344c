@@ -1,0 +1,75 @@
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+public class TestManipulation {
+
+	Scanner sc = new Scanner(System.in);
+	Test t1 = new Test();
+	Test.Question q1 = t1.new Question();
+	
+	public Test addTest() {
+
+		System.out.print("Enter Total Number of Tests : ");
+		int p = sc.nextInt();
+		
+		Test tArr
+		
+		for (int i = 0; i < p; i++) {
+			System.out.print("Enter Test Id : ");
+			int tid = sc.nextInt();
+			sc.nextLine();
+
+			System.out.print("Enter Test Name : ");
+			String t_name = sc.nextLine();
+
+			System.out.print("Enter Date Of Test : ");
+			String td = sc.nextLine();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+			Date dot = null;
+			try {
+				dot = sdf.parse(td);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+			int n;
+			String s, ans;
+			String[] opt = new String[4];
+			
+
+			System.out.print("Enter Total No. of Question : ");
+			int z = sc.nextInt();
+			Test.Question qArr[] = new Test.Question[z];
+
+			for (int a = 0; a < z; a++) {
+				System.out.print("Enter Question No. : ");
+				n = sc.nextInt();
+				sc.nextLine();
+
+				System.out.println("Enter Question...");
+				s = sc.nextLine();
+
+				for (int j = 0; j < opt.length; j++) {
+					System.out.print("Enter option " + ((int) (j + 1)) + ": ");
+					opt[j] = sc.nextLine();
+				}
+
+				System.out.print("Enter Correct Answer : ");
+				ans = sc.nextLine();
+
+				for (int j = 0; j < n; j++) {
+					q1 = t1.new Question(n, s, opt, ans);
+					qArr[j] = q1;
+				}
+			}
+
+			Test t = new Test(tid, t_name, dot, qArr);
+			tArr[i] = t;
+		}
+
+		return tArr;
+	}
+
+}

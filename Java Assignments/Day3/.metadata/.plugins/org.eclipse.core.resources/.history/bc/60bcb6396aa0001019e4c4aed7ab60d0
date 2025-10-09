@@ -1,0 +1,72 @@
+import java.sql.Date;
+
+public class Student {
+
+	private int sid;
+	private String name;
+	private float m1;
+	private float m2;
+	private Date bdt;
+
+	public Student() {
+		sid = 0;
+		name = "";
+		m1 = 0.0f;
+		m2 = 0.0f;
+		bdt = null;
+	}
+
+	public Student(int n, String name, float m, float m2, Date date) {
+		sid = n;
+		this.name = name;
+		m1 = m;
+		this.m2 = m2;
+		this.bdt = date;
+	}
+
+	// Setters
+
+	public void setId(int id) {
+		this.sid = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setM1(float m1) {
+		this.m1 = m1;
+	}
+
+	public void setM2(float m1) {
+		this.m2 = m1;
+	}
+
+	public void setDate(Date m1) {
+		this.bdt = m1;
+	}
+
+	// Getters
+
+	public int getId() {
+		return this.sid;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public float getM1() {
+		return m1;
+	}
+
+	public float getM2() {
+		return this.m2;
+	}
+
+	public Date getDate() {
+		return this.bdt;
+	}
+	
+	
+}

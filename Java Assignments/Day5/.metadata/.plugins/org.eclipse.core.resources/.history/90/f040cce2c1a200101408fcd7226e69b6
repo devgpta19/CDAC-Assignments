@@ -1,0 +1,84 @@
+
+public class Account {
+
+	private String FName;
+	private String LName;
+	private long mob;
+	private String email;
+	private String id; // Auto Generated;
+	static int ccount = 0;
+	static int scount = 0;
+	static int dcount = 0;
+	
+	public Account() {
+		super();
+	}
+
+	public Account(String accType, String fName, String lName, long mob, String email) {
+		super();
+		FName = fName;
+		LName = lName;
+		this.mob = mob;
+		this.email = email;
+		this.id = generateId(accType);
+	}
+
+	private String generateId(String accType) {
+
+		if (accType.equals("s")) {
+			scount++;
+			return accType + scount;
+		} else if (accType.equals("c")) {
+			scount++;
+			return accType + ccount;
+		} else if (accType.equals("d")) {
+			scount++;
+			return accType + dcount;
+		} else {
+			return null;
+		}
+	}
+
+	public String getFName() {
+		return FName;
+	}
+
+	public void setFName(String fName) {
+		FName = fName;
+	}
+
+	public String getLName() {
+		return LName;
+	}
+
+	public void setLName(String lName) {
+		LName = lName;
+	}
+
+	public long getMob() {
+		return mob;
+	}
+
+	public void setMob(long mob) {
+		this.mob = mob;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+ "Account [FName=" + FName + ", LName=" + LName + ", mob=" + mob + ", email=" + email + ", id=" + id
+				+ "]";
+	}
+
+}

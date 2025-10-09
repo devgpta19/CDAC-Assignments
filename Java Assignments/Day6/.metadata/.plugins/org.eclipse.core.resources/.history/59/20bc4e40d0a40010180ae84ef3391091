@@ -1,0 +1,11 @@
+package com.demo.service;
+
+public interface EmployeeService {
+
+	boolean addNewEmployee();
+
+	void displayAll();
+
+	void searchById(int id);
+
+}

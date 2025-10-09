@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Student_Service {
+
+	static Student[] studarr;
+	static int cnt;
+	static {
+		studarr = new Student[100];
+		studarr[0] = new Student(11,"Dev", 97, 82, new Date(2001-9-19));
+		studarr[1] = new Student(12,"Deva", 97, 82, new Date(2002-7-20));
+		studarr[2] = new Student(13,"Devendar", 97, 82, new Date(2001-9-20));
+		cnt = 3;
+	}
+	
+	public static boolean addNewStud() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Student ID:");
+		int sid = sc.nextInt();
+		sc.nextLine();
+		System.out.print("Enter Student ID:");
+		
+		
+		
+		return false;
+	}
+
+}
