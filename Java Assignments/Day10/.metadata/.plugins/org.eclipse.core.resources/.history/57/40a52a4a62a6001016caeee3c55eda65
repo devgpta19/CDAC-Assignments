@@ -1,0 +1,22 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.Set;
+
+import com.demo.beans.Student;
+
+public interface StudentDao {
+
+	Set<Student> showAll();
+
+	void save(Student st);
+
+	Student findById(int id);
+
+	Set<Student> findByName(String nm);
+
+	Set<Student> findByPer(float id);
+
+	boolean updateMarks(int id, int m1, int);
+
+}

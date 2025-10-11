@@ -1,0 +1,100 @@
+package com.demo.services;
+
+import java.util.Set;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+
+import com.demo.beans.Student;
+import com.demo.dao.StudentDao;
+import com.demo.dao.StudentDaoImpl;
+
+public class StudentServiceImpl implements StudentService {
+	Scanner sc = new Scanner(System.in);
+
+	StudentDao edao = new StudentDaoImpl();
+
+	Student st;
+
+	@Override
+	public boolean addNewStud() {
+		System.out.println("Enter Student ID:");
+		int id = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter Student name:");
+		String name = sc.nextLine();
+		System.out.println("Enter Student Mark1:");
+		int m1 = sc.nextInt();
+		System.out.println("Enter Student Mark2:");
+		int m2 = sc.nextInt();
+		System.out.println("Enter Student Mark3:");
+		int m3 = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter Student Email-ID:");
+		String em = sc.nextLine();
+		float per = Student.calcPerc(m1, m2, m3);
+
+		st = new Student(id, name, m1, m2, m3, em);
+
+		edao.save(st);
+
+		return true;
+	}
+
+	@Override
+	public Set<Student> displayAllStud() {
+		return edao.showAll();
+	}
+
+	@Override
+	public Student searchById(int id) {
+		return edao.findById(id);
+	}
+
+	@Override
+	public Set<Student> searchByName(String nm) {
+		return edao.findByName(nm);
+	}
+
+	@Override
+	public Set<Student> searchByPerc(float per) {
+		return edao.findByPer(per);
+	}
+
+	@Override
+	public boolean updateMarks(int id, int m1, int m2, int m3) {
+		return edao.updateMarks(id, m1, m2, m3);
+	}
+
+	@Override
+	public boolean deleteByPer(float per) {
+		return edao.deleteByPer(per);
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		return edao.deleteById(id);
+	}
+
+	@Override
+	public boolean deleteByName(String id) {
+		return edao.deleteByName(id);
+	}
+
+	@Override
+	public List<Student> sortById() {
+		return edao.sortById();
+	}
+
+	@Override
+	public List<Student> sortByName() {
+		return edao.sortByName();
+	}
+
+	@Override
+	public List<Student> sortByPerc() {
+		return edao.sortByPerc();
+
+	}
+
+}

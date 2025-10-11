@@ -1,0 +1,34 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.Set;
+
+import com.demo.beans.Student;
+
+public interface StudentDao {
+
+	Set<Student> showAll();
+
+	void save(Student st);
+
+	Student findById(int id);
+
+	Set<Student> findByName(String nm);
+
+	Set<Student> findByPer(float per);
+
+	boolean updateMarks(int id, int m1, int m2, int m3);
+
+	boolean deleteByPer(float per);
+
+	boolean deleteById(int id);
+
+	boolean deleteByName(String nm);
+
+	List<Student> sortById();
+
+	List<Student> sortByName();
+
+	List<Student> sortByPerc();
+
+}

@@ -1,0 +1,33 @@
+package com.demo.services;
+
+import java.util.List;
+import java.util.Set;
+
+import com.demo.beans.Student;
+
+public interface StudentService {
+
+	boolean addNewStud();
+
+	Set<Student> displayAllStud();
+
+	Student searchById(int id);
+
+	Set<Student> searchByName(String nm);
+
+	Set<Student> searchByPerc(float id);
+
+	boolean updateMarks(int id, int m1, int m2, int m3);
+
+	boolean deleteByPer(float per);
+
+	boolean deleteById(int id);
+
+	boolean deleteByName(String id);
+
+	List<Student> sortById();
+
+	List<Student> sortByName();
+
+	List<Student> sortByPerc();
+}

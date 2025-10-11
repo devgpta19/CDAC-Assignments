@@ -1,0 +1,175 @@
+package com.demo.dao;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.demo.beans.Student;
+
+public class StudentDaoImpl implements StudentDao {
+	static Set<Student> sSet;
+	static {
+		sSet = new HashSet<>();
+		sSet.add(new Student(101, "Ajay", 79, 88, 69, "ram@jane"));
+		sSet.add(new Student(102, "Karan", 89, 68, 69, "karan@jane"));
+		sSet.add(new Student(104, "Karan", 100, 100, 100, "karan@gg"));
+		sSet.add(new Student(109, "Raj", 79, 100, 69, "ramlakahan@jane"));
+		sSet.add(new Student(103, "Rohan", 70, 80, 90, "ramlakahan@jane"));
+	}
+
+	@Override
+	public void save(Student st) {
+		sSet.add(st);
+	}
+
+	@Override
+	public Set<Student> showAll() {
+		if (sSet.size() != 0)
+			return sSet;
+
+		return null;
+	}
+
+	@Override
+	public Student findById(int id) {
+		for (Student s : sSet) {
+			if (s.getSid() == id)
+				return s;
+		}
+		return null;
+
+	}
+
+	@Override
+	public Set<Student> findByName(String nm) {
+		Set<Student> slist = new HashSet<>();
+		for (Student s : sSet) {
+			if (s.getSname().equals(nm))
+				slist.add(s);
+		}
+		return slist;
+	}
+
+	@Override
+	public Set<Student> findByPer(float perc) {
+		Set<Student> slist = new HashSet<>();
+		for (Student s : sSet) {
+			if (s.getPerc() == (perc))
+				slist.add(s);
+		}
+		return slist;
+	}
+
+	@Override
+	public boolean updateMarks(int id, int m1, int m2, int m3) {
+		for (Student s : sSet) {
+			if (s.getSid() == (id)) {
+				s.setM1(m1);
+				s.setM2(m2);
+				s.setM3(m3);
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	@Override
+	public boolean deleteByPer(float per) {
+
+//		for(Student s: sSet) {
+//			if(s.getPerc()==(per)) {
+//				sSet.remove(s);
+//			}
+//		}
+
+		Set<Student> s = sSet.stream().filter(ss -> ss.getPerc() < (per)).collect(Collectors.toSet());
+		if (s.size() != 0) {
+			sSet.removeAll(s);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		for (Student s : sSet) {
+			if (s.getSid() == (id)) {
+				sSet.remove(s);
+				return true;
+			}
+
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteByName(String nm) {
+		Set<Student> s = sSet.stream().filter(ss -> ss.getSname().equals(nm)).collect(Collectors.toSet());
+		if (s.size() != 0) {
+			sSet.removeAll(s);
+			return true;
+		}
+		return false;
+
+	}
+
+	@Override
+	public List<Student> sortById() {
+		Comparator<Student> c = (o1, o2) -> {
+			return o1.getSid() - o2.getSid();
+		};
+		List<Student> slist = new ArrayList<>();
+		for (Student s : sSet) {
+			slist.add(s);
+		}
+
+		slist.sort(c);
+
+		if (slist.size() > 0)
+			return slist;
+
+		return null;
+	}
+
+	@Override
+	public List<Student> sortByName() {
+		// TODO Auto-generated method stub
+		Comparator<Student> c = (o1, o2) -> {
+			return o1.getSname().compareTo(o2.getSname());
+		};
+		List<Student> slist = new ArrayList<>();
+		for (Student s : sSet) {
+			slist.add(s);
+		}
+
+		slist.sort(c);
+
+		if (slist.size() > 0)
+			return slist;
+
+		return null;
+	}
+
+	@Override
+	public List<Student> sortByPerc() {
+		Comparator<Student> c = (o1, o2) -> {
+			return (int) (o1.getPerc() - o2.getPerc());
+		};
+		List<Student> slist = new ArrayList<>();
+		for (Student s : sSet) {
+			slist.add(s);
+		}
+
+		slist.sort(c);
+
+		if (slist.size() > 0)
+			return slist;
+
+		return null;
+	}
+
+}

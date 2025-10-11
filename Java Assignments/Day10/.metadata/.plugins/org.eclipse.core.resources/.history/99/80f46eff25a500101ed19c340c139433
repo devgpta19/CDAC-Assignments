@@ -1,0 +1,15 @@
+package com.demo.services;
+
+import java.util.List;
+
+import com.demo.beans.Student;
+
+public interface StudentService {
+
+	boolean addNewStud();
+
+	List<Student> displayAllStud();
+
+	Student searchById(int id);
+
+}

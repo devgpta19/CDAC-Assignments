@@ -1,0 +1,29 @@
+package com.demo.services;
+
+import java.util.List;
+
+import com.demo.beans.Student;
+
+public interface StudentService {
+
+	boolean addNewStud();
+
+	List<Student> displayAllStud();
+
+	Student searchById(int id);
+
+	Student searchByName(String nm);
+
+	Student searchByPerc(float id);
+
+	boolean updateMarks(int id);
+
+	boolean deleteByMarks(int id);
+
+	boolean deleteById(int id);
+
+	boolean deleteByName(String id);
+
+	List<Student> sortById();
+
+}

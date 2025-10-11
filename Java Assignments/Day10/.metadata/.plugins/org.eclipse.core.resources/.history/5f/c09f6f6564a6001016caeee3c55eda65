@@ -1,0 +1,186 @@
+package com.demo.test;
+
+import java.util.Set;
+import java.util.Scanner;
+import com.demo.beans.Student;
+import com.demo.services.StudentService;
+import com.demo.services.StudentServiceImpl;
+
+public class TestStudentManagementSystem {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		StudentService studService = new StudentServiceImpl();
+		int count = 0;
+
+		do {
+			System.out.println("1. Add a New Student\n2. Display All Existing Students\n"
+					+ "3. Search By StudentId\n4. Search By Name\n"
+					+ "5. Search By Percentage\n6. Update Marks\n7. Delete By Marks\n"
+					+ "8. Delete By ID\n9. Delete By Name \n10. Sort By ID\n11. Sort By Name\n"
+					+ "12. Sort By Percentage\n13. Exit");
+
+			System.out.println();
+			System.out.print("Enter your choise...");
+			count = sc.nextInt();
+
+			switch (count) {
+			case 1 -> {
+				boolean status = studService.addNewStud();
+				if (status) {
+					System.out.println("Student Added Successfully...");
+				} else {
+					System.out.println("Oop's Something Went Wrong");
+				}
+			}
+
+			case 2 -> {
+				Set<Student> sSet = studService.displayAllStud();
+				if (sSet.size() != 0) {
+					System.out.println("-----------------------------------------------------");
+					sSet.forEach(System.out::println);
+					System.out.println("-----------------------------------------------------");
+				} else {
+					System.out.println("No Students Found!");
+				}
+			}
+
+			case 3 -> {
+				System.out.println("Enter Student ID for Search...");
+				int id = sc.nextInt();
+
+				Student s = studService.searchById(id);
+				if (s != null) {
+					System.out.println("Found Successfully");
+					System.out.println("-----------------------------------------------------");
+					System.out.println(s);
+					System.out.println("-----------------------------------------------------");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 4 -> {
+				System.out.println("Enter Student Name for Search...");
+				sc.nextLine();
+				String nm = sc.nextLine();
+				Set<Student> s = studService.searchByName(nm);
+				if (s != null) {
+					System.out.println("Found Successfully");
+					System.out.println("-----------------------------------------------------");
+					s.forEach(System.out::println);
+					System.out.println("-----------------------------------------------------");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 5 -> {
+				System.out.println("Enter Student Percentage for Search...");
+				float id = sc.nextFloat();
+				Set<Student> s = studService.searchByPerc(id);
+				if (s != null) {
+					System.out.println("Found Successfully");
+					System.out.println("-----------------------------------------------------");
+					s.forEach(System.out::println);
+					System.out.println("-----------------------------------------------------");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 6 -> {
+				System.out.println("Enter Student ID for Update Marks...");
+				int id = sc.nextInt();
+				System.out.print("Enter New M1 Marks = ");
+				int m1 = sc.nextInt();
+				System.out.print("Enter New M2 Marks = ");
+				int m2 = sc.nextInt();
+				System.out.print("Enter New M3 Marks = ");
+				int m3 = sc.nextInt();
+				boolean s = studService.updateMarks(id, m1, m2, m3);
+				if (s) {
+					System.out.println("Marks Updated Successfully");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 7 -> {
+				System.out.println("Enter Student's Percentage to Delete Student...");
+				float id = sc.nextInt();
+				boolean s = studService.deleteByMarks(id);
+				if (s) {
+					System.out.println("Student Deleted Successfully");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 8 -> {
+				System.out.println("Enter Student's ID to Delete Student...");
+				int id = sc.nextInt();
+				boolean s = studService.deleteById(id);
+				if (s) {
+					System.out.println("Student with ID : " + id + " is Deleted Successfully.");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 9 -> {
+				System.out.println("Enter Student's Name to Delete Student...");
+				String id = sc.nextLine();
+				boolean s = studService.deleteByName(id);
+				if (s) {
+					System.out.println("Student with ID : " + id + " is Deleted Successfully.");
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 10 -> {
+				Set<Student> sSet = studService.sortById();
+				if (sSet.size() != 0) {
+					System.out.println("Sorted Student by ID");
+					sSet.forEach(System.out::println);
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 11 -> {
+				Set<Student> sSet = studService.sortByName();
+				if (sSet.size() != 0) {
+					System.out.println("Sorted Student by Name");
+					sSet.forEach(System.out::println);
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 12 -> {
+				Set<Student> sSet = studService.sortByPerc();
+				if (sSet.size() != 0) {
+					System.out.println("Sorted Student by Percentage");
+					sSet.forEach(System.out::println);
+				} else {
+					System.out.println("Sorry Something Went Wrong or Didn't find Anything...");
+				}
+			}
+
+			case 13 -> {
+				System.out.println("Successfully completed all the Operations");
+				System.out.println("See ya next time.  Bye Bye !!");
+				System.exit(0);
+			}
+
+			default -> {
+				System.out.println("Wrong Choice... Plzz Re-Enter...");
+			}
+			}
+
+		} while (count != 15);
+	}
+
+}
