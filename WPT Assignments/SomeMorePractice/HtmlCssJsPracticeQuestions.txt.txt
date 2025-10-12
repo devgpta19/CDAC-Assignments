@@ -1,0 +1,63 @@
+Here is a plain text file containing the 10 practice questions.
+
+
+1. Simple Temperature Converter and Data Display
+   1. Create a form with a single text input for a user to enter a temperature in *Fahrenheit*.
+   2. Add a "Convert" button.
+   3. Use JavaScript to validate that the input is a valid number.
+   4. If the input is valid, convert the temperature to *Celsius* using the formula: C = (F - 32) * 5/9.
+   5. Display the result on the page in a new paragraph below the form.
+   6. If the input is not a valid number, display a descriptive error message on the page.
+
+2. Student Grade Calculator with Object Storage
+   1. Create a form with three input fields: **Student Name**, **Subject**, and **Score** (a number from 0 to 100).
+   2. Define a JavaScript object named `studentGrades` to store the data.
+   3. Add a button that, when clicked, updates the `studentGrades` object with the data from the input fields.
+   4. Immediately below the input form, display the contents of the `studentGrades` object on the page. This display should update dynamically every time the button is clicked.
+   5. Based on the score, add a new property to the object called `grade` and assign it a letter grade (A, B, C, D, or F).
+
+3. Dynamic User Profile Generator
+   1. Create a page with three text input fields: **City**, **Favorite Animal**, and **Lucky Number** (a single digit).
+   2. On button click, use JavaScript to create a user profile ID following a specific set of rules: The first **three letters** of the City, the **middle two letters** of the Favorite Animal, and the **Lucky Number**.
+   3. Display the generated profile ID in a large font on the page.
+   4. Add a validation check to ensure all three input fields have content before generating the ID.
+
+4. Simple Quiz with Score
+   1. Create a quiz page with 3-5 multiple-choice questions.
+   2. Use JavaScript to check the user's answers when a "Submit" button is clicked.
+   3. Calculate the total score and display it on the page.
+   4. Provide feedback on which questions were answered correctly and which were incorrect.
+
+5. To-Do List Application
+   1. Create an HTML page with an input field and an "Add" button.
+   2. Use JavaScript to add new list items to an unordered list (`<ul>`) every time the "Add" button is clicked.
+   3. Each list item should contain the text from the input field.
+   4. Add a "Remove" button next to each list item that, when clicked, deletes that item from the list.
+
+6. Image Gallery with Filters
+   1. Create an image gallery using a set of images.
+   2. Add buttons or links to filter the images by category (e.g., "Nature," "City," "Animals").
+   3. Use JavaScript to show or hide images based on the selected filter.
+
+7. Character Counter for a Text Area
+   1. Create a `<textarea>` element for user input.
+   2. Below the text area, add a counter that displays the number of characters the user has typed in real time.
+   3. Set a maximum character limit and change the counter's color to red when the limit is exceeded.
+
+8. Digital Clock
+   1. Create a webpage with a dedicated area to display the time.
+   2. Use JavaScript to get the current time.
+   3. Update the display every second to show a real-time digital clock.
+
+9. Interactive Form with Show/Hide Fields
+   1. Create a form with a checkbox that says "I have a car."
+   2. Initially, hide two input fields: **Car Make** and **Car Model**.
+   3. Use JavaScript to show these two fields only when the checkbox is checked.
+   4. Hide them again if the checkbox is unchecked.
+
+10. Simple Calculator
+    1. Create a basic calculator with buttons for digits (0-9) and operators (+, -, *, /).
+    2. Display the user's input in a text field.
+    3. Use JavaScript to handle button clicks and perform the calculation when an "equals" button is pressed.
+    4. Display the result in the same text field.
+```

@@ -1,0 +1,56 @@
+<!-- 1. Simple Temperature Converter and Data Display
+   1. Create a form with a single text input for a user to enter a temperature in *Fahrenheit*.
+   2. Add a "Convert" button.
+   3. Use JavaScript to validate that the input is a valid number.
+   4. If the input is valid, convert the temperature to *Celsius* using the formula: C = (F - 32) * 5/9.
+   5. Display the result on the page in a new paragraph below the form.
+   6. If the input is not a valid number, display a descriptive error message on the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #showTemp {
+      display: none;
+    }
+  </style>
+  <body>
+    <h1>Temperature Converter from °F to °C</h1>
+    <br />
+    <div>
+      Enter Temperature :
+      <input id="input" type="number" placeholder="Enter Temperature..." />
+      <button type="submit">Convert to °C</button>
+    </div>
+
+    <div id="showTemp">
+      <h2>Temperature in °C</h2>
+      <h2 id="result"></h2>
+    </div>
+
+    <script>
+      document.querySelector("button").addEventListener("click", function () {
+        let temp = document.querySelector("#input").value;
+        if (temp.trim() == "") {
+          alert("The Field is Empty. Plzz Enter a Number...");
+          return;
+        }
+        
+
+
+        let t = converter(temp);
+
+        function converter(f) {
+          return ((f - 32) * 5) / 9;
+        }
+
+        document.getElementById("showTemp").style.display = "block";
+        document.getElementById("result").textContent = `${t}°C`;
+      });
+    </script>
+  </body>
+</html>

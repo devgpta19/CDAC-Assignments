@@ -1,0 +1,118 @@
+<!-- 2. Student Grade Calculator with Object Storage
+   1. Create a form with three input fields: **Student Name**, **Subject**, and **Score** (a number from 0 to 100).
+   2. Define a JavaScript object named `studentGrades` to store the data.
+   3. Add a button that, when clicked, updates the `studentGrades` object with the data from the input fields.
+   4. Immediately below the input form, display the contents of the `studentGrades` object on the page. This display should update dynamically every time the button is clicked.
+   5. Based on the score, add a new property to the object called `grade` and assign it a letter grade (A, B, C, D, or F). -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #error1 {
+      display: none;
+      color: red;
+    }
+    #error2 {
+      display: none;
+      color: red;
+    }
+    #error3 {
+      display: none;
+      color: red;
+    }
+    #stuform {
+      display: flex;
+      gap: 50px;
+    }
+  </style>
+  <body>
+    <h1>Student Form</h1>
+    <br />
+    <div id="stuform">
+      <div>
+        Student Name :
+        <input type="text" id="sn" />
+        <p id="error1">This field is mandatory</p>
+      </div>
+      <div>
+        Student Subject :
+        <input type="text" id="sb" />
+        <p id="error2">This field is mandatory</p>
+      </div>
+      <div>
+        Student Score :
+        <input type="text" id="sc" /><br />
+        <sub>A Number from 0 to 100</sub>
+        <p id="error3">This field is mandatory</p>
+      </div>
+    </div>
+
+    <button onclick="updateDate()">Update Student_Data</button>
+
+    <br /><br />
+
+    <h2>Student is :</h2>
+    <br />
+    <h3>Student Name : <span id="s_name" value="John">John</span></h3>
+    <h3>Student Subject : <span id="s_subject" value="Doe">Doe</span></h3>
+    <h3>Student Score : <span id="s_score" value="90">90</span></h3>
+
+    <script>
+      function updateDate() {
+        let sn = document.querySelector("#sn").value;
+        let sb = document.querySelector("#sb").value;
+        let sc = document.querySelector("#sc").value;
+
+        if (sn.trim() === "") {
+          document.getElementById("error1").style.display = "block";
+          return;
+        } else {
+          document.getElementById("error1").style.display = "none";
+        }
+
+        if (sb.trim() === "") {
+          document.getElementById("error2").style.display = "block";
+          return;
+        } else {
+          document.getElementById("error2").style.display = "none";
+        }
+
+        if (sc.trim() === "") {
+          document.getElementById("error3").style.display = "block";
+          return;
+        } else {
+          document.getElementById("error3").style.display = "none";
+        }
+        if (isNaN(Number(sc))) {
+          document.getElementById("error3").style.display = "block";
+          document.getElementById("error3").textContent = "Must be a number";
+          return;
+        } else {
+            document.getElementById("error3").style.display = "none";
+        }
+        if (Number(sc) < 0 || Number(sc) > 100) {
+            document.getElementById("error3").style.display = "block";
+            document.getElementById("error3").textContent = "Must be a number between 0-100";
+        } else {
+          document.getElementById("error3").style.display = "none";
+        }
+
+        let studentGrades = {
+          sName: sn,
+          sSubject: sb,
+          sScore: sc,
+        };
+
+        document.querySelector("#s_name").textContent = studentGrades.sName;
+        document.querySelector("#s_subject").textContent =
+          studentGrades.sSubject;
+        document.querySelector("#s_score").textContent = studentGrades.sScore;
+      }
+    </script>
+  </body>
+</html>

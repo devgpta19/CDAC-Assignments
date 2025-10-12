@@ -1,0 +1,95 @@
+<!-- 4. Simple Quiz with Score
+   1. Create a quiz page with 3-5 multiple-choice questions.
+   2. Use JavaScript to check the user's answers when a "Submit" button is clicked.
+   3. Calculate the total score and display it on the page.
+   4. Provide feedback on which questions were answered correctly and which were incorrect. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #result{
+        display: none;
+    }
+  </style>
+  <body>
+    <div>
+      <div id="mcqs">
+        
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+
+      <h3 id="result">
+
+      </h3>
+
+    </div>
+
+    <script>
+      let ques = [
+        {
+          id: 1,
+          que: "Which of the following is a car?",
+          options: ["BMW", "Royal Enfield", "AirIndia", "Cruise"],
+          ans: "BMW",
+        },
+        {
+          id: 2,
+          que: "Which of the following is a car?",
+          options: ["BMW", "Royal Enfield", "AirIndia", "Cruise"],
+          ans: "BMW",
+        },
+        {
+          id: 3,
+          que: "Which of the following is a car?",
+          options: ["BMW", "Royal Enfield", "AirIndia", "Cruise"],
+          ans: "BMW",
+        },
+        {
+          id: 4,
+          que: "Which of the following is a car?",
+          options: ["BMW", "Royal Enfield", "AirIndia", "Cruise"],
+          ans: "BMW",
+        },
+      ];
+
+      ques.forEach((i) => {
+        document.querySelector(
+          "#mcqs"
+        ).innerHTML += `<br><div id="questions"><h3 class="q_desc">${i.que}</h3></div>`;
+
+        i.options.forEach((j, index) => {
+          document.querySelector(
+            "#mcqs"
+          ).innerHTML += `<input type="radio" name="option${index}" id="opt${index}"/>${j} <br>`;
+        });
+      });
+
+      document.querySelector("button").addEventListener("click",
+        ()=>{
+            let score=0;
+
+            ques.forEach((q, index) => {
+                document.querySelector(`input[name="optionX"]:checked`)
+                if (selected) {
+                    if (selected.value === q.ans) {
+                        score++;
+                    }
+                };
+
+                
+            let res = document.getElementById("result");
+            res.style.display = "block";
+            res.innerHTML = `<br><br> <h2> Result : ${score} / ${ques.length}</h2>`;
+
+            }
+        )
+        })
+    </script>
+  </body>
+</html>
