@@ -28,6 +28,8 @@ const Demo = () => {
                 <Link to='/contact'> Contact </Link> |
                 <Link to='/axios_page'> Axios </Link> |
                 <Link to='/counter'> Counter </Link> |
+                <Link to='/useref-counter'> UseRef Counter </Link> |
+                <Link to='/useref'> UseRef Input </Link> |
             </BrowserRouter>
         </div>
     );

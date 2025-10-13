@@ -19,7 +19,7 @@ const Counter = () => {
     return (
         <div>
             <h1>
-                Counter: {counter}
+                Counter-UseCallBack: {counter}
             </h1>
 
             <button onClick={incre}>Inc++</button>
