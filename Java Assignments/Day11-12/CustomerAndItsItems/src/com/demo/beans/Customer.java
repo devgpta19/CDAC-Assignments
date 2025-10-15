@@ -22,7 +22,7 @@ public class Customer implements Comparable<Customer> {
 		
 	@Override
 	public int hashCode() {
-		return Objects.hash(cid);
+		return Objects.hash(cid, cname);
 	}
 	public Customer(int cid) {
 		super();
@@ -30,8 +30,14 @@ public class Customer implements Comparable<Customer> {
 	}
 	@Override
 	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
 		Customer other = (Customer) obj;
-		return cid == other.cid;
+		return cid == other.cid && Objects.equals(cname, other.cname);
 	}
 	public int getCid() {
 		return cid;

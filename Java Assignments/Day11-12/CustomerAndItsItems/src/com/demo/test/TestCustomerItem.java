@@ -91,7 +91,7 @@ public class TestCustomerItem {
 				
 				Map<Customer,List<Item>> lm = cservice.searchByName(nm);
 				System.out.println("-------------------------------------------------");
-				if(!lm.isEmpty()) {
+				if(lm!=null ) {
 					Set<Customer> keys = lm.keySet();
 					for (Customer c : keys) {
 						System.out.println(c + "------>" + lm.get(c));
@@ -170,7 +170,7 @@ public class TestCustomerItem {
 			}
 			
 			case 9 -> {
-				System.out.println("Enter Customer ID for Add items");
+				System.out.println("Enter Customer ID to Add items");
 				int id= sc.nextInt();
 				boolean status = cservice.addItemToId(id);
 				if(status) {
@@ -179,7 +179,7 @@ public class TestCustomerItem {
 					System.out.println("-------------------------------------------------");
 				}else {
 					System.out.println("-------------------------------------------------");
-					System.out.println("Something went Wrong...");
+					System.out.println("Customer Not Found...");
 					System.out.println("-------------------------------------------------");
 				}
 				}
@@ -205,9 +205,14 @@ public class TestCustomerItem {
 				int id = sc.nextInt();
 				double total = cservice.generateBill(id);
 				System.out.println("-------------------------------------------------");
-				
+				int disc = calcDiscount();
 				if(total > -1) {
-					System.out.println("Your Generated Bill is : " + total);
+					System.out.println("-------------------------------------------------");
+					System.out.println("Your Bill is Generated Successfully");
+					System.out.println("Your Grand Total is : " + total);
+					System.out.println("Discount is : " + disc);
+					System.out.println("You Have To Pay : " + (total-disc));
+					System.out.println("-------------------------------------------------");
 				}
 				else {
 					System.out.println("Something went wrong Error 404 Not Found.");
@@ -222,6 +227,12 @@ public class TestCustomerItem {
 			}
 		} while (choice != 12);
 
+	}
+
+	private static int calcDiscount() {
+		// TODO Auto-generated method stub
+		
+		return 0;
 	}
 
 }

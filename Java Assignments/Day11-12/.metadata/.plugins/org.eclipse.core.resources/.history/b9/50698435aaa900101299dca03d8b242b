@@ -1,0 +1,227 @@
+package com.demo.test;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+import com.demo.services.CustomerServices;
+import com.demo.services.CustomerServicesImpl;
+
+public class TestCustomerItem {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		CustomerServices cservice = new CustomerServicesImpl();
+
+		int choice = 0;
+
+		do {
+			System.out.println("1. Add Customer\n2. Display all\n3. Search Customer By ID\n"
+					+ "4. Search Customer By Name\n5. Delete Customer By ID\n6. Delete Customer By Name\n"
+					+ "7. Sort Customer By ID\n8. Sort Customer By Name(If Same Name then By Id)\n"
+					+ "9. Add Items to a particular Customer\n10. Delete Items from a Particular Customer\n"
+					+ "11. Generate Bill\n12. Exit\n ENTER YOUR CHOICE");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1 -> {
+				boolean status = cservice.addCustomer();
+				if (status) {
+					
+					System.out.println("-------------------------------------------------");
+					System.out.println("Customer Added Successfully");
+					System.out.println("-------------------------------------------------");
+				} else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something went Wrong...");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			case 2 -> {
+				Map<Customer, List<Item>> lm = cservice.displayAll();
+				if (!lm.isEmpty()) {
+					Set<Customer> keys = lm.keySet();
+					System.out.println("-------------------------------------------------");
+					for (Customer c : keys) {
+						System.out.println(c + "------>" + lm.get(c));
+					}
+					System.out.println("-------------------------------------------------");
+				} else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something Went Wronng 404 Not Found");
+					System.out.println("-------------------------------------------------");
+					
+				}
+			}
+			case 3->{
+				System.out.println("Enter Id to Search");
+				int id = sc.nextInt();
+				
+//				Map<Customer,List<Item>> lm = cservice.searchById(id);
+//				if(lm!=null) {
+//					Set<Customer> keys = lm.keySet();
+////					for (Customer c : keys) {
+////						System.out.println(c + "------>" + lm.get(c));
+////					}
+//				}else {
+//					System.out.println("Something Went Wrong 404 Not Found");
+//				}
+				
+				Map.Entry<Customer,List<Item>> lm = cservice.searchById(id);
+				if(lm!=null) {
+					System.out.println("-------------------------------------------------"); 
+						System.out.println(lm.getKey() + "------>" + lm.getValue());
+						System.out.println("-------------------------------------------------");
+					}
+				else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something Went Wrong 404 Not Found");
+					System.out.println("-------------------------------------------------");
+				}
+				
+				
+			}
+			case 4->{
+				System.out.println("Enter Customer Name for Search:");
+				sc.nextLine();
+				String nm = sc.nextLine();
+				
+				Map<Customer,List<Item>> lm = cservice.searchByName(nm);
+				System.out.println("-------------------------------------------------");
+				if(!lm.isEmpty() ||  ) {
+					Set<Customer> keys = lm.keySet();
+					for (Customer c : keys) {
+						System.out.println(c + "------>" + lm.get(c));
+					}
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something Went Wronng 404 Not Found");
+					System.out.println("-------------------------------------------------");
+				}
+				
+			}
+			
+			case 5 ->{
+				System.out.println("Enter Id for Delete Customer");
+				int id = sc.nextInt();
+				boolean status = cservice.deleteById(id);
+				if(status) {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Customer Deleted Successfully!");
+					System.out.println("-------------------------------------------------");
+				}else {
+					
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something went Wrong...");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			
+			case 6 ->{
+				sc.nextLine();
+				System.out.println("Enter Name for Delete Customer");
+				String nm = sc.nextLine();
+				boolean status = cservice.deleteByName(nm);
+				if(status) {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Customer Deleted Successfully!");
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something went Wrong...");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			
+			case 7 -> {
+				Map<Customer,List<Item>> st = cservice.sortById();
+				if(!st.isEmpty()) {
+					Set<Customer> keys = st.keySet();
+					System.out.println("-------------------------------------------------");
+					for (Customer c : keys) {
+						System.out.println(c + "------>" + st.get(c));
+					}
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something Went Wronng 404 Not Found");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			
+			case 8 -> {
+				Map<Customer,List<Item>> st = cservice.sortByName();
+				if(!st.isEmpty()) {
+					Set<Customer> keys = st.keySet();
+					System.out.println("-------------------------------------------------");
+					for (Customer c : keys) {
+						System.out.println(c + "------>" + st.get(c));
+					}
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something Went Wronng 404 Not Found");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			
+			case 9 -> {
+				System.out.println("Enter Customer ID to Add items");
+				int id= sc.nextInt();
+				boolean status = cservice.addItemToId(id);
+				if(status) {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Item Added Successfully!");
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Customer Not Found...");
+					System.out.println("-------------------------------------------------");
+				}
+				}
+			case 10 -> {
+				System.out.println("Enter Customer ID for Delete items");
+				int cid = sc.nextInt();
+				System.out.println("Enter Item ID for Delete items");
+				int iid = sc.nextInt();
+				boolean status = cservice.deleteItemToId(cid, iid);
+				if(status) {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Item Deleted Successfully!");
+					System.out.println("-------------------------------------------------");
+				}else {
+					System.out.println("-------------------------------------------------");
+					System.out.println("Something went Wrong...");
+					System.out.println("-------------------------------------------------");
+				}
+			}
+			
+			case 11->{
+				System.out.println("Enter Customer ID : ");
+				int id = sc.nextInt();
+				double total = cservice.generateBill(id);
+				System.out.println("-------------------------------------------------");
+				
+				if(total > -1) {
+					System.out.println("Your Generated Bill is : " + total);
+				}
+				else {
+					System.out.println("Something went wrong Error 404 Not Found.");
+				}
+			}
+			
+			case 12->{
+				sc.close();
+				System.out.println("Thankyou for shopping with us...! ");
+				System.out.println("Come back Soon, Bye Bye...! ");
+			}
+			}
+		} while (choice != 12);
+
+	}
+
+}

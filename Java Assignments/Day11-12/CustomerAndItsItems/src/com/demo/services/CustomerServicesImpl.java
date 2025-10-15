@@ -111,6 +111,8 @@ public class CustomerServicesImpl implements CustomerServices {
 
 	@Override
 	public boolean addItemToId(int id) {
+		Map.Entry<Customer, List<Item>> fnd = cdao.getElementById(id);
+		if(fnd == null) return false;
 		Item item = new Item();
 		item = addItem();
 		return cdao.addItemToId(id, item);
