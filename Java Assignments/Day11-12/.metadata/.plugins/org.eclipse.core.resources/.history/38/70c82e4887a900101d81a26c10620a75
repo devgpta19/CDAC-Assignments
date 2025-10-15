@@ -1,0 +1,140 @@
+package com.demo.services;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+import com.demo.dao.CustomerDao;
+
+public class CustomerServicesImpl implements CustomerServices {
+	Scanner sc = new Scanner(System.in);
+
+	CustomerDao cdao = new CustomerDaoImpl();
+
+	Customer c;
+
+	@Override
+	public boolean addCustomer() {
+
+		List<Item> ilst = new ArrayList<>();
+		System.out.println("Enter Customer ID:");
+		int id = sc.nextInt();
+		System.out.println("Enter Customer Name:");
+		sc.nextLine();
+		String cname = sc.nextLine();
+		System.out.println("Enter Customer Mobile No.:");
+		String cmob = sc.nextLine();
+
+		c = new Customer(id, cname, cmob);
+
+		String ch = "n";
+		do {
+			System.out.println("---------------------------------------------------");
+			System.out.println("Want to enter Items for this customer ?\n y or n");
+			ch = sc.next();
+			switch (ch) {
+
+			case "y" -> {
+				ilst.add(addItem());
+			}
+			case "n" -> {
+				System.out.println("Thankyou!!!");
+			}
+
+			default -> {
+				System.out.println("Enter Valid Choice y/n");
+			}
+
+			}
+
+		} while (!ch.equals("n"));
+
+		cdao.save(c, ilst);
+		return true;
+	}
+
+	private Item addItem() {
+//		Item item = new Item();
+
+		System.out.println("---------------------------------------------------");
+
+		System.out.println("Enter Item ID :");
+		int iid = sc.nextInt();
+
+		sc.nextLine();
+		System.out.println("Enter Item Name :");
+		String iname = sc.nextLine();
+
+		System.out.println("Enter Item Quantity :");
+		int iqyt = sc.nextInt();
+
+		System.out.println("Enter Item Price :");
+		double ip = sc.nextDouble();
+
+		return (new Item(iid, iname, iqyt, ip));
+	}
+
+	@Override
+	public Map<Customer, List<Item>> displayAll() {
+
+		return cdao.showAll();
+	}
+
+	@Override
+	public Map<Customer, List<Item>> searchByName(String nm) {
+
+		return cdao.findByName(nm);
+	}
+
+	@Override
+	public Entry<Customer, List<Item>> searchById(int id) {
+		return cdao.getElementById(id);
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+
+		return cdao.deleteById(id);
+	}
+
+	@Override
+	public boolean deleteByName(String nm) {
+
+		return cdao.deleteByName(nm);
+	}
+
+	@Override
+	public boolean addItemToId(int id) {
+		Item item = new Item();
+		item = addItem();
+		return cdao.addItemToId(id, item);
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortById() {
+		return cdao.sortById();
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortByName() {
+
+		return cdao.sortByName();
+	}
+
+	@Override
+	public boolean deleteItemToId(int cid, int iid) {
+		return cdao.deleteItemToId(cid, iid);
+	}
+
+	@Override
+	public double generateBill(int id) {
+		// TODO Auto-generated method stub
+		return cdao.generatedBill(id);
+	}
+
+}

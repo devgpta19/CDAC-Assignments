@@ -1,0 +1,70 @@
+package com.demo.beans;
+
+import java.util.Objects;
+
+public class Item {
+	private int iid;
+	private String iname;
+	private int iquant;
+	private double price;
+	public Item() {
+		super();
+	}
+	public Item(int iid, String iname, int iquant, double price) {
+		super();
+		this.iid = iid;
+		this.iname = iname;
+		this.iquant = iquant;
+		this.price = price;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(iid);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		return iid == other.iid;
+	}
+	public Item(int iid) {
+		super();
+		this.iid = iid;
+	}
+	public int getIid() {
+		return iid;
+	}
+	public void setIid(int iid) {
+		this.iid = iid;
+	}
+	public String getIname() {
+		return iname;
+	}
+	public void setIname(String iname) {
+		this.iname = iname;
+	}
+	public int getIquant() {
+		return iquant;
+	}
+	public void setIquant(int iquant) {
+		this.iquant = iquant;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "Item [iid=" + iid + ", iname=" + iname + ", iquant=" + iquant + ", price=" + price + "]";
+	}
+	
+
+}

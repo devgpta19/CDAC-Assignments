@@ -1,0 +1,117 @@
+package com.demo.services;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+import com.demo.dao.CustomerDao;
+
+public class CustomerDaoImpl implements CustomerDao {
+	
+	static Map<Customer, List<Item>> hm;
+	static {
+		
+		hm = new HashMap<>();
+		Customer c1 = new Customer(101,"John","7894561230");
+		List<Item> l1 = new ArrayList<>();
+		l1.add(new Item(3210,"Item11",20,30));
+		l1.add(new Item(3220,"Item12",13,100));
+		l1.add(new Item(3230,"Item13",25,5));
+		l1.add(new Item(3240,"Item14",5,25));
+		Customer c2 = new Customer(102,"Anny","231654987");
+		List<Item> l1 = new ArrayList<>();
+		l2.add(new Item(321,"Item21",20,30));
+		l2.add(new Item(322,"Item22",10,100));
+		l2.add(new Item(323,"Item23",5,5));
+		l2.add(new Item(324,"Item24",15,25));
+		Customer c3 = new Customer(103,"Mia","1234986542");
+		List<Item> l3 = new ArrayList<>();
+		l3.add(new Item(321,"Item31",20,30));
+		l3.add(new Item(322,"Item32",10,100));
+		l3.add(new Item(323,"Item33",5,5));
+		l3.add(new Item(324,"Item34",15,25));
+		Customer c4 = new Customer(104,"Lana","2334897512");
+		List<Item> l1 = new ArrayList<>();
+		l1.add(new Item(321,"Item1",20,30));
+		l1.add(new Item(322,"Item2",10,100));
+		l1.add(new Item(323,"Item3",5,5));
+		l1.add(new Item(324,"Item4",15,25));
+		Customer c5 = new Customer(105,"John","4578651234");
+		List<Item> l1 = new ArrayList<>();
+		l1.add(new Item(321,"Item1",20,30));
+		l1.add(new Item(322,"Item2",10,100));
+		l1.add(new Item(323,"Item3",5,5));
+		l1.add(new Item(324,"Item4",15,25));
+		
+	}
+
+	@Override
+	public void save(Customer c, List<Item> ilst) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Map<Customer, List<Item>> showAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> findByName(String nm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Entry<Customer, List<Item>> getElementById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByName(String nm) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addItemToId(int id, Item item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortByName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteItemToId(int cid, int iid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public double generatedBill(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

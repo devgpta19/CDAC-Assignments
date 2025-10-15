@@ -1,0 +1,10 @@
+package com.demo.beans;
+
+public class Customer {
+	private int cid;
+	private String cname;
+	private String mob;
+	
+	private Item li
+	
+}

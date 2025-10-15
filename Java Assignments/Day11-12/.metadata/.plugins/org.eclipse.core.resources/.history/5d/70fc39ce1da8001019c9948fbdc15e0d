@@ -1,0 +1,21 @@
+package com.demo.services;
+
+import java.util.List;
+import java.util.Map;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public interface CustomerServices {
+
+	boolean addCustomer();
+
+	Map<Customer, List<Item>> displayAll();
+
+	Map<Customer, List<Item>> searchByName(String nm);
+
+	Map<Customer, List<Item>> searchById(int id);
+
+	boolean deleteById(int id);
+
+}

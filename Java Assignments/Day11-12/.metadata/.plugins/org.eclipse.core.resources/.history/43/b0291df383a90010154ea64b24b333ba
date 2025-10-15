@@ -1,0 +1,204 @@
+package com.demo.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public class CustomerDaoImpl implements CustomerDao {
+
+	static Map<Customer, List<Item>> hm;
+	static {
+		hm = new HashMap<>();
+		Customer c3 = new Customer(102, "Devan", "6549872310");
+		List<Item> l3 = new ArrayList<>();
+		l3.add(new Item(110011, "BakerWadi", 50, 90.0));
+		l3.add(new Item(564879, "Unibic Cookies", 6, 110.0));
+		l3.add(new Item(778001, "Frooti", 10, 60.0));
+		hm.put(c3, (List<Item>) l3);
+		Customer c1 = new Customer(100, "Deva", "7894561230");
+		List<Item> l1 = new ArrayList<>();
+		l1.add(new Item(110011, "BakerWadi", 50, 90.0));
+		l1.add(new Item(564879, "Unibic Cookies", 6, 110.0));
+		l1.add(new Item(778001, "Frooti", 10, 60.0));
+		hm.put(c1, (List<Item>) l1);
+		Customer c2 = new Customer(101, "Devesh", "9876543210");
+		List<Item> l2 = new ArrayList<>();
+		l2.add(new Item(110011, "BakerWadi", 50, 90.0));
+		l2.add(new Item(564879, "Unibic Cookies", 6, 110.0));
+		l2.add(new Item(778001, "Frooti", 10, 60.0));
+		hm.put(c2, (List<Item>) l2);
+
+	}
+
+	@Override
+	public void save(Customer c, List<Item> ilst) {
+		hm.put(c, (List<Item>) ilst);
+	}
+
+	@Override
+	public Map<Customer, List<Item>> showAll() {
+		return hm;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> findByName(String nm) {
+		Map<Customer, List<Item>> cust = new HashMap<>();
+
+		Set<Customer> keys = hm.keySet();
+
+		for (Customer c : keys) {
+			if (c.getCname().equals(nm))
+				cust.put(c, hm.get(c));
+
+		}
+
+		if (cust.isEmpty()) {
+			return null;
+		} else {
+			return cust;
+		}
+	}
+
+	@Override
+	public Entry<Customer, List<Item>> getElementById(int id) {
+
+		Set<Map.Entry<Customer, List<Item>>> cust = hm.entrySet();
+		for (Map.Entry<Customer, List<Item>> c : cust) {
+			if (c.getKey().getCid() == id) {
+				return c;
+			}
+		}
+
+		return null;
+
+//		Map<Customer, List<Item>> cust = new HashMap<>();
+//
+//		Set<Customer> keys = hm.keySet();
+//
+//		for (Customer c : keys) {
+//			if (c.getCid() == (id)) {
+//				cust.put(c, hm.get(c));
+//				return cust;
+//			}
+//		}
+//
+//		if (cust.isEmpty()) {
+//			return null;
+//		}
+//
+//		return cust;
+
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+
+		Set<Customer> keys = hm.keySet();
+
+		for (Customer c : keys) {
+			if (c.getCid() == (id)) {
+				hm.remove(c);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteByName(String nm) {
+		Set<Customer> keys = hm.keySet();
+		int count = 0;
+//		for (Customer c : keys) {
+//			if (c.getCname().equals(nm)) {
+//				hm.remove(c);
+//				count++;
+//			}
+//			
+//		}
+		Iterator<Customer> it = keys.iterator();
+		while (it.hasNext()) {
+			Customer s = it.next();
+
+			if (s.getCname().equals(nm)) {
+				it.remove();
+				count++;
+			}
+		}
+
+		if (count <= 0)
+			return false;
+		else
+			return true;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortById() {
+		Map<Customer, List<Item>> mp = new TreeMap<>();
+
+		Set<Customer> keys = hm.keySet();
+
+		for (Customer c : keys) {
+			mp.put(c, hm.get(c));
+		}
+		if (!mp.isEmpty())
+			return mp;
+
+		return null;
+	}
+
+	@Override
+	public boolean addItemToId(int id, Item item) {
+		Set<Map.Entry<Customer, List<Item>>> mp = hm.entrySet();
+		for (Map.Entry<Customer, List<Item>> m : mp) {
+			if(m.getKey().getCid() == id) {
+				if (m.getKey() != null) {
+					m.getValue().add(item);
+					return true;
+				} else
+					System.out.println("No Customer Found with " + id + " this ID");
+			}
+		}
+
+		return false;
+	}
+
+	@Override
+	public Map<Customer, List<Item>> sortByName() {
+		Map<Customer, List<Item>> mp = new TreeMap<>();
+
+		Set<Customer> keys = hm.keySet();
+
+		for (Customer c : keys) {
+			mp.put(c, hm.get(c));
+		}
+		if (!mp.isEmpty())
+			return mp;
+
+		return null;
+	}
+	
+	@Override
+	public boolean deleteItemToId(int cid, int iid) {
+		List<Item> lst =hm.get(new Customer(cid));
+		if(lst!=null) {
+			return lst.remove(new Item(iid));
+			
+			}
+		return false;
+	}
+
+	@Override
+	public double generatedBill(int id) {
+		// TODO Auto-generated method stub
+		List<Item> lst = hm.get(new Customer(id));
+		Item itm = 
+		return 0;
+	}}

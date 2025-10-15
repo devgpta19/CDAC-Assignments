@@ -1,0 +1,35 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public interface CustomerDao {
+
+	void save(Customer c, List<Item> ilst);
+
+	Map<Customer, List<Item>> showAll();
+
+	Map<Customer, List<Item>> findByName(String nm);
+
+	Entry<Customer, List<Item>> getElementById(int id);
+
+	boolean deleteById(int id);
+
+	boolean deleteByName(String nm);
+
+	boolean addItemToId(int id, Item item);
+	
+	Map<Customer, List<Item>> sortById();
+
+	Map<Customer, List<Item>> sortByName();
+
+	boolean deleteItemToId(int cid, int iid);
+
+	boolean deleteItemToId(int cid);
+
+
+}

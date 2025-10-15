@@ -1,0 +1,8 @@
+package com.demo.beans;
+
+public class Item {
+	private int iid;
+	private String iname;
+	private int iuant
+
+}

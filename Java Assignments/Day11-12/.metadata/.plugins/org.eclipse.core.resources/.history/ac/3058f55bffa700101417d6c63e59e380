@@ -1,0 +1,20 @@
+package com.demo.beans;
+
+public class Item {
+	private int iid;
+	private String iname;
+	private int iquant;
+	private double price;
+	public Item() {
+		super();
+	}
+	public Item(int iid, String iname, int iquant, double price) {
+		super();
+		this.iid = iid;
+		this.iname = iname;
+		this.iquant = iquant;
+		this.price = price;
+	}
+	
+
+}

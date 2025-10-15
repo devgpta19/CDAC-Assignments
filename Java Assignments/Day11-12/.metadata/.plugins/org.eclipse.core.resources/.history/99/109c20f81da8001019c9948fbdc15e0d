@@ -1,0 +1,20 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public interface CustomerDao {
+
+	void save(Customer c, List<Item> ilst);
+
+	Map<Customer, List<Item>> showAll();
+
+	Map<Customer, List<Item>> findByName(String nm);
+
+	Map<Customer, List<Item>> getElementById(int id);
+
+
+}

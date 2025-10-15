@@ -1,0 +1,10 @@
+package com.demo.dao;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public interface CustomerDao {
+
+	void save(Customer c, Item ilst);
+
+}
