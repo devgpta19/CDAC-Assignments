@@ -1,0 +1,34 @@
+package com.demo.services;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Item;
+
+public interface CustomerServices {
+
+	boolean addCustomer();
+
+	Map<Customer, List<Item>> displayAll();
+
+	Map<Customer, List<Item>> searchByName(String nm);
+
+	Entry<Customer, List<Item>> searchById(int id);
+
+	boolean deleteById(int id);
+
+	boolean deleteByName(String nm);
+
+	boolean addItemToId(int id);
+
+	Map<Customer, List<Item>> sortById();
+
+	Map<Customer, List<Item>> sortByName();
+
+	boolean deleteItemToId(int cid, int iid);
+
+	double generateBill(int id);
+
+}

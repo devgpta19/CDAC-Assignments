@@ -205,13 +205,13 @@ public class TestCustomerItem {
 				int id = sc.nextInt();
 				double total = cservice.generateBill(id);
 				System.out.println("-------------------------------------------------");
-				int disc = calcDiscount();
+				double disc = cservice.calcDiscount(id);
 				if(total > -1) {
 					System.out.println("-------------------------------------------------");
 					System.out.println("Your Bill is Generated Successfully");
 					System.out.println("Your Grand Total is : " + total);
-					System.out.println("Discount is : " + disc);
-					System.out.println("You Have To Pay : " + (total-disc));
+					System.out.println("Discount is : " + (((total-disc)*100)/total) + "%");
+					System.out.println("You Have To Pay : " + (disc));
 					System.out.println("-------------------------------------------------");
 				}
 				else {
@@ -228,11 +228,4 @@ public class TestCustomerItem {
 		} while (choice != 12);
 
 	}
-
-	private static int calcDiscount() {
-		// TODO Auto-generated method stub
-		
-		return 0;
-	}
-
 }

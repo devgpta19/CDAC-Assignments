@@ -140,4 +140,10 @@ public class CustomerServicesImpl implements CustomerServices {
 		return cdao.generatedBill(id);
 	}
 
+	@Override
+	public double calcDiscount(int id) {
+		
+		return cdao.calcDis(id);
+	}
+
 }

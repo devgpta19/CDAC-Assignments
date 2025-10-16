@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
@@ -208,11 +209,37 @@ public class CustomerDaoImpl implements CustomerDao {
 	public double generatedBill(int id) {
 		double val = 0;
 		Map.Entry<Customer, List<Item>> mp = getElementById(id);
-		for(Item itm: mp.getValue()) {
+		for (Item itm : mp.getValue()) {
 			val += itm.getIquant() * itm.getPrice();
 		}
-
 		return val;
+	}
+
+	@Override
+	public double calcDis(int id) {
+		double val = generatedBill(id);
+		int dis = 0;
+		Scanner sc = new Scanner(System.in);
+		String y = "n";
+		do {
+			System.out.println("Wanted to give discount ?");
+			y = sc.next();
+			switch (y) {
+			case "y" -> {
+				System.out.println("Enter Discount Percentange : ");
+				dis = sc.nextInt();
+				return (val - val * dis / 100);
+			}
+			case "n" -> {
+				return val;
+			}
+
+			default -> {
+				System.out.println("Wrong Input...");
+			}
+			}
+		} while (y != "y" || y != "n");
+		return 0;
 	}
 
 }

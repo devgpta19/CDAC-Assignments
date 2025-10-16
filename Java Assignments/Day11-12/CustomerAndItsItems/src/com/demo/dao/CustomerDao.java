@@ -31,4 +31,6 @@ public interface CustomerDao {
 
 	double generatedBill(int id);
 
+	double calcDis(int id);
+
 	}

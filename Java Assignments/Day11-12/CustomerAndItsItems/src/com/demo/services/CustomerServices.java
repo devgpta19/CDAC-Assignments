@@ -31,4 +31,6 @@ public interface CustomerServices {
 
 	double generateBill(int id);
 
+	double calcDiscount(int id);
+
 }
