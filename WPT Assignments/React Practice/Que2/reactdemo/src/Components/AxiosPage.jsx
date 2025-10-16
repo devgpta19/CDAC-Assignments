@@ -23,8 +23,8 @@ function AxiosPage() {
         fetchAPI();
     }, [])
 
-    if (loading) return <h2>Loading...</h2>
     if (error) return <h2>Error...</h2>
+    if (loading) return <h2>Loading...</h2>
 
     return (
         <div>
