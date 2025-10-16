@@ -1,0 +1,12 @@
+package com.demo.dao;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeDao {
+	
+
+	boolean add(Employee e);
+
+	void readData(String string);
+
+}

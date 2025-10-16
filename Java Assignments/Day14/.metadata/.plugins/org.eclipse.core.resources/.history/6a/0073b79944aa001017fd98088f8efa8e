@@ -1,0 +1,17 @@
+package com.demo.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeDao {
+static List<Employee> lst;
+	
+	static {
+		lst = new ArrayList<>();
+	}
+
+	boolean add(Employee e);
+
+}

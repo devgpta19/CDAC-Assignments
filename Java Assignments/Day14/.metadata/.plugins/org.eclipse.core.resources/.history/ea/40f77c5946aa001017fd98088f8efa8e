@@ -1,0 +1,16 @@
+package com.demo.service;
+
+public interface EmployeeService {
+
+	void readFile(String string);
+
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+	boolean addNewEmployee();
+
+}

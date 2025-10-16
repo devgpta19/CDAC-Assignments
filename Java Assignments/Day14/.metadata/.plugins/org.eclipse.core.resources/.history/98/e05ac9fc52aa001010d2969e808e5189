@@ -1,0 +1,63 @@
+package com.demo.service;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+import java.util.Scanner;
+
+import com.demo.beans.Employee;
+import com.demo.dao.EmployeeDao;
+import com.demo.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private EmployeeDao edao;
+	
+	public EmployeeServiceImpl() {
+		super();
+		this.edao = new EmployeeDaoImpl();
+	}
+
+	@Override
+	public void readFile(String string) {
+		edao.readData(string);
+	}
+	
+	public boolean addNewEmployee() {
+		return edao.save(addEmployee());
+	}
+
+	private Employee addEmployee() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Employee Id : ");
+		int id = sc.nextInt();
+		System.out.println("Enter Employee Name : ");
+		sc.nextLine();
+		String name = sc.nextLine();
+		System.out.println("Enter Employee Department : ");
+		String dept = sc.nextLine();
+		System.out.println("Enter Employee Salary : ");
+		double sal = sc.nextDouble();
+		
+		Employee e = new Employee(id,name,dept,sal);
+		return e;
+	}
+
+	@Override
+	public List<Employee> displayAll() {
+		// TODO Auto-generated method stub
+		return edao.displayAll();
+	}
+
+	@Override
+	public void writeToFile(String string) {
+		// TODO Auto-generated method stub
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("string"))){
+			for(Emolo)
+			oos.writeObject(e);
+		}catch(Exception e) {
+			
+		}
+		
+	}
+
+}

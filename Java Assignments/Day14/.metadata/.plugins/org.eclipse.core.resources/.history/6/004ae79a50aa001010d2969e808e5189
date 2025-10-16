@@ -1,0 +1,14 @@
+package com.demo.dao;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeDao {
+	
+
+	boolean addEmployee(Employee e);
+
+	void readData(String string);
+
+	boolean save(Employee addNewEmployee);
+
+}
