@@ -1,0 +1,89 @@
+package com.demo.array;
+
+import java.util.Scanner;
+
+public class My2DArrays {
+	private int[][] arr;
+	private int n;
+	private int m;
+
+	public My2DArrays() {
+		arr = new int[3][3];
+		n = 3;
+		m = 3;
+	}
+
+	public My2DArrays(int n, int m) {
+		arr = new int[n][m];
+		this.n = n;
+		this.m = m;
+	}
+
+	Scanner sc = new Scanner(System.in);
+
+	public void addElements() {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				System.out.println("Enter Element at [" + i + "," + j + "]");
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		System.out.println("Your entered Matrix : ");
+		display(arr);
+	}
+
+	public int[] rowWiseSum() {
+		
+		int row[] = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			row[i] = 0;
+		}
+
+		for (int i = 0; i < n; i++) {
+			int sum = 0;
+			for (int j = 0; j < m; j++) {
+				sum = sum + arr[i][j];
+			}
+			row[i] = sum;
+		}
+
+		return row;
+	}
+	public int[] colWiseSum() {
+		
+		int col[] = new int[m];
+		
+		for (int i = 0; i < m; i++) {
+			col[i] = 0;
+		}
+		
+		for (int i = 0; i < n; i++) {
+			int sum = 0;
+			for (int j = 0; j < m; j++) {
+				sum = sum + arr[j][i];
+			}
+			col[i] = sum;
+		}
+		
+		return col;
+	}
+	
+	public int[][] add22DArrays(My2DArrays o) {
+		if(n==m) {
+			for(int i = 0; i<n )
+		}
+	}
+
+	public void display(int[][] arr2) {
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.print(arr[i][j] + "\t");
+			}
+			System.out.println();
+		}
+
+	}
+
+}

@@ -1,0 +1,61 @@
+package com.demo.test;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+import com.demo.array.MyArray;
+
+public class TestArray {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		MyArray my = new MyArray();
+		int arr[] = my.addElem();
+		int n = arr.length;
+		int choice = 0;
+		do {
+			
+			System.out.println("1. Display Array\n2. Recurcive Binary search\n"
+					+ "3. Binary Search\n4. Sequential Search");
+			
+			System.out.println("Enter your choice : ");
+			choice = sc.nextInt();
+			switch(choice) {
+			case 1->{
+				System.out.println("Entered Array is : ");
+				display(arr);
+			}
+			case 2->{
+				System.out.println("####### USING RECURSIVE BINARY SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.recBinSearch(0, arr.length-1, x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+			}
+			case 3->{
+				System.out.println("####### BINARY SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.binarySearch(x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+			}
+			case 4->{
+				System.out.println("####### LINEAR SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.sequentialSearch(x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+				
+			}
+			case 5->{
+				System.out.println("Thanks for visiting us... (; *|*");
+			}
+			}
+			
+		}while(choice != 5);
+		
+	}
+
+	private static void display(int[] arr) {
+		System.out.println("Array : "+Arrays.toString(arr));
+	}
+}
