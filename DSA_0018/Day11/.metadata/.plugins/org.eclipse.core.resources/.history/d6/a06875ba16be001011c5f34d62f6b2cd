@@ -1,0 +1,94 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.trees.BinarySearchTree;
+
+public class TestBinarySearchTree {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinarySearchTree bst = new BinarySearchTree();
+		int ch;
+		do {
+			System.out.println("1. Add Node in Binary Search Tree:\n" + "2. Remove Node from Binary Search Tree\n"
+					+ "3. Search Node in Recursively in Binary Search tree\n"
+					+ "4. Search Node in NonRecursively in Binary Search tree\n" + "5. Traverse in InOrder direction\n"
+					+ "6. Traverse in PreOrder Direction\n" + "7. Traverse in PostOrder Direction\n" + "8. exit\n"
+					+ "----------------------------------------\n" + "Enter your Choice:");
+			ch = sc.nextInt();
+			switch (ch) {
+			
+			case 0 -> {
+				bst.insertNode(31);
+				bst.insertNode(15);
+				bst.insertNode(17);
+				bst.insertNode(18);
+				bst.insertNode(10);
+				bst.insertNode(40);
+				bst.insertNode(32);
+				bst.insertNode(45);
+				bst.insertNode(33);
+						
+			}
+			case 1 -> {
+				System.out.println("Enter Node value:");
+				int val = sc.nextInt();
+				boolean status = bst.insertNode(val);
+				if (status) {
+					System.out.println("Node added sucessfully...!");
+				} else {
+					System.out.println("Something went wrong...!");
+				}
+			}
+			case 2 -> {
+				System.out.println("Enter Node value to remove:");
+				int val = sc.nextInt();
+				boolean status = bst.deleteNode(val);
+				if (status) {
+					System.out.println("Node added sucessfully...!");
+				} else {
+					System.out.println("Something went wrong...!");
+				}
+			}
+			case 3 -> {
+				System.out.println("Enter Node value for search:");
+				int val = sc.nextInt();
+				boolean status = bst.recursiveSearch(val);
+				if (status) {
+					System.out.println("Value Found...!");
+				} else {
+					System.out.println("Something went wrong...!");
+				}
+			}
+			case 4 -> {
+				System.out.println("Enter Node value for Search:");
+				int val = sc.nextInt();
+				boolean status = bst.nonRecursiveSearch(val);
+				if (status) {
+					System.out.println("Value Found...!");
+				} else {
+					System.out.println("Something went wrong...!");
+				}
+			}
+			case 5 -> {
+				bst.inOrder();
+			}
+			case 6 -> {
+				bst.preOrder();
+			}
+			case 7 -> {
+				bst.postOrder();
+			}
+			case 8 -> {
+				bst.postOrder();
+			}
+			case 9 -> {
+				System.out.println("Thank you For visiting...!");
+				sc.close();
+			}
+			}
+		} while (ch != 9);
+	}
+
+}

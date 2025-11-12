@@ -1,0 +1,38 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.trees.BinarySearchTree;
+
+public class TestBinarySearchTree {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinarySearchTree bst = new BinarySearchTree();
+		int ch;
+		do {
+			System.out.println("1. Add Node in Binary Search Tree:\n" + "2. Remove Node from Binary Search Tree\n"
+					+ "3. Search Node in Binary Search tree\n" + "4. Traverse in InOrder direction\n"
+					+ "5. Traverse in PreOrder Direction\n" + "6. Traverse in PostOrder Direction\n" + "7. exit\n"
+					+ "----------------------------------------\n" + "Enter your Choice:");
+			ch = sc.nextInt();
+			switch(ch) {
+			case 1->{
+				System.out.println("Enter Node value:");
+				int val = sc.nextInt();
+				boolean status = bst.insertNode(val);
+				if(status) {
+					System.out.println("Node added sucessfully...!");
+				}else {
+					System.out.println("Something went wrong...!");
+				}
+			}
+			case 7->{
+				System.out.println("Thank you For visiting...!");
+				sc.close();
+			}
+			}
+		} while (ch != 7);
+	}
+
+}

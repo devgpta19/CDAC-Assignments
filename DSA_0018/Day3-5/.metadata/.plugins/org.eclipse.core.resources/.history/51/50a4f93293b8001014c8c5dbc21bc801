@@ -1,0 +1,98 @@
+package com.demo.test;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+import com.demo.array.MyArray;
+
+public class TestArray {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		MyArray my = new MyArray();
+		int arr[] = my.addElem();
+		int n = arr.length;
+		int choice = 0;
+		do {
+			
+			System.out.println("1. Display Array\n2. Recurcive Binary search\n"
+					+ "3. Binary Search\n4. Sequential Search\n5. BUBBLE SORT\n"
+					+ "6. Selection Sort\n7. MERGE SORT\n8.");
+			
+			System.out.println("Enter your choice : ");
+			choice = sc.nextInt();
+			switch(choice) {
+			case 1->{
+				System.out.println("Entered Array is : ");
+				display(arr);
+			}
+			case 2->{
+				System.out.println("####### USING RECURSIVE BINARY SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.recBinSearch(0, arr.length-1, x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+			}
+			case 3->{
+				System.out.println("####### BINARY SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.binarySearch(x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+			}
+			case 4->{
+				System.out.println("####### LINEAR SEARCH ########");
+				System.out.println("Enter Number You Have to search in array : ");
+				int x = sc.nextInt();
+				int pos = my.sequentialSearch(x);
+				System.out.println("Number found at "+pos+"\nNo. of Iterations are : "+my.getCount());
+				
+			}		
+			case 5->{				
+				System.out.println("####### BUBBLE SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.bubbleSort();
+			}
+			
+			case 6->{				
+				System.out.println("####### SELECTION SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.selectionSort();
+			}
+			
+			case 7->{				
+				System.out.println("####### MERGE SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.mergeSort(arr, 0, arr.length-1);
+			}
+			
+			case 8->{				
+				System.out.println("####### COUNTING SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.countingSort();
+			}
+			
+			case 9->{				
+				System.out.println("####### INSERTION SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.insertionSort();
+			}
+			
+			case 10->{				
+				System.out.println("####### QUICK SORT ########");
+				System.out.println("Here's your Sorted Array : ");
+				my.quickSort();
+			}
+			
+			case 11->{
+				System.out.println("Thanks for visiting us... (; (: ");
+			}
+			}
+			
+		}while(choice != 11);
+		
+	}
+
+	private static void display(int[] arr) {
+		System.out.println("Array : "+Arrays.toString(arr));
+	}
+}

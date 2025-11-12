@@ -1,0 +1,99 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.circularlinkedList.CircularSinglyLinkedList;
+
+public class TestCircularSinglyLinkedList {
+
+	public static void main(String[] args) {
+		CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
+		Scanner sc = new Scanner(System.in);
+		int op=-1;
+		do {
+			System.out.println("1. Add new Node\n" + "2. Add at ith index\n" + "3. Add after Value\n"
+					+ "4. delete node of ith index\n" + "5. Delete Node after Value\n"
+					+ "6. Display Circular Linked List\n" + "7. Reverse Circular Linked list\n" + "10. EXIT\n"
+					+ "-------------------------------------\n" + "Enter Your Option.....");
+			op = sc.nextInt();
+			switch (op) {
+			
+			case 0->{
+				 csll.addNewNode(val);
+			}
+			
+			case 1 -> {
+				System.out.println("Enter Node Value:");
+				int val = sc.nextInt();
+				boolean status = csll.addNewNode(val);
+				if (status) {
+					System.out.println("Node Added Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 2 -> {
+				System.out.println("Enter Node Value:");
+				int val = sc.nextInt();
+				System.out.println("Enter Index Value:");
+				int idx = sc.nextInt();
+				boolean status = csll.addAtIthindex(val, idx);
+				if (status) {
+					System.out.println("Node Added Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 3 -> {
+				System.out.println("Enter Node Value:");
+				int val = sc.nextInt();
+				System.out.println("Enter Number after you want to add:");
+				int num = sc.nextInt();
+				boolean status = csll.addNodeAfterValue(val, num);
+				if (status) {
+					System.out.println("Node Added Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 4 -> {
+				System.out.println("Enter Node Value:");
+				int val = sc.nextInt();
+				System.out.println("Enter Index Value:");
+				int idx = sc.nextInt();
+				boolean status = csll.deleteAtIthindex(val, idx);
+				if (status) {
+					System.out.println("Node Deleted Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 5 -> {
+				System.out.println("Enter Node Value:");
+				int val = sc.nextInt();
+				System.out.println("Enter Number after you want to Delete:");
+				int num = sc.nextInt();
+				boolean status = csll.deleteNodeAfterValue(val);
+				if (status) {
+					System.out.println("Node Deleted Successfully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 6 -> {
+				System.out.println("--------- Your Circular Linked List ---------");
+				csll.display();
+
+			}
+			case 7 -> {
+				System.out.println("--------- Your Reversed Circular Linked List ---------");
+				csll.reverse();
+			}
+			case 10 -> {
+				System.out.println("Thnak You for Visiting....(; (;");
+				sc.close();
+			}
+			}
+		} while (op != 10);
+	}
+}

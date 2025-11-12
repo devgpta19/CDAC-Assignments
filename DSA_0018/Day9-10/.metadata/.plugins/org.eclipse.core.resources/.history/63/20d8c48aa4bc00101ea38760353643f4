@@ -1,0 +1,96 @@
+package com.demo.stacks;
+
+public class MyStack<T> {
+	Node top;
+
+	class Node {
+		T data;
+		Node next;
+
+		public Node(T data) {
+			this.data = data;
+			this.next = null;
+		}
+	}
+
+	public MyStack() {
+		super();
+		this.top = null;
+	}
+
+	public boolean push(T i) {
+		Node newNode = new Node(i);
+		if (isEmpty()) {
+			top = newNode;
+		} else {
+			newNode.next = top;
+			top = newNode;
+		}
+		return true;
+	}
+
+	boolean isEmpty() {
+		return top == null;
+	}
+
+	public void display() {
+		if (isEmpty()) {
+			System.out.println("Stack List Is Empty...!");
+		} else {
+			Node temp = top;
+			System.out.println("top --> " + temp.data);
+			while (temp != null) {
+				System.out.println("|\t" + temp.data + "\t| ");
+				temp = temp.next;
+			}
+			System.out.println("|\tnull\t| ");
+		}
+		System.out.println("|_______________|");
+	}
+
+	public char pop() {
+		if (!isEmpty()) {
+			Node temp = top;
+			top = top.next;
+			temp.next = null;
+			return temp.data;
+		} else {
+			System.out.println("This is Empty");
+			return 0;
+		}
+	}
+
+	MyStack stack;
+
+	public void checkVBrc(String str) {
+	    MyStack stack = new MyStack();
+
+	    for (int i = 0; i < str.length(); i++) {
+	        char ch = str.charAt(i);
+
+	        if (ch == '(' || ch == '{' || ch == '[') {
+	            stack.push(ch);
+	        } else if (ch == ')' || ch == '}' || ch == ']') {
+	            if (stack.isEmpty()) {
+	                System.out.println("Invalid Brackets");
+	                return;
+	            }
+	            char top = stack.pop();
+	            if ((ch == ')' && top != '(') ||
+	                (ch == '}' && top != '{') ||
+	                (ch == ']' && top != '[')) {
+	                System.out.println("Invalid Brackets"); 
+	                return;
+	            }
+	        }
+	    }
+
+	    if (stack.isEmpty()) {
+	        System.out.println("Valid Brackets");
+	    } else {
+	        System.out.println("Invalid Brackets");
+	    }
+	}
+
+
+}

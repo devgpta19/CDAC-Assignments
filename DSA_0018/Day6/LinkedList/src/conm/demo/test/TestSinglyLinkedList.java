@@ -1,0 +1,94 @@
+package conm.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.service.SinglyLinkedListService;
+import com.demo.service.SinglyLinkedListServiceImpl;
+
+public class TestSinglyLinkedList {
+	
+	public static void main(String[] args) {
+		
+		SinglyLinkedListService listService = new SinglyLinkedListServiceImpl();
+		Scanner sc = new Scanner (System.in);
+		int ch = 0;
+		
+		do {
+			System.out.println("1. Add element at end\n2. Add value after given number\n"
+					+ "3. Add Element at start or X position\n10. Display LinkedList\n"
+					+ "11. Exit\n");
+			System.out.println("----------------------------------");
+			System.out.println("Enter Your Choice...");
+			ch = sc.nextInt();
+			switch(ch) {
+			case 1->{
+				System.out.println("Enter Value you want to add");
+				int value = sc.nextInt();
+				boolean status = listService.addNode(value);
+				if(status) {
+					System.out.println("----------------------------------");
+					System.out.println("Added at the End.");
+					System.out.println("----------------------------------");
+				}
+				else {
+					System.out.println("----------------------------------");
+					System.out.println("Something went wrong.");
+					System.out.println("----------------------------------");
+				}
+			}
+			case 2->{
+				System.out.println("Enter Value you want to add");
+				int value = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Entre number:");
+				int num = sc.nextInt();
+				boolean status = listService.addByNum(value,num);				
+				if(status) {
+					
+					System.out.println("----------------------------------");
+					System.out.println("Value added after: "+num);
+					System.out.println("----------------------------------");
+				}
+				else {
+					
+					System.out.println("----------------------------------");
+					System.out.println("Something went wrong.");
+					System.out.println("----------------------------------");
+				}
+			}
+			case 3->{
+				System.out.println("Enter Value you want to add");
+				int value = sc.nextInt();
+				System.out.println("Enter position:");
+				sc.nextLine();
+				int x = sc.nextInt();
+				boolean status = listService.addNodeAtX(x,value);				
+				if(status) {
+					System.out.println("----------------------------------");
+					System.out.println("Value Added at:"+x+" position.");
+					System.out.println("----------------------------------");
+				}
+				else {
+					System.out.println("----------------------------------");
+					System.out.println("Something went wrong.");
+					System.out.println("----------------------------------");
+				}
+			}
+			case 10->{
+				System.out.println("----------------------------------");
+				listService.displayList();
+				System.out.println("----------------------------------");
+			}
+			case 11->{
+				System.out.println("----------------------------------");
+				System.out.println("Thank you for visiting...");
+				System.out.println("----------------------------------");
+				sc.close();
+			}
+			}
+			
+		}while(ch!=11);
+		
+	}
+		
+}

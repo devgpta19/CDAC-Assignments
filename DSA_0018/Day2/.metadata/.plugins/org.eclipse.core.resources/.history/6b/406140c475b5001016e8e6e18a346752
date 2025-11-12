@@ -1,0 +1,46 @@
+package com.demo.test;
+
+import java.util.Arrays;
+
+import com.demo.array.My2DArrays;
+
+public class Test2DArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		My2DArrays m1 = new My2DArrays();
+		m1.addElements();
+		System.out.print("Row Wise Sum : ");
+		int[] a1 = m1.rowWiseSum();
+		String s1 = Arrays.toString(a1);
+		System.out.println(s1);
+		System.out.print("Column Wise Sum : ");
+		a1 = m1.colWiseSum();
+		s1 = Arrays.toString(a1);
+		System.out.println(s1);
+		
+		My2DArrays m2 = new My2DArrays(3,3);
+		m2.addElements();
+		
+		System.out.println("Addition of both matrixes are : ");
+		int[][]arr2 = m2.add22DArrays(m1);
+		display(arr2);
+
+	}
+
+	private static void display(int[][] arr) {
+		// TODO Auto-generated method stub
+		
+	
+		int n = arr.length;
+		int m = arr[0].length;
+	for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					System.out.print(arr[i][j] + "\t");
+				}
+				System.out.println();
+			}
+	}
+
+}

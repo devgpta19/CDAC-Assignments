@@ -1,0 +1,13 @@
+package com.demo.service;
+
+public interface SinglyLinkedListService {
+
+	boolean addNodeAtEnd(int value);
+
+	boolean addNodeAtStart(int value);
+
+	boolean addNodeAtX(int value);
+
+	void displayList();
+
+}

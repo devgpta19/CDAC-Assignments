@@ -1,0 +1,20 @@
+package com.demo.hashtable;
+
+public class HashTable {
+	Node[] heads;
+	class Node{
+		int data;
+		Node next;
+		
+		public Node(int data) {
+			this.data = data;
+			next = null;
+		}
+	}
+
+	public boolean insertData(int val) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

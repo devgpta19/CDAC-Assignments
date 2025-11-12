@@ -1,0 +1,84 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.queues.CircularQueue;
+import com.demo.stacks.MyStack;
+
+public class TestMyStack {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		MyStack<Integer>  mstki = new MyStack<>();
+		MyStack<Character>  mstkc = new MyStack<>();
+		CircularQueue cMyQ = new CircularQueue();
+		int ch;
+		do {
+			System.out.println("1, Add new Node in Stack List:\n"
+					+ "2. Remove Node from Stack List:\n"
+					+ "3. Display\n"
+					+ "4. Check Balanced Brackets.\n"
+					+ "5. Add new Element in Circular Queue:\n"
+					+ "6. Remove Element from Circular Queue\n"
+					+ "---------------------------------------\n"
+					+ "Enter Your Choice:");
+			ch = sc.nextInt();
+			switch(ch) {
+			case 0 ->{
+				mstki.push(39);
+				mstki.push(10);
+				mstki.push(20);
+				mstki.push(45);
+				mstki.push(78);
+				mstki.push(3);
+				mstki.push(6);
+				
+				mstki.display();
+			}
+			case 1->{
+				System.out.print("Enter Value For Node:");
+				int val = sc.nextInt();
+				boolean status = mstki.push(val);
+				if(status) {
+					System.out.println("Node Added Successfully...");
+				}else {
+					System.out.println("Not added...!");
+				}
+				
+			}
+			case 2->{
+				boolean status = mstki.pop();
+				if(status) {
+					System.out.println("Node are Removed...");
+				}else {
+					System.out.println("Not Removed...");
+				}
+			}
+			
+			case 3->{
+				mstki.display();
+			}
+			
+			case 4->{
+				System.out.println("Enter your String:");
+				String str = sc.next();
+				mstkc.checkVBrc(str);
+			}
+			case 5->{
+				System.out.println("Enter Element Value For Circular Queue: ");
+				int val = sc.nextInt();
+				boolean status = cMyQ.enQueue(val);
+				if(status) {
+					System.out.println("Element added successfully...!");
+				}else {
+					System.out.println("something went Wrong");
+				}
+				}
+			
+			case 8 ->{
+				System.out.println("Thank You for Visiting...");
+				sc.close();
+			}
+			}
+		}while(ch!=8);
+	}
+}

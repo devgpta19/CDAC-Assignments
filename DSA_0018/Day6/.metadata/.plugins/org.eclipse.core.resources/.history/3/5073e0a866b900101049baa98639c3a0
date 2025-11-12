@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class TestSinglyLinkedList {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner (System.in);
+		int ch = 0;
+		
+		do {
+			System.out.println("1. Add element at end\n2. Add Element at Start\n"
+					+ "3. Add Element at X position\4. Display LinkedList");
+			System.out.println("Enter Your Choice...");
+			
+			switch(ch) {
+			case 1->{
+				boolean status = listService.addNodeAtEnd(value);
+			}
+			}
+			
+		}while(ch!=15);
+		
+	}
+		
+}

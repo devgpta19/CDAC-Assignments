@@ -1,0 +1,113 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.linkedlists.DoublyLinkedList;
+
+public class TestDoublyLinkedList {
+
+	public static void main(String[] args) {
+
+		DoublyLinkedList dbllst = new DoublyLinkedList();
+
+		Scanner sc = new Scanner(System.in);
+		int ch = 0;
+
+		do {
+			System.out.println(" 1. Add Node\n " + "2. Add Node at ith index\n " + "3. Add Node after v value\n "
+					+ "4. Delete Node of ith index\n " + "5. Delete Node by v Value\n "
+					+ "6. Display Doubly LinkedList\n " + "10. Exit\n" + "---------------------------------------\n");
+			System.out.print("Enter your choice:");
+			ch = sc.nextInt();
+
+			switch (ch) {
+			case 0->{
+				dbllst.addNodeAtLast(5);
+				dbllst.addNodeAtLast(12);
+				dbllst.addNodeAtLast(98);
+				dbllst.addNodeAtLast(23);
+				dbllst.addNodeAtLast(81);
+				dbllst.addNodeAtLast(60);
+				dbllst.addNodeAtLast(17);
+				
+				d
+			}
+
+			case 1 -> {
+				System.out.println("Enter the Value : ");
+				int x = sc.nextInt();
+				boolean status = dbllst.addNodeAtLast(x);
+				if (status) {
+					System.out.println("Value added successfully...");
+				} else {
+					System.out.println("something went wrong...");
+				}
+			}
+
+			case 2 -> {
+				System.out.println("Enter the value:");
+				sc.nextLine();
+				int v = sc.nextInt();
+				System.out.println("Enter index:");
+				int i = sc.nextInt();
+				boolean status = dbllst.addNodeAtIindex(i, v);
+				if (status) {
+					System.out.println("Value added at:'" + i + "'index.");
+				} else {
+					System.out.println("something went wrong...!");
+				}
+			}
+			
+			case 3->{
+				System.out.println("Enter the value:");
+				sc.nextLine();
+				int v = sc.nextInt();
+				System.out.println("Enter The Number after which you want to add this element");
+				int i = sc.nextInt();
+				boolean status = dbllst.addNodeAfterValue(i, v);
+				if (status) {
+					System.out.println(v+" added after '" + i + "'.");
+				} else {
+					System.out.println("Something went wrong...!");
+				}	
+			}
+			
+			case 4->{
+				System.out.println("At what index do you want to delete.");
+				System.out.print("Enter index : ");
+				int i = sc.nextInt();
+				boolean status = dbllst.deleteNodeAti(i);
+				if(status)
+					System.out.println("Deleted Successfully");
+				else
+					System.out.println("Something went Wrong");
+			}
+			
+			case 5->{
+				System.out.println("At what index do you want to delete.");
+				System.out.print("Enter index : ");
+				int val = sc.nextInt();
+				boolean status = dbllst.deleteNodeByVal(val);
+				if(status)
+					System.out.println("Deleted Successfully");
+				else
+					System.out.println("Value Not Found");
+			}
+			
+			case 6 -> {
+				dbllst.display();
+			}
+
+			case 10 -> {
+
+				System.out.println("Thank you for visiting....(; (;\n");
+				sc.close();
+			}
+
+			}
+
+		} while (ch != 10);
+
+	}
+
+}

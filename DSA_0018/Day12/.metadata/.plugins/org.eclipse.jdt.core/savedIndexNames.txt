@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\DSA_0018\Day12\.metadata\.plugins\org.eclipse.jdt.core
+3291002090.index
+2890303241.index
+1865797976.index
