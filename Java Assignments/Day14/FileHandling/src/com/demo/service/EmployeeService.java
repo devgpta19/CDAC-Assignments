@@ -1,6 +1,6 @@
 package com.demo.service;
 
-import java.util.List;
+import java.util.Set;
 
 import com.demo.beans.Employee;
 
@@ -10,9 +10,15 @@ public interface EmployeeService {
 
 	boolean addNewEmployee();
 
-	List<Employee> displayAll();
+	Set<Employee> displayAll();
 
 	boolean writeToFile(String string);
+
+	Employee searchById(int id);
+
+	boolean deleteById(int id);
+
+	boolean modifySalaryById(int id);
 	
 	
 }

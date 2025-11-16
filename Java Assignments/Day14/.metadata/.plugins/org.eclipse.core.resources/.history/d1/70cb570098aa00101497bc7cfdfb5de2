@@ -1,0 +1,20 @@
+package com.demo.service;
+
+import java.util.Set;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeService {
+
+	void readFile(String string);
+
+	boolean addNewEmployee();
+
+	Set<Employee> displayAll();
+
+	boolean writeToFile(String string);
+
+	Employee searchById(int id);
+	
+	
+}

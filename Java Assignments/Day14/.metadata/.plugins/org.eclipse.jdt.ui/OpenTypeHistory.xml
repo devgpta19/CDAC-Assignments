@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=FileHandling/src&lt;com.demo.service{EmployeeService.java[EmployeeService" modifiers="513" timestamp="1760594309789"/>
-    <typeInfo handle="=FileHandling/src&lt;com.demo.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1760594335260"/>
-    <typeInfo handle="=FileHandling/C:\/Users\/IET\/Desktop\/New folder\/eclipse-jee-2023-03-R-win32-x86_64\/eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\/jre\/lib\/jrt-fs.jar`java.base=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/17\/docs\/api\/=/=/module=/true=/&lt;java.lang(Comparable.class[Comparable" modifiers="1537" timestamp="1759735954804"/>
+    <typeInfo handle="=FileHandling/src&lt;com.demo.service{EmployeeService.java[EmployeeService" modifiers="513" timestamp="1760623348247"/>
+    <typeInfo handle="=FileHandling/src&lt;com.demo.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1760623163374"/>
 </typeInfoHistroy>

@@ -1,7 +1,7 @@
 package com.demo.service;
 
-import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.demo.beans.Employee;
 import com.demo.dao.EmployeeDao;
@@ -41,7 +41,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<Employee> displayAll() {
+	public Set<Employee> displayAll() {
 		// TODO Auto-generated method stub
 		return edao.displayAll();
 	}
@@ -49,8 +49,26 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public boolean writeToFile(String string) {
 		// TODO Auto-generated method stub
-		return edao.writeTo(string);
+		return edao.writeTo(string);	
+	}
+
+	@Override
+	public Employee searchById(int id) {
+		// TODO Auto-generated method stub
+		return edao.getElementById(id);
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
 		
+		return edao.removeElementById(id);
+	}
+
+	@Override
+	public boolean modifySalaryById(int id) {
+		// TODO Auto-generated method stub
+		return false ;
 	}
 
 }

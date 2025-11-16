@@ -22,6 +22,11 @@ public class Employee implements Comparable<Employee>, Serializable {
 		this.empSal = empSal;
 	}
 
+	public Employee(int empId) {
+		super();
+		this.empId = empId;
+	}
+
 	public int getEmpId() {
 		return empId;
 	}

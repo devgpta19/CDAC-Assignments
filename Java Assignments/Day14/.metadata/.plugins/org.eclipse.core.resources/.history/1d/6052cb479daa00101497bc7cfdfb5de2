@@ -1,0 +1,74 @@
+package com.demo.service;
+
+import java.util.Scanner;
+import java.util.Set;
+
+import com.demo.beans.Employee;
+import com.demo.dao.EmployeeDao;
+import com.demo.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private EmployeeDao edao;
+	
+	public EmployeeServiceImpl() {
+		super();
+		this.edao = new EmployeeDaoImpl();
+	}
+
+	@Override
+	public void readFile(String string) {
+		edao.readData(string);
+	}
+	
+	public boolean addNewEmployee() {
+		return edao.save(addEmployee());
+	}
+
+	private Employee addEmployee() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Employee Id : ");
+		int id = sc.nextInt();
+		System.out.println("Enter Employee Name : ");
+		sc.nextLine();
+		String name = sc.nextLine();
+		System.out.println("Enter Employee Department : ");
+		String dept = sc.nextLine();
+		System.out.println("Enter Employee Salary : ");
+		double sal = sc.nextDouble();
+		
+		Employee e = new Employee(id,name,dept,sal);
+		return e;
+	}
+
+	@Override
+	public Set<Employee> displayAll() {
+		// TODO Auto-generated method stub
+		return edao.displayAll();
+	}
+
+	@Override
+	public boolean writeToFile(String string) {
+		// TODO Auto-generated method stub
+		return edao.writeTo(string);	
+	}
+
+	@Override
+	public Employee searchById(int id) {
+		// TODO Auto-generated method stub
+		return edao.getElementById(id);
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
+		
+		return edao.removeElementById(id);
+	}
+
+	@Override
+	public boolean modifySalaryById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

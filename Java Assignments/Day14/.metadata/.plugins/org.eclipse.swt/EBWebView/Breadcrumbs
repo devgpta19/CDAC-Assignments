@@ -1,0 +1,50 @@
+0:16:02 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
+0:16:02 Tab9 RenderProcessGone
+0:16:02 Microsoft.UnloadController.ClearUnloadState
+0:16:02 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+0:16:02 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+0:16:02 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+0:16:02 Microsoft.UnloadController.ClearUnloadState
+0:16:02 Browser9 Close Tab9 at 0
+0:16:02 Tab9 WebContentsDestroyed
+0:16:02 Microsoft.UnloadController.TabStripEmpty
+0:16:02 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+0:16:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:16:02 Microsoft.Shutdown.OnWindowClosing
+0:16:02 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+0:16:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:16:02 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+0:16:02 Widget Closed: BrowserWidget
+0:16:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:16:02 Microsoft.Shutdown.OnWindowClosing
+0:16:02 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
+0:16:02 Microsoft.Browser_Removed
+0:48:12 Microsoft.NewBrowser_Popup
+0:48:12 Microsoft.BrowserList.AddBrowser
+0:48:12 Browser12 Insert active Tab12 at 0
+0:48:12 Tab12 StartNav79 #auto_toplevel
+0:48:12 Tab12 StartNav80 #typed
+0:48:12 Tab12 FinishNav79
+0:48:12 Tab12 PageLoad
+0:48:12 Tab12 FinishNav80
+0:48:12 Tab12 PageLoad
+0:48:13 Tab12 StartNav81 #typed
+0:48:13 Tab12 FinishNav81
+0:48:13 Tab12 PageLoad
+0:48:16 Tab1 StartNav82 #typed
+0:48:16 Tab1 FinishNav82
+0:48:16 Tab1 PageLoad
+20:45:50 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+0:00:00 Startup
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
+0:00:00 Microsoft.NewBrowser_Popup
+0:00:00 Microsoft.BrowserList.AddBrowser
+0:00:00 Browser1 Insert active Tab1 at 0
+0:00:00 Tab1 StartNav1 #auto_toplevel
+0:00:00 Tab1 StartNav2 #typed
+0:00:00 Tab1 FinishNav1
+0:00:00 Tab1 PageLoad
+0:00:01 Tab1 FinishNav2
+0:00:03 Tab1 PageLoad
+0:00:13 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp

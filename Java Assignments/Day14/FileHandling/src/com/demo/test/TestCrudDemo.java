@@ -1,7 +1,7 @@
 package com.demo.test;
 
-import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.demo.beans.Employee;
 import com.demo.service.EmployeeService;
@@ -36,7 +36,7 @@ public class TestCrudDemo {
 				}
 			}
 			case 2 -> {
-				List<Employee> lst = eservice.displayAll();
+				Set<Employee> lst = eservice.displayAll();
 				if (lst == null) {
 					System.out.println("------------------------------------------------------");
 					System.out.println("No Employees Exist...");
@@ -49,6 +49,58 @@ public class TestCrudDemo {
 //					System.out.println("------------------------------------------------------");
 				}
 			}
+			case 3->{
+				System.out.println("Enter Empoyee Id to Search the Employee : ");
+				int id = sc.nextInt();
+				Employee e = eservice.searchById(id);
+				if(e!=null)
+				{
+					System.out.println("------------------------------------------------------");
+					System.out.println("Employees Exists...");
+					System.out.println("------------------------------------------------------");				
+					System.out.println(e);
+					System.out.println("------------------------------------------------------");				
+				}
+				else {
+					System.out.println("------------------------------------------------------");
+					System.out.println("No Employees Exist with this ID...");
+					System.out.println("------------------------------------------------------");					
+				}
+			}
+			case 4->{
+				System.out.println("Enter Empoyee Id to Delete the Employee : ");
+				int id = sc.nextInt();
+				boolean e = eservice.deleteById(id);
+				if(e)
+				{
+					System.out.println("------------------------------------------------------");
+					System.out.println("Employees Deleted Successfully...");
+					System.out.println("------------------------------------------------------");							
+				}
+				else {
+					System.out.println("------------------------------------------------------");
+					System.out.println("No Employees Exist with this ID...");
+					System.out.println("------------------------------------------------------");					
+				}
+			}
+			
+			case 5->{
+				System.out.println("Enter Empoyee Id to Delete the Employee : ");
+				int id = sc.nextInt();
+				boolean e = eservice.modifySalaryById(id);
+				if(e)
+				{
+					System.out.println("------------------------------------------------------");
+					System.out.println("Employees Salary Updated Successfully...");
+					System.out.println("------------------------------------------------------");							
+				}
+				else {
+					System.out.println("------------------------------------------------------");
+					System.out.println("No Employees Exist with this ID...");
+					System.out.println("------------------------------------------------------");					
+				}
+			}
+			
 			case 6->{
 				boolean status = eservice.writeToFile("EmpData.txt");
 				if(status) {
@@ -56,6 +108,7 @@ public class TestCrudDemo {
 					System.out.println("Employee Added To File Successfully");
 					System.out.println("You are now out of the Application... Thankyou for choosing us..");
 					System.out.println("------------------------------------------------------");
+					System.exit(0);
 				}
 				else {
 					System.out.println("------------------------------------------------------");
@@ -64,6 +117,7 @@ public class TestCrudDemo {
 					sc.close();
 				}
 			}
+			
 			default -> {
 				System.out.println("Wrong Input Plzz Re-Enter...");
 			}

@@ -1,0 +1,42 @@
+beans - 
+	Customer -
+		cid (Auto Generate)
+		cname
+		phoneno.
+	Items - 
+		iid
+		iname
+		iprice
+		iquantity
+		istock
+		
+
+service - 
+	Add customer with items
+	display all customers
+	find customer by ID
+	find customer by name
+	sort customer by name
+	add Item to particular customer
+	delete Item to particular customer
+	delete customer by Id
+	save data to "Customer.txt" file
+	
+	Generate Bill
+	add discount(also display discount%)
+	Exit
+
+
+dao - 
+	use Appropriate Data Structure (Collection).
+
+
+exception - 
+	
+	Quantity Exception (Quantity > Stock)
+	Negative Price/Quantity Exception
+	
+
+file Handling-
+
+	use Serializable and save data to "Customer.txt" file.
