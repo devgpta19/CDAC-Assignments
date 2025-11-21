@@ -1,0 +1,11 @@
+package com.demo.services;
+
+public interface ProductService {
+
+	boolean addNewProduct();
+
+	void startConnection();
+
+	void display();
+
+}

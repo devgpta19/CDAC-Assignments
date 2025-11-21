@@ -1,0 +1,39 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DUtil {
+	static Connection conn;
+	
+	public static Connection getMyConnection() {
+		if(conn == null) {
+			try {
+				DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+				String url = "jdbc:mysql://1192.168.10.175:3306/test?useSSL=false";
+				Connection conn = DriverManager.getConnection(url, "dac19", "welcome");
+				
+				Statement st = conn.createStatement();
+				ResultSet rs = st.executeQuery("select * from myProduct");
+				while(rs.next()) {
+					System.out.println("P_ID:"+rs.getInt(1));
+					System.out.println("P_NAME:"+rs.getString(2));
+					System.out.println("P_QTY:"+rs.getInt(3));
+					System.out.println("P_PRICE:"+rs.getDouble(4));
+					System.out.println("P_ID:"+rs.getDate(5));
+					System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=>>");
+				}
+				
+				if(conn!=null)
+					System.out.println("CONNECTED SUCCESSUFLLY");
+				else
+					System.out.println("NOT CONNECTED..PLZZ TRY AGAIN.");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+package com.demo.services;
+
+public interface ProductService {
+
+	boolean addNewProduct();
+
+	void startConnection();
+
+	void display();
+
+	boolean modifysalary(int id, double price);
+
+}

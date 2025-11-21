@@ -1,0 +1,39 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.services.ProductService;
+import com.demo.services.ProductServiceImpl;
+
+public class TestProductServices {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ProductService pservice = new ProductServiceImpl();
+		int ch;
+		do {
+			System.out.println("------------------Product Menu--------------------");
+			System.out.println("1. Add new Product\n" + "2. Modify Product\n" + "3. Delete Product\n"
+					+ "4. Display All Product\n" + "5. Find by ID\n" + "6. Display in sorted Order\n" + "7. Exit\n"
+					+ "-------------------------------------------------\n" + "Enter your Choice:");
+			ch = sc.nextInt();
+			switch (ch) {
+			case 1 -> {
+				boolean status = pservice.addNewProduct();
+				if (status) {
+					System.out.println("Product Added Succefully...!");
+				} else {
+					System.out.println("Something Went Wrong...!");
+				}
+			}
+			case 2 -> {
+
+			}
+			case 7->{
+				System.out.println("");
+			}}
+		} while (ch != 7);
+
+	}
+
+}

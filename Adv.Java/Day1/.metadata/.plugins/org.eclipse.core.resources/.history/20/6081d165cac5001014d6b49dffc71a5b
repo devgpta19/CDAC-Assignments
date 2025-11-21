@@ -1,0 +1,74 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.demo.beans.Product;
+
+public class ProductDaoImpl implements ProductDao {
+
+	static Connection conn = DUtil.getMyConnection();
+
+	public void startConnection() {
+
+		if (conn != null) {
+			System.out.println("CONNECTED SUCCESSUFLLY");
+			try {
+
+				Statement st = conn.createStatement();
+				ResultSet rs = st.executeQuery("select * from myProducts");
+				while (rs.next()) {
+					System.out.println("<<<=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=>>>");
+					System.out.println("P_ID:" + rs.getInt(1));
+					System.out.println("P_NAME:" + rs.getString(2));
+					System.out.println("P_QTY:" + rs.getInt(3));
+					System.out.println("P_PRICE:" + rs.getDouble(4));
+					System.out.println("P_ID:" + rs.getDate(5));
+					System.out.println("<<<=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=>>>");
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("NOT CONNECTED..PLZZ TRY AGAIN.");
+			System.exit(1);
+		}
+	}
+
+	@Override
+	public boolean save(Product p) {
+		try {
+			Statement st = conn.createStatement();
+			Date ddt = java.sql.Date.valueOf(p.getpMfg());
+			System.out.println(ddt);
+			st.executeUpdate("insert into myProducts values(" + p.getpId() + ", '" + p.getpName() + "', " + p.getpQty()
+					+ ", " + p.getpPrice() + ", '" + ddt + "')");
+//			st.setInt(1, p.getpId());
+//			st.setString(2, p.getpName());
+//			st.setInt(3, p.getpQty());
+//			st.setDouble(4, p.getpPrice());
+//			st.setDate(5, java.sql.Date.valueOf(p.getpMfg()));
+//			int n=insProd.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	
+	public void display() {
+		try {
+			Statement st = conn.createStatement();
+			st.executeQuery("table myproducts;")
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

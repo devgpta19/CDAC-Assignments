@@ -1,0 +1,68 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.demo.beans.Product;
+
+public class ProductDaoImpl implements ProductDao {
+
+	static Connection conn = DUtil.getMyConnection();
+//	static {
+//		conn = DUtil.getMyConnection();
+//	}
+
+	public void startConnection() {
+//		conn = DUtil.getMyConnection();
+		if (conn != null) {
+			System.out.println("CONNECTED SUCCESSUFLLY");
+			try {
+
+				Statement st = conn.createStatement();
+				ResultSet rs = st.executeQuery("select * from myProducts");
+				while (rs.next()) {
+					System.out.println("P_ID:" + rs.getInt(1));
+					System.out.println("P_NAME:" + rs.getString(2));
+					System.out.println("P_QTY:" + rs.getInt(3));
+					System.out.println("P_PRICE:" + rs.getDouble(4));
+					System.out.println("P_ID:" + rs.getDate(5));
+					System.out.println("<<<=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=>>>");
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			System.out.println("NOT CONNECTED..PLZZ TRY AGAIN.");
+			System.exit(1);
+		}
+	}
+
+	@Override
+	public boolean save(Product p) {
+		try {
+			Statement st = conn.createStatement();
+			st.executeUpdate("insert into myProducts values(?,?,?,?,?)");
+			insProd.setInt(1, p.getPid());
+			insProd.setString(2, p.getPname());
+			insProd.setInt(3, p.getQty());
+			insProd.setDouble(4, p.getPrice());
+			insProd.setDate(5, java.sql.Date.valueOf(p.getLdt()));
+			int n=insProd.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.demo.dao;
+
+/**
+ * @author IET
+ *
+ */
+public interface ProductDao {
+
+}
