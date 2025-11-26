@@ -1,0 +1,13 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public class UserServiceImpl implements UserService {
+	UserDao udao = 
+	@Override
+	public void addUser(Users u) {
+		
+		
+	}
+	
+}

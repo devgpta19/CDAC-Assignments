@@ -1,0 +1,48 @@
+package com.demo.servelets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.beans.Users;
+import com.demo.services.UserService;
+import com.demo.services.UserServiceImpl;
+
+@WebServlet("/saveUserToDB")
+public class SaveUserToDB extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	UserService uservice = new UserServiceImpl();
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
+		String nm = request.getParameter("nm");
+		String em = request.getParameter("em");
+		String dob = request.getParameter("dob");
+		String gender = request.getParameter("gender");
+		String role = "User";
+		LocalDate ldt = LocalDate.parse(dob, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		
+		String pass = request.getParameter("pass");
+		String repass = request.getParameter("repass");
+		
+		if(pass.equals(repass)) {
+			Users u = new Users(nm, em, role, ldt, gender);
+			uservice.addUser(u, pass);
+		}else {
+			out.println("<h3>Password Missmatch</h3>");
+			RequestDispatcher rd = response.get
+		}
+		
+	}
+
+}

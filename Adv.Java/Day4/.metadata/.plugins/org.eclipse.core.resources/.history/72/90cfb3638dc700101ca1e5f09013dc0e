@@ -1,0 +1,71 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+public class Users {
+
+	private String uname;
+	private String password;
+	private String email;
+	private LocalDate dob;
+	private String gender;
+
+	public Users() {
+		super();
+	}
+
+	public Users(String uname, String password, String email, LocalDate dob, String gender) {
+		super();
+		this.uname = uname;
+		this.password = password;
+		this.email = email;
+		this.dob = dob;
+		this.gender = gender;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Users [uname=" + uname + ", email=" + email+ ", role=" + email + ", dob=" + dob + ", gender="
+				+ gender + "]";
+	}
+}

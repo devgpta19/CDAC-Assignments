@@ -1,0 +1,81 @@
+package com.demo.servelets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.beans.Product;
+import com.demo.dao.DBUtil;
+import com.demo.services.ProductService;
+import com.demo.services.ProductServiceImpl;
+
+@WebServlet("/showProduct")
+public class DisplayProduct extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		Connection conn = DBUtil.getMyConnection();
+		ProductService pservice = new ProductServiceImpl();
+
+		String btnVal = request.getParameter("btn");
+		switch (btnVal) {
+		case "show" -> {
+			int catID = Integer.parseInt(request.getParameter("Category"));
+			ResultSet rs = pservice.fatchProduct(catID);
+			if (rs != null)
+				try {
+					Map<String,String> map = new HashMap<>();
+					List<Product> plist  = new ArrayList<>();
+					out.println("Here are Products for " + catID + " Category.");
+					out.println("<table border='1'>");
+					out.println("<tr>");
+					out.println("  <th>Select</th>");
+					out.println("  <th>Product Name</th>");
+					out.println("  <th>Price</th>");
+					out.println("  <th>Stock Qty</th>");
+					out.println("</tr>");
+					int num = 0;
+					while (rs.next()) {
+						map.put("Product name", rs.getString(2));
+						map.put("Product name", rs.getString(6));
+						map.put("Product name", rs.getString(7));
+						out.println("<tr>");
+						out.println("  <td> <input type='checkbox' name='opiton'"+(1+num)+"value='"+rs.getInt(1)+"' id='check_box' /></td>");
+						out.println("  <td>" + rs.getString(2) + "</td>");
+						out.println("  <td>" + rs.getString(6) + "</td>");
+						out.println("  <td>" + rs.getString(7) + "</td>");
+						out.println("</tr>");
+					}
+					out.println("</table>");
+					
+					out.println("<form action='' method='post'");
+					out.println("<button type='submit' name='btn' id='btn' value='addToCart'>Add To Cart</button>");
+					out.println("</form>");
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+		case "order" -> {
+
+		}
+		}
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.demo.services;
+
+import java.util.Set;
+
+public class ProductServiceImpl implements ProductService {
+	ProductDao 
+	@Override
+	public Set<Integer> fetchAllPro() {
+		return pdao.getAllPro();
+	}
+
+}

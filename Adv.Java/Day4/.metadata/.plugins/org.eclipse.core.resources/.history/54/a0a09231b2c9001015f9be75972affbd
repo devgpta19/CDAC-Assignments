@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<form action="/saveUserToDB" method='get'>
+		<h3>
+		<label for="nm">Enter Your Name</label> 
+		<input type="text" name="nm"
+			id="nm" placeholder="Enter Your Name...">
+			</h3>
+			 <br> 
+			 <h3>
+			 <label
+			for="nm">Enter Your Email</label> <input type="text" name="nm"
+			id="nm" placeholder="Enter Your Name...">
+			</h3>
+			<br> 
+			<h3>
+			<label
+			for="nm">Enter Your DOB</label> <input type="text" name="nm" id="nm"
+			placeholder="Enter Your Name..."> 
+			</h3>
+			<br> 
+			<h3>
+			<label for="nm">Enter
+			Your Gender <br />
+		</label> <input type="radio" name="gender" id="gender1"> &nbsp; <input
+			type="radio" name="gender" id="gender2"
+			placeholder="Enter Your Name..."> <br>
+
+		<button type="submit" , name="add" , id="add">Submit Details</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public interface LoginService {
+
+	Users validateUser(String unm, String pass);
+
+}

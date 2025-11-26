@@ -1,0 +1,11 @@
+package com.demo.dao;
+
+import java.sql.SQLException;
+
+import com.demo.beans.Users;
+
+public interface UserDao {
+
+	void addUser(Users u) throws SQLException;
+
+}

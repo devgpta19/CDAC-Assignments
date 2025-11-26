@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LoginApp</title>
+</head>
+<body>
+
+	<h1>Login Page</h1>
+	<form action="validateUser" method="post">
+		<h3>
+			Username : <input type="text" placeholder="Enter Username..."
+				id="unm" name="unm">
+		</h3>
+		<h3>
+			Password : <input type="password" placeholder="Enter Password..."
+				id="pass" name="pass">
+		</h3>
+		<button type="submit" name="add" id="add">Submit</button>
+		<br>
+		<br>
+		<a href="forgotPassword" name='fpass' id='fpass'> Forgot Password ?</a>
+		
+	</form>
+</body>
+</html>

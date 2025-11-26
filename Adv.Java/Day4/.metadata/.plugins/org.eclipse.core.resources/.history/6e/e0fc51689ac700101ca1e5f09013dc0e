@@ -1,0 +1,11 @@
+package com.demo.dao;
+
+import java.sql.SQLException;
+
+import com.demo.beans.Users;
+
+public interface ForgotPasswordDao {
+
+	Users changePass(String user, String email, String newPass) throws SQLException;
+
+}

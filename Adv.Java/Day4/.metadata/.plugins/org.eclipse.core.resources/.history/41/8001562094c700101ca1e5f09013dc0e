@@ -1,0 +1,13 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public class ForgotPasswordServiceImpl implements ForgotPasswordService {
+	private 
+	@Override
+	public Users frogotPass() {
+		
+		return null;
+	}
+	
+}

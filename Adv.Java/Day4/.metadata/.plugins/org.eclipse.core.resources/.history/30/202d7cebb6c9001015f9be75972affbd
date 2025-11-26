@@ -1,0 +1,29 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.demo.beans.Users;
+
+public class LoginDaoImpl implements LoginDao {
+	private static Connection conn;
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+
+	@Override
+	public Users checkUser(String unm, String pass) throws SQLException {
+		PreparedStatement pst = conn.prepareStatement(
+				"SELECT uname, email, role, dob, gender FROM user WHERE uname = ? AND password = ?;");
+		pst.setString(1, unm);
+		pst.setString(2, pass);
+		ResultSet rs = pst.executeQuery();
+		if (rs.next())
+			return new Users(rs.getString(1), rs.getString(2), rs.getDate(3).toLocalDate(),
+					rs.getString(4));
+		return null;
+	}
+
+}

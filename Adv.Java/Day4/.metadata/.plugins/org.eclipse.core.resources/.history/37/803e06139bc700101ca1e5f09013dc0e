@@ -1,0 +1,50 @@
+package com.demo.servelets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.beans.Users;
+import com.demo.services.ForgotPasswordService;
+import com.demo.services.ForgotPasswordServiceImpl;
+
+@WebServlet("/changePass")
+public class ForgotPassword extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		ForgotPasswordService fService = new ForgotPasswordServiceImpl();
+		
+		String user = request.getParameter("unm");
+		String email = request.getParameter("mail");
+		String newPass= request.getParameter("newPass");
+		
+		try {
+			int u = fService.frogotPass(user,email,newPass);
+			if(u>0) {
+				out.println("Password Changed Success");
+				RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+				rd.forward(request, response);
+			}else {
+				out.println("User not Found or Invalid Credential...");
+				RequestDispatcher rd = request.getRequestDispatcher("ForgotPass.html");
+				rd.include(request, response);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

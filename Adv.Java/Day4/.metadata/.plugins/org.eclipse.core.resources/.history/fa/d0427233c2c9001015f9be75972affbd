@@ -1,0 +1,25 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Set;
+
+public class ProductDaoImpl implements ProductDao {
+
+	Connection conn = DBUtil.getMyConnection();
+	@Override
+	public Set<Integer> getAllPro() {
+		try {
+			PreparedStatement pst = conn.prepareStatement("select distinct CategoryID from products");
+			ResultSet rs = pst.executeQuery();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+}

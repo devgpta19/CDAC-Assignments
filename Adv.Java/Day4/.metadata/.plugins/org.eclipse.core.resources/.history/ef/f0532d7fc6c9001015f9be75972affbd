@@ -1,0 +1,9 @@
+package com.demo.dao;
+
+import java.util.Set;
+
+public interface ProductDao {
+
+	Set<Integer> getAllPro();
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.services{LoginService.java[LoginService" modifiers="513" timestamp="1763802268994"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.dao{LoginDao.java[LoginDao" modifiers="513" timestamp="1763802254708"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.services{ForgotPasswordService.java[ForgotPasswordService" modifiers="513" timestamp="1763812657794"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.dao{ForgotPasswordDao.java[ForgotPasswordDao" modifiers="513" timestamp="1763812643761"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.services{ProductService.java[ProductService" modifiers="513" timestamp="1764051427425"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.services{UserService.java[UserService" modifiers="513" timestamp="1764048263619"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.dao{UserDao.java[UserDao" modifiers="513" timestamp="1764048297445"/>
+    <typeInfo handle="=ProductAndUsers/src\/main\/java&lt;com.demo.dao{ProductDao.java[ProductDao" modifiers="513" timestamp="1764051482291"/>
+</typeInfoHistroy>

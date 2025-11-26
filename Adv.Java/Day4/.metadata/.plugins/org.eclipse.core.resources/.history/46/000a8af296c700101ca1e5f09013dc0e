@@ -1,0 +1,20 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.demo.beans.Users;
+
+public class ForgotPasswordDaoImpl implements ForgotPasswordDao {
+	private static Connection conn;
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+	@Override
+	public Users changePass(String user, String email, String newPass) {
+		PreparedStatement pst = conn.prepareStatement("UPDATE USER SET PASSWORD =? where");
+		
+		return null;
+	}
+	
+}

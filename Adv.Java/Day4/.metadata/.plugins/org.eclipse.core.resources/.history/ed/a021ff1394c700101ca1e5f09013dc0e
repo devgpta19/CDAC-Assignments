@@ -1,0 +1,13 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public class ForgotPasswordServiceImpl implements ForgotPasswordService {
+
+	@Override
+	public Users frogotPass() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

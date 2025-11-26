@@ -1,0 +1,15 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+public class Product {
+	private int p_id;
+	private String p_name;
+	private int p_qty;
+	private double p_price;
+	private LocalDate p_expdt;
+	private int p_c_id;
+	
+	
+	
+}

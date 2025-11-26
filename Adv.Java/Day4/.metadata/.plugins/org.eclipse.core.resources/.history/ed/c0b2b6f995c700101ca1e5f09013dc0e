@@ -1,0 +1,11 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public interface ForgotPasswordService {
+
+	Users frogotPass(String user, String email);
+
+	Users frogotPass();
+
+}

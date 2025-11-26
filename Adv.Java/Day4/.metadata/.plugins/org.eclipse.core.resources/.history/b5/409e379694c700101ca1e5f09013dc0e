@@ -1,0 +1,18 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+import com.demo.dao.ForgotPasswordDao;
+import com.demo.dao.ForgotPasswordDaoImpl;
+
+public class ForgotPasswordServiceImpl implements ForgotPasswordService {
+	private ForgotPasswordDao fdao;
+	public ForgotPasswordServiceImpl() {
+		fdao = new ForgotPasswordDaoImpl();
+	}
+	@Override
+	public Users frogotPass() {
+		
+		return fdao.changePassword;
+	}
+	
+}
