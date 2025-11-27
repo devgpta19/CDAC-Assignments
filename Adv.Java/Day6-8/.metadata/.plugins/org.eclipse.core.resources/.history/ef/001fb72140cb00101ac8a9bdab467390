@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"
+	import="com.demo.services.*, com.demo.beans.* "%>
+	<@taglib prifix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Validation</title>
+</head>
+<body>
+	<c:set var="unm" value="${unm}"/>
+	<c:set var="pwd" value="${pwd}"/>
+	<%
+	String unm = request.getParameter("unm");
+	String pwd = request.getParameter("pwd");
+	String str = "Your Name is " + unm + " and Password is " + pwd;
+	%>
+
+	<jsp:useBean id="uservice" type="com.demo.services.UserService"
+		class="com.demo.services.UserServiceImpl"></jsp:useBean>
+
+	<%
+	Users u = uservice.fetchUser(unm, pwd);
+	if (u == null) {
+	%>
+	<h1>Wrong Credentials...</h1>
+	<%
+	} else {
+	%>
+	<jsp:useBean id="uobj" class="com.demo.beans.Users" scope="session"></jsp:useBean>
+	<jsp:setProperty property="uname" name="uobj" value='<%u.getUname(); %>'/>
+	<jsp:forward page="showUser.jsp">
+		<jsp:param name="user" value="<%=uobj%>"></jsp:param>
+	</jsp:forward>
+	<%}%>
+	<hr>
+
+
+</body>
+</html>

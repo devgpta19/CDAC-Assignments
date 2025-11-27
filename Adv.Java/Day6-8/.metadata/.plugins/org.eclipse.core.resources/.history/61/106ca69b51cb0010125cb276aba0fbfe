@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	double tamt = 0;
+	%>
+	<form action="showCart.jsp">
+		<table>
+			<tr>
+				<th>Product ID</th>
+				<th>Product Name</th>
+				<th>Product Price</th>
+				<th>Product Quantity</th>
+				<th>Amount</th>
+			</tr>
+			<c:forEach var="set" items="${ResultSet}">
+				<tr>
+					<c:set var="amt" value="${set.qty}*${set.price}"></c:set>
+					<c:set var="tamt" value="${tamt}+${amt}"></c:set>
+					<td>${set.pid}</td>
+					<td>${set.pname}</td>
+					<td>${set.price}</td>
+					<td>${set.qty}</td>
+					<td>${amt}</td>
+				</tr>
+			</c:forEach>
+			<tr>
+			<th colspan='4'>Tot</th>
+			<th></th>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>

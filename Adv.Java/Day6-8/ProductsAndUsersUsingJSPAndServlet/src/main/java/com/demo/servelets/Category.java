@@ -1,0 +1,54 @@
+package com.demo.servelets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Set;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.demo.beans.Users;
+import com.demo.services.ProductService;
+import com.demo.services.ProductServiceImpl;
+
+@WebServlet("/Category")
+public class Category extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		Users u = (Users) session.getAttribute("user");
+		if (u != null) {
+			ProductService pservice = new ProductServiceImpl();
+			Set<Integer> cset = pservice.fetchAllCat();
+			if (cset == null) {
+				String errMsg = "Products are not avilable in this category.";
+				session.setAttribute("errMsg", errMsg);
+				out.print("<h2>"+errMsg+"</h2>");
+				out.print("<h4>Select a new Category.</h2>");
+				RequestDispatcher rd = request.getRequestDispatcher("showProduct.jsp");
+				rd.include(request, response);
+				
+			} else {
+				session.setAttribute("cset", cset);
+				RequestDispatcher rd = request.getRequestDispatcher("category.jsp");
+				rd.forward(request, response);
+			}
+		} else {
+			out.println("<h5>unauthorized status</h5>");
+			RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+			rd.include(request, response);
+		}
+
+	}
+
+}

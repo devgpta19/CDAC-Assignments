@@ -1,0 +1,9 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+
+public interface UserService {
+
+	int addUser(Users u, String pass);
+	
+}

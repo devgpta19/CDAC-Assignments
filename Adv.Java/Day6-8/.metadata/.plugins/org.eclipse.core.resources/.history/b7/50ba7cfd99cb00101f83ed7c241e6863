@@ -1,0 +1,61 @@
+package com.demo.servelets;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.demo.beans.Product;
+import com.demo.beans.Users;
+import com.demo.services.CartService;
+import com.demo.services.CartServiceImpl;
+
+@WebServlet("/addtocart")
+public class AddToCart extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	CartService cservice = new CartServiceImpl();
+
+	@SuppressWarnings("unchecked")
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		
+		Users user = (Users) session.getAttribute("user");
+		if (user != null) {
+			int pid = Integer.parseInt(request.getParameter("pid"));
+			String pname = request.getParameter("pname");
+			int qty = Integer.parseInt(request.getParameter("qty"));
+			Double price = Double.parseDouble(request.getParameter("price"));
+
+			Product p = new Product(pid, pname, qty, price);
+			Set<Product> cset = (Set<Product>) session.getAttribute("cset");
+			if (cset == null) {
+				cset = new HashSet<>();
+			}
+			cset.add(p);
+			session.setAttribute("cset", cset);
+		}else {
+			out.println("Invalid Credentials");
+			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+			rd.include(request, response);
+		}
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="com.demo.beans.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	User is = <%=request.getParameter("user")%> <br>
+	
+	<%
+		Users u = (Users)request.getAttribute("u1");
+		String nm = u.getUname();
+	%>
+	<jsp:useBean id="uobj" class="com.demo.beans.Users" scope="session"></jsp:useBean>
+	
+	<jsp:setProperty name="uobj" property="uname" value='<%=u.getUname()%>' ></jsp:setProperty>
+	<jsp:setProperty name="uobj" property="email" value='<%=u.getUname()%>' ></jsp:setProperty>
+	<jsp:setProperty name="uobj" property="uname" value='<%=u.getUname()%>' ></jsp:setProperty>
+	<jsp:setProperty name="uobj" property="uname" value='<%=u.getUname()%>' ></jsp:setProperty>
+	<jsp:setProperty name="uobj" property="uname" value='<%=u.getUname()%>' ></jsp:setProperty>
+	
+	Name : <jsp:getProperty property="uname" name="uobj"></jsp:getProperty>
+	Name :<jsp:getProperty property="uname" name="uobj" />
+	Email : ${uobj.email} 
+	<%--<br> 
+	${ us } 
+	String is =<%=request.getParameter("user")%>
+	Name : ${param.usr.uname} 
+	Role : ${usr.role} 
+	Dob : ${usr.dob}
+	Gender : ${usr.gender}
+	--%>
+</body>
+</html>

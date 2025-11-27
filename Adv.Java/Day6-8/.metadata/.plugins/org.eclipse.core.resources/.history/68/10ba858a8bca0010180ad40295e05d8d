@@ -1,0 +1,15 @@
+package com.demo.services;
+
+import com.demo.beans.Users;
+import com.demo.dao.UserDao;
+import com.demo.dao.UserDaoImpl;
+
+public class UserServiceImpl implements UserService {
+	private UserDao udao = new UserDaoImpl();
+	
+	@Override
+	public int addUser(Users u, String pass) {
+		return udao.addUser(u, pass);		
+	}
+	
+}

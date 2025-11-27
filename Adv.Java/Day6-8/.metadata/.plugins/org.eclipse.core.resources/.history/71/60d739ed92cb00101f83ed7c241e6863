@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="addtocart">
+		<table>
+			<div>
+				<h3>Product ID  ${set.pid} </h3>
+				<h3>Product Name ${set.pname}</h3>
+				<h3>Product Price</h3>
+				<h3>Product Quantity</h3>
+				<h3>Amount</h3>
+			</div>
+			<c:forEach var="set" items="${ResultSet}">
+				<tr>
+					<c:set var="amt" value="${set.qty}*${set.price}"></c:set>
+					<c:set var="tamt" value="${tamt}+${amt}"></c:set>
+					
+					<h4></h4>
+					<h4>${set.price}</h4>
+					<h4>${set.qty}</h4>
+					<h4>${amt}</h4>
+				</tr>
+			</c:forEach>
+			<tr>
+			<h3 colspan='4'>Total Bill Amount</h3>
+			<h3>${tamt}</h3>
+			</tr>
+		</table>
+		
+		<button type="submit" name="btn" id="btn" >Make Payment</button>
+	</form>
+	
+	<form action="Category">
+	<button type="submit" name="btn" id="btn">Add More to Cart</button>
+	</form>
+</body>
+</html>

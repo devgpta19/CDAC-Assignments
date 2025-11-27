@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="showProduct" method="get">
+		<select>
+			<c:forEach var="c" items="${cset}">
+				<option value="${c}">${c}</option>
+			</c:forEach>
+		<%-- </select> <input type ="hidden" name ="category" id ="category" value="${c}"></input>  --%>
+		<button type="submit" name="show" id="show">Show Product</button>
+	</form>
+</body>
+</html>

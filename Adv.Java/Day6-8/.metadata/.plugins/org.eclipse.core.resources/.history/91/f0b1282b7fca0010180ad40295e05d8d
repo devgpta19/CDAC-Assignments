@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ProductsAndUsersUsingJSPAndServlet">
+        <property name="context-root" value="ProductsAndUsersUsingJSPAndServlet"/>
+        <property name="java-output-path" value="/ProductsAndUsersUsingJSPAndServlet/build/classes"/>
+    </wb-module>
+</project-modules>

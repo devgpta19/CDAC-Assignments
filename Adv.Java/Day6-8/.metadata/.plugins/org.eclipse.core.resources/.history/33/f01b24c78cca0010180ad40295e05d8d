@@ -1,0 +1,18 @@
+package com.demo.services;
+
+import java.sql.ResultSet;
+
+import com.demo.beans.Users;
+
+public interface UserService {
+
+	int addUser(Users u, String pass);
+	
+	pst.setString(1, unm);
+	pst.setString(2, pass);
+	ResultSet rs = pst.executeQuery();
+	if (rs.next())
+		return new Users(rs.getString(1), rs.getString(2), rs.getString(3), rs.getDate(4).toLocalDate(),
+				rs.getString(5));
+	
+}

@@ -1,0 +1,11 @@
+package com.demo.services;
+
+import java.sql.SQLException;
+
+import com.demo.beans.Users;
+
+public interface ForgotPasswordService {
+
+	int frogotPass(String user, String email, String newPass) throws SQLException;
+
+}

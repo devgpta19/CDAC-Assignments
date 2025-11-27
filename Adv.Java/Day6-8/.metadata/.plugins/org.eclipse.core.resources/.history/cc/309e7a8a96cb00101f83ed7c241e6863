@@ -1,0 +1,23 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.util.Set;
+
+import com.demo.beans.Product;
+
+public class CartDaoImpl implements CartDao {
+
+	private static Connection conn = null;
+
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+
+	@Override
+	public Set<Product> addToCart(Product p) {
+		Prepared
+		return null;
+	}
+	
+	
+}
