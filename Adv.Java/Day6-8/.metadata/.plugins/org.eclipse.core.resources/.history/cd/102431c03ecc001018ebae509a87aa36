@@ -1,0 +1,34 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.demo.beans.Product;
+
+public class CartDaoImpl implements CartDao {
+
+	private static Connection conn = null;
+
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+
+	@Override
+	public int addToCart(Product p) {
+		try {
+
+			PreparedStatement pst = conn.prepareStatement("Insert into cart values(?,?,?,?);");
+			pst.setInt(1, p.getP_id());
+			pst.setString(2, p.getP_name());
+			pst.setInt(1, p.getP_qty());
+			pst.setDouble(1, p.getP_price());
+			
+			int n = pst.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	double tamt = 0;
+	%>
+	<form action="makePayment" method="post">
+		<table border='2'>
+			<tr>
+				<th>Product ID</th>
+				<th>Product Name</th>
+				<th>Product Price</th>
+				<th>Product Quantity</th>
+				<th>Amount</th>
+			</tr>
+			<c:forEach var="p" items="${cartList}">
+				<tr>
+					<c:set var="amt" value="${p.p_qty * p.p_price}"></c:set>
+					<td>${p.p_id}</td>
+					<td>${p.p_name}</td>
+					<td>${p.p_price}</td>
+					<td>${p.p_qty}</td>
+					<td>${amt}</td>
+					<c:set var="tamt" value="${tamt + amt}"></c:set>
+				</tr>
+			</c:forEach>
+			<tr>
+				<th colspan='4'>Total Bill Amount</th>
+				<th>${tamt}</th>
+			</tr>
+		</table>
+		
+		<input type="" name="totalAmt" />
+		
+		<button type="submit" name="btn" id="btn">Make Payment</button>
+	</form>
+
+	<form action="Category" method="post">
+		<button type="submit" name="btn" id="btn">Add More to Cart</button>
+	</form>
+</body>
+</html>

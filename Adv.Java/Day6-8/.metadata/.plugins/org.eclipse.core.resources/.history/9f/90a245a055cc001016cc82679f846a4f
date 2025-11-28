@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="order" method="post">
+		<c:forEach var="p" items="${cartList}">
+			<div>
+				<h3>Product ID : &nbsp; ${p.p_id}</h3>
+				<h3>Product Name : &nbsp; ${set.p_name}</h3>
+				<h3>Product Price : &nbsp; ${set.p_price}</h3>
+				<h3>Product Quantity &nbsp; ${set.qty}</h3>
+				<button type="submit" name="btn" id="btn" value="${set.pid}">Add-to-Cart</button>
+			</div>
+		</c:forEach>
+		<button type="submit" name="btn" id="btn">Show Orders</button>
+	</form>
+</body>
+</html>

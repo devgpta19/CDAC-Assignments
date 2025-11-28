@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="showProduct">
+
+		<c:forEach var="set" items="${proRs}">
+			<div>
+				<h3>Product ID : &nbsp; ${set.p_id}</h3>
+				<h3>Product Name : &nbsp; ${set.p_name}</h3>
+				<h3>Product Price : &nbsp; ${set.p_price}</h3>
+				<h3>
+					Product Quantity <input type="text" name="qty" id="qty" />
+				</h3>
+				<button type="submit" name="btn" id="btn">Add to Cart</button>
+			</div>
+		</c:forEach>
+
+		<input type="hidden" name="pid" id="pid" value="${set.p_id}" /> <input
+			type="hidden" name="pname" id="pname" value="${set.p_name}" /> <input
+			type="hidden" name="qty" id="qty" value="${set.p_price}" />
+
+	</form>
+
+	<form action="addtocart">
+		<button type="submit" name="btn" id="btn">Show Cart</button>
+	</form>
+	<form action="order">
+		<button type="submit" name="btn" id="btn">Show Categ</button>
+	</form>
+</body>
+</html>

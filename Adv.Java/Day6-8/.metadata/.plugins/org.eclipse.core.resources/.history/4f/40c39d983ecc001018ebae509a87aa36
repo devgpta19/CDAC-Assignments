@@ -1,0 +1,28 @@
+package com.demo.dao;
+
+public class CartDaoImpl implements CartDao {
+
+	private static Connection conn = null;
+
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+
+	@Override
+	public void addToCart(Product p) {
+		try {
+
+			PreparedStatement pst = conn.prepareStatement("Insert into cart values(?,?,?,?);");
+			pst.setInt(1, p.getP_id());
+			pst.setString(2, p.getP_name());
+			pst.setInt(1, p.getP_qty());
+			pst.setDouble(1, p.getP_price());
+			
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

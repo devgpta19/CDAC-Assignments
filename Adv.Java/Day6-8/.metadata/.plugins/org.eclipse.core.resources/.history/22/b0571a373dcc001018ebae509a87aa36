@@ -1,0 +1,13 @@
+package com.demo.services;
+
+import java.util.Set;
+
+import com.demo.beans.Product;
+
+public interface CartService {
+
+	Set<Product> addNewToCart(Product p);
+
+	void addProduct(Product p);
+
+}
