@@ -1,0 +1,33 @@
+package com.demo.beans;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Course {
+	@Id
+	@GeneratedValue
+	private int cid;
+	private String cname;
+	private String fname;
+	private String duration;
+	public Course() {
+		super();
+	}
+	public Course(int cid, String cname, String fname, String duration) {
+		super();
+		this.cid = cid;
+		this.cname = cname;
+		this.fname = fname;
+		this.duration = duration;
+	}
+	public Course(String cname, String fname, String duration) {
+		super();
+		this.cname = cname;
+		this.fname = fname;
+		this.duration = duration;
+	}
+	
+	
+}

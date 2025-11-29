@@ -1,0 +1,29 @@
+package com.demo.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.demo.beans.Course;
+import com.demo.beans.Faculty;
+
+public class TestProject {
+
+	public static void main(String[] args) {
+
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
+		Course c = new Course("Adv_Java", "Kishori", "3 weeks");
+		Faculty f = new Faculty(01,"Kishori","Adv_Java & Core_Java",c);
+		session.save(f);
+		tx.commit();
+		session.close();
+		sf
+		
+		
+
+	}
+
+}
