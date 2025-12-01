@@ -1,7 +1,5 @@
 package com.demo.services;
 
-import java.util.Set;
-
 import com.demo.beans.Product;
 import com.demo.dao.CartDao;
 import com.demo.dao.CartDaoImpl;
@@ -17,9 +15,8 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Set<Product> addNewToCart(Product p) {
+	public int addProduct(Product p) {
 		return cdao.addToCart(p);
-
 	}
 
 }

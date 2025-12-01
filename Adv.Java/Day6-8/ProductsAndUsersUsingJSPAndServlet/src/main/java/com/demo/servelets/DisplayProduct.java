@@ -3,6 +3,7 @@ package com.demo.servelets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.demo.beans.Product;
 import com.demo.services.ProductService;
 import com.demo.services.ProductServiceImpl;
 
@@ -19,7 +21,7 @@ import com.demo.services.ProductServiceImpl;
 public class DisplayProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -28,9 +30,9 @@ public class DisplayProduct extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		int catID = Integer.parseInt(request.getParameter("cat_id"));
-		ResultSet rs = pservice.fatchProduct(catID);
-		if(rs != null) {
-			session.setAttribute("proRs", rs);
+		List<Product> plist = pservice.fatchProduct(catID);
+		if(plist != null) {
+			session.setAttribute("proRs", plist);
 			RequestDispatcher rd = request.getRequestDispatcher("showProduct.jsp");
 			rd.forward(request, response);
 		}else {

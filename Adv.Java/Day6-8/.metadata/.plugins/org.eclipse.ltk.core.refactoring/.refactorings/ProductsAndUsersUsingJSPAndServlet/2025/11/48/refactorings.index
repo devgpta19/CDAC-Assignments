@@ -12,3 +12,10 @@
 1764214031265	Delete element
 1764217836397	Move 'showProduct.jsp' to 'webapp'
 1764222916442	Rename resource 'showProduct.jsp'
+1764325179514	Rename type 'ShowCart'
+1764325185427	Rename type 'AddToCart'
+1764325194619	Rename type 'Hehe'
+1764329343237	Rename resource 'displayCart.jsp'
+1764329588508	Delete element
+1764331649515	Rename resource 'cart.jsp'
+1764332831814	Rename resource 'DisplayCart.jsp'

@@ -24,11 +24,12 @@ public class Product {
 		this.p_u_id = p_u_id;
 	}
 
-	public Product(int pid, String pname, int qty, Double price) {
+	public Product(int p_u_id, int pid, String pname, int qty, Double price) {
 		this.p_id = pid;
 		this.p_name = pname;
 		this.p_qty = qty;
 		this.p_price = price;
+		this.p_u_id = p_u_id;
 	}
 
 	public int getP_id() {

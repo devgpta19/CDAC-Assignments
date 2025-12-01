@@ -8,13 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="showProduct" method="get">
-		<select>
+	<form action="showProduct" method="post">
+		<select name ="cat_id">
 			<c:forEach var="c" items="${cset}">
 				<option value="${c}">${c}</option>
 			</c:forEach>
 		</select> 
-		<input type ="hidden" name ="cat_id" id ="cat_id" value="${c}"></input>
 		<button type="submit" name="show" id="show">Show Product</button>
 	</form>
 </body>

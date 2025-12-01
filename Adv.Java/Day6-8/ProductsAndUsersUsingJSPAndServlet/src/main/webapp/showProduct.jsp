@@ -9,29 +9,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="addtocart">
+	<form action="showCart" method="post">
+		<button type="submit" name="btn" id="btn">Show Cart</button>
+	</form>
 
-		<c:forEach var="set" items="${rs}">
+	<form action="Category" method="post">
+		<button type="submit" name="btn" id="btn">Show Categories</button>
+	</form>
+
+
+		<c:forEach var="set" items="${proRs}">
+		<form action="addtocart" method="post">
 			<div>
-				<h3>Product ID : &nbsp; ${set.pid}</h3>
-				<h3>Product Name : &nbsp; ${set.pname}</h3>
-				<h3>Product Price : &nbsp; ${set.price}</h3>
+				<h3>Product ID : &nbsp; ${set.p_id}</h3>
+				<h3>Product Name : &nbsp; ${set.p_name}</h3>
+				<h3>Product Price : &nbsp; ${set.p_price}</h3>
 				<h3>
 					Product Quantity <input type="text" name="qty" id="qty" />
 				</h3>
-				<h3>Amount</h3>
+				<input type="hidden" name="pid" id="pid" value="${set.p_id}" /> <input
+					type="hidden" name="pname" id="pname" value="${set.p_name}" /> <input
+					type="hidden" name="price" id="price" value="${set.p_price}" />
+				<button type="submit" name="btn" id="btn" value="${qty}">Add
+					to Cart</button>
+				<hr>
 			</div>
-		</c:forEach>
-		
-		<input type="hidden" name="pid" id="pid" value="${set.pid}" />
-		<input type="hidden" name="pname" id="pname" value="${set.pname}" />
-		<input type="hidden" name="qty" id="qty" value="${set.price}" />
-				
-		<button type="submit" name="btn" id="btn">Add to Cart</button>
-	</form>
+		</form>
+	</c:forEach>
 
-	<form action="order">
-		<button type="submit" name="btn" id="btn">Show Orders</button>
-	</form>
 </body>
 </html>

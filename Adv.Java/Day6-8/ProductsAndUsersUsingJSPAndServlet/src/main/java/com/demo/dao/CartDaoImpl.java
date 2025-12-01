@@ -3,7 +3,6 @@ package com.demo.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Set;
 
 import com.demo.beans.Product;
 
@@ -16,16 +15,22 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public Set<Product> addToCart(Product p) {
+	public int addToCart(Product p) {
 		try {
-			PreparedStatement pst = conn.prepareStatement("Insert into Order values(?,?,?,?,?);");
-//			pst.setInt(1, "p.pid");
+
+			PreparedStatement pst = conn.prepareStatement("Insert into cart values(?,?,?,?);");
+			pst.setInt(1, p.getP_id());
+			pst.setString(2, p.getP_name());
+			pst.setInt(1, p.getP_qty());
+			pst.setDouble(1, p.getP_price());
+			
+			int n = pst.executeUpdate();
+			return n;
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return -1;
 	}
-	
-	
 }

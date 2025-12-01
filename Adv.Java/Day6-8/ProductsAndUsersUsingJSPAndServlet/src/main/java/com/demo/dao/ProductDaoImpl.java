@@ -4,8 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import com.demo.beans.Product;
 
 public class ProductDaoImpl implements ProductDao {
 
@@ -27,12 +31,19 @@ public class ProductDaoImpl implements ProductDao {
 		return null;
 	}
 	@Override
-	public ResultSet fatchProduct(int catID) {
+	public List<Product> fatchProduct(int catID) {
 		
 		try {
 			PreparedStatement pst = conn.prepareStatement("select * from product1 where procategory = ?");
 			pst.setInt(1, catID);
-			return pst.executeQuery();
+			ResultSet rs = pst.executeQuery();
+			List<Product> plist = new ArrayList<>();
+			while(rs.next()) {
+				Product p = new Product(rs.getInt("cid"),rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty") ,rs.getDouble("price"));
+				    plist.add(p);
+			}
+			return plist;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
