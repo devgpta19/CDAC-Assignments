@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--  calls default constructor of HelloWorld class  -->
+<bean id="f1" class="com.demo.beans.Faculty" autowire="constructor">
+		<constructor-arg name="fid" value="001"></constructor-arg>
+		<constructor-arg name="fname" value="Kishori Khandilkar"></constructor-arg>
+	</bean>
+
+	<bean id="s1" class="com.demo.beans.Subject" autowire="constructor">
+		<constructor-arg name="subName" value="Adv_Java"></constructor-arg>
+		<constructor-arg name="fac" ref="f1"></constructor-arg>
+	</bean>
+
+	<bean id="m1" class="com.demo.beans.Marks" autowire="constructor">
+		<constructor-arg  name="mark1" value="79"></constructor-arg>
+		<constructor-arg name="tMark" value="100"></constructor-arg>
+	</bean>
+
+	<bean id="stu1" class="com.demo.beans.Student" autowire="constructor">
+		<constructor-arg name="sid" value="0001"></constructor-arg>
+		<constructor-arg name="sname" value="Chongu"></constructor-arg>
+		<constructor-arg name="m1" ref="m1"></constructor-arg>
+		<constructor-arg name="sub1" ref="s1"></constructor-arg>
+	</bean>
+</beans>
