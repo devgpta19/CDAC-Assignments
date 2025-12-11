@@ -1,0 +1,142 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.util.Enumeration;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
+
+import com.demo.service.LoginService;
+import com.demo.service.LoginServiceImpl;
+
+@WebServlet("/validateUser")
+public class LoginValidate extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String uname = request.getParameter("uname");
+		String pass = request.getParameter("pass");
+		
+			LoginService lservice = new LoginServiceImpl();
+			boolean status = lservice.validateUser(uname,pass);
+			if(status) {
+				HttpSession session = new HttpSession() {
+					
+					@Override
+					public void setMaxInactiveInterval(int interval) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void setAttribute(String name, Object value) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void removeValue(String name) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void removeAttribute(String name) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void putValue(String name, Object value) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public boolean isNew() {
+						// TODO Auto-generated method stub
+						return false;
+					}
+					
+					@Override
+					public void invalidate() {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public String[] getValueNames() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public Object getValue(String name) {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public HttpSessionContext getSessionContext() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public ServletContext getServletContext() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public int getMaxInactiveInterval() {
+						// TODO Auto-generated method stub
+						return 0;
+					}
+					
+					@Override
+					public long getLastAccessedTime() {
+						// TODO Auto-generated method stub
+						return 0;
+					}
+					
+					@Override
+					public String getId() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public long getCreationTime() {
+						// TODO Auto-generated method stub
+						return 0;
+					}
+					
+					@Override
+					public Enumeration<String> getAttributeNames() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					@Override
+					public Object getAttribute(String name) {
+						// TODO Auto-generated method stub
+						return null;
+					}
+				};
+			}
+			
+		
+
+
+	}
+
+}

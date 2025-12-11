@@ -1,0 +1,41 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.demo.beans.MyUSer;
+
+public class LoginDaoImpl implements LoginDao {
+
+	public static Connection conn = null;
+	PreparedStatement pst;
+	static {
+		conn = DBUtil.getMyConnection();
+	}
+	
+	@Override
+	public MyUSer verifyUser(String uname, String pass) {
+		try {
+			pst = conn.prepareStatement("Select * from MyUser123 where uname =? and pass=?");
+			pst.setString(1, uname);
+			pst.setString(2, pass);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				MyUSer u = new MyUSer();
+				u.setUid(rs.getInt(1));
+				u.setUname(rs.getString(2));
+				u.setPass(rs.getString(3));
+				u.setDob(rs.getDate(4).toLocalDate());
+
+				terurn u;
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

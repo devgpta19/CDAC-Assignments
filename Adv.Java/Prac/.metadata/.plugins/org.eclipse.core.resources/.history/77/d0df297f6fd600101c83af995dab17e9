@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%@ include file="LogoutBtn.jsp" %>
+	
+	<h1>Welcome To the Home Page</h1>
+		
+	<h3>User Details</h3><br>
+	<h4>User Id : ${user.uid}</h4> <br>
+	<span></</span><h4>UserName : ${user.uname}</h4> &nbsp; &nbsp;<h4>DoB : ${user.dob}</h4>
+	
+</body>
+</html>

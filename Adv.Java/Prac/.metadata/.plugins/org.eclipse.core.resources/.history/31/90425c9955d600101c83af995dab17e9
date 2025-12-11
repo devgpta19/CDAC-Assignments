@@ -1,0 +1,22 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.demo.beans.MyUSer;
+
+public class RegistrationDaoImpl implements RegistrationDao {
+
+	public Connection conn = null;
+	PreparedStatement
+	
+	@Override
+	public boolean save(MyUSer u) {
+		
+		conn = DBUtil.getMyConnection();
+		
+		
+		return false;
+	}
+
+}

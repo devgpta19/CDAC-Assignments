@@ -1,0 +1,7 @@
+package com.demo.beans;
+
+public class MyUSer {
+
+	private String uname;
+	private String 
+}

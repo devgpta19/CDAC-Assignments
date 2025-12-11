@@ -1,0 +1,11 @@
+package com.demo.service;
+
+public class LoginServiceImpl implements LoginService {
+
+	@Override
+	public boolean validateUser(String uname, String pass) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

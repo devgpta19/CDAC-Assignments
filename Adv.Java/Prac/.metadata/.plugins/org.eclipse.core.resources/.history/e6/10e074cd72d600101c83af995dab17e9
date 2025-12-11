@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin-left: 5px;
+}
+
+h1 {
+	color: #2c3e50;
+	text-align: center;
+}
+
+h3 {
+	color: #16a085;
+}
+
+.all_Butons {
+	width: 100%;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	gap:25px;
+}
+
+.btn{
+	height:auto;
+	width:vw;
+	color:white;
+	background-color: blue;
+}
+
+</style>
+
+	<%@ include file="LogoutBtn.jsp"%>
+
+	<h1>Welcome To the Home Page</h1>
+
+	<div>
+		<div class="card-details">
+			<h3>User Details</h3>
+			<h4>User Id : ${user.uid}</h4>
+			<h4>UserName : ${user.uname} &nbsp;</h4>
+			<h4>DoB : ${user.dob} &nbsp;</h4>
+		</div>
+	</div>
+
+
+	<div class="all_Butons">
+		<form action="showAllCars">
+			<button type="submit" class="btn" id="show" name="show">Show All Cars</button>
+		</form>
+		<br><br><br>
+		<form action="showCart">
+			<button type="submit" class="btn" id="showCart" name="showCart">Show Cart</button>
+		</form>
+	</div>
+
+</body>
+</html>

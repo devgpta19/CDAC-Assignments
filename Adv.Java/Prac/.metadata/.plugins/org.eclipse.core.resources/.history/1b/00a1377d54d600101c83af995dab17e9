@@ -1,0 +1,13 @@
+package com.demo.service;
+
+import com.demo.beans.MyUSer;
+
+public class RegistrationServiceImpl implements RegistrationService {
+
+	@Override
+	public boolean addNewUser(MyUSer u) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

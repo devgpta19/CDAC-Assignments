@@ -1,0 +1,19 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+
+import com.demo.beans.MyUSer;
+
+public class LoginDaoImpl implements LoginDao {
+
+	public static Connection conn = null;
+	static {
+		conn
+	}
+	
+	@Override
+	public MyUSer verifyUser(String uname, String pass) {
+		return null;
+	}
+
+}

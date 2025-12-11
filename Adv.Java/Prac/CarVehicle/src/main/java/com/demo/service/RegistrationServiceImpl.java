@@ -1,0 +1,19 @@
+package com.demo.service;
+
+import com.demo.beans.MyUSer;
+import com.demo.dao.RegistrationDao;
+import com.demo.dao.RegistrationDaoImpl;
+
+public class RegistrationServiceImpl implements RegistrationService {
+
+	RegistrationDao rdao = new RegistrationDaoImpl();
+	
+	@Override
+	public boolean addNewUser(MyUSer u) {
+		
+		
+		
+		return rdao.save(u);
+	}
+
+}

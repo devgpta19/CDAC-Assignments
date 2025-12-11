@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+public class TestUserAndCars {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int ch;
+		do {
+			System.out.println();
+			ch = sc.nextInt();
+		}while(ch!=5);
+
+	}
+
+}

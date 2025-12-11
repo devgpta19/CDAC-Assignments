@@ -1,0 +1,13 @@
+package com.demo.dao;
+
+import com.demo.beans.MyUSer;
+
+public class RegistrationDaoImpl implements RegistrationDao {
+
+	@Override
+	public boolean save(MyUSer u) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

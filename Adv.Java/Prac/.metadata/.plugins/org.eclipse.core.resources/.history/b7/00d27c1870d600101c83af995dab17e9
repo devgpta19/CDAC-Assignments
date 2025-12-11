@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 20px;
+}
+
+h1 {
+	color: #2c3e50;
+	text-align: center;
+}
+
+h3 {
+	color: #16a085;
+}
+
+.user-details {
+	background: #fff;
+	padding: 15px;
+	border: 1px solid #ccc;
+	width: 300px;
+	margin: auto;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
+
+	<%@ include file="LogoutBtn.jsp"%>
+
+	<h1>Welcome To the Home Page</h1>
+
+	<h3>User Details</h3>
+	<br>
+	<h4>User Id : ${user.uid}</h4>
+	<br>
+	<div class="user-details">
+		<h4>UserName : ${user.uname} &nbsp;</h4>
+		<h4>DoB : ${user.dob} &nbsp;</h4>
+	</div>
+
+</body>
+</html>

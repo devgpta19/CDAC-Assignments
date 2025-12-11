@@ -1,0 +1,15 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+import java.time.LocalDate;
+
+public class MyUSer {
+
+	private String uname;
+	private String pass;
+	private LocalDate dob;
+	
+	
+	
+}

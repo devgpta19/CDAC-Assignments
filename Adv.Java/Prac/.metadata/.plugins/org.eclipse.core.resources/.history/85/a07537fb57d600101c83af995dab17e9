@@ -1,0 +1,53 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.beans.MyUSer;
+import com.demo.service.RegistrationService;
+import com.demo.service.RegistrationServiceImpl;
+
+/**
+ * Servlet implementation class RegisterMe
+ */
+@WebServlet("/RegisterMe")
+public class RegisterMe extends HttpServlet {
+
+	RegistrationService rservice = new RegistrationServiceImpl();
+
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		int uid = Integer.parseInt(request.getParameter("uid"));
+		String uname = request.getParameter("uname");
+		String pass = request.getParameter("pass");
+		String dt = request.getParameter("date");
+		
+		LocalDate ldt = LocalDate.parse(dt, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		
+		MyUSer u = new MyUSer(uid,uname,pass,ldt);
+		
+		boolean status = rservice.addNewUser(u);
+		
+		if(status) {
+			out.println("<h2>You Are SuccessFully Registered...</h2>\n<h2>Make Sure to Login</h2>");
+			RequestDispatcher rd =  request.getRequestDispatcher("LoginPage.jsp");
+			rd.include(request, response);
+		}else {
+			RequestDispatcher rd =  request.getRequestDispatcher("LoginPage.jsp");
+			rd.inclu(request, response);
+		}
+	}
+
+}

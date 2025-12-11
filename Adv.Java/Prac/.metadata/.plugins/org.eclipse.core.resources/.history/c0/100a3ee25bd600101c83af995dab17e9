@@ -1,0 +1,21 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.demo.beans.MyUSer;
+
+public class LoginDaoImpl implements LoginDao {
+
+	public static Connection conn = null;
+	static {
+		conn = DBUtil.getMyConnection();
+		PreparedStatement pst;
+	}
+	
+	@Override
+	public MyUSer verifyUser(String uname, String pass) {
+		return null;
+	}
+
+}

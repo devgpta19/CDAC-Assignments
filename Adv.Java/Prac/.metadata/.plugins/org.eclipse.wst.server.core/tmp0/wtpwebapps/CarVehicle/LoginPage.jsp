@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%@ page %>
+	<h1>Login Page</h1>
+	<form action="validateUser" method="post">
+	
+		<label for="uname" >UserName : </label>
+		<input type="text" name="uname" id="uname" />
+	
+		<br>
+	
+		<label for="pass" >Password : </label>
+		<input type="text" name="pass" id="pass" />
+		
+		<button type="submit" name="btn" id="btn" >Submit</button>
+
+	</form>
+	
+	<a href="RegisterPage.jsp" >Register Your Self!</a> &nbsp; &nbsp;
+	<a href="/ForgotPass" >Forgot Password?</a> 
+	
+</body>
+</html>

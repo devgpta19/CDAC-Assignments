@@ -1,0 +1,9 @@
+package com.demo.servlet;
+
+import java.net.http.HttpRequest;
+
+public abstract class LoginValidate extends HttpRequest{
+	
+	
+
+}

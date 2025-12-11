@@ -1,0 +1,45 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+
+public class MyUSer {
+
+	private String uname;
+	private String pass;
+	private LocalDate dob;
+	public MyUSer() {
+		super();
+	}
+	public MyUSer(String uname, String pass, LocalDate dob) {
+		super();
+		this.uname = uname;
+		this.pass = pass;
+		this.dob = dob;
+	}
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public LocalDate getDob() {
+		return dob;
+	}
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+	@Override
+	public String toString() {
+		return "MyUSer [uname=" + uname + ", pass=" + pass + ", dob=" + dob + "]";
+	}
+	
+	
+	
+}
