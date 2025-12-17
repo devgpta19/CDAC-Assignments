@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\bin\Debug\net8.0\002_Day_OOp_InheritanceInterface.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\bin\Debug\net8.0\002_Day_OOp_InheritanceInterface.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\bin\Debug\net8.0\002_Day_OOp_InheritanceInterface.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\bin\Debug\net8.0\002_Day_OOp_InheritanceInterface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\bin\Debug\net8.0\002_Day_OOp_InheritanceInterface.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\refint\002_Day_OOp_InheritanceInterface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\002_Day_OOp_InheritanceInterface.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_InheritanceInterface\obj\Debug\net8.0\ref\002_Day_OOp_InheritanceInterface.dll

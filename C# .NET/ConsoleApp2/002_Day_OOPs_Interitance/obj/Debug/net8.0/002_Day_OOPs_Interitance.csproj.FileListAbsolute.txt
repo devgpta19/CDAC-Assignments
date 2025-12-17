@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\bin\Debug\net8.0\002_Day_OOPs_Interitance.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\bin\Debug\net8.0\002_Day_OOPs_Interitance.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\bin\Debug\net8.0\002_Day_OOPs_Interitance.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\bin\Debug\net8.0\002_Day_OOPs_Interitance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\bin\Debug\net8.0\002_Day_OOPs_Interitance.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\refint\002_Day_OOPs_Interitance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\002_Day_OOPs_Interitance.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOPs_Interitance\obj\Debug\net8.0\ref\002_Day_OOPs_Interitance.dll

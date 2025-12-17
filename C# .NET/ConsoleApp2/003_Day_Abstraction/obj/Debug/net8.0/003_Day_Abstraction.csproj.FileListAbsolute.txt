@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\bin\Debug\net8.0\003_Day_Abstraction.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\bin\Debug\net8.0\003_Day_Abstraction.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\bin\Debug\net8.0\003_Day_Abstraction.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\bin\Debug\net8.0\003_Day_Abstraction.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\bin\Debug\net8.0\003_Day_Abstraction.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\refint\003_Day_Abstraction.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\003_Day_Abstraction.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\003_Day_Abstraction\obj\Debug\net8.0\ref\003_Day_Abstraction.dll

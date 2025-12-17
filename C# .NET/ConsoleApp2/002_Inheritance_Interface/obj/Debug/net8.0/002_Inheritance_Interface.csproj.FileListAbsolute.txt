@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\bin\Debug\net8.0\002_Inheritance_Interface.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\bin\Debug\net8.0\002_Inheritance_Interface.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\bin\Debug\net8.0\002_Inheritance_Interface.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\bin\Debug\net8.0\002_Inheritance_Interface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\bin\Debug\net8.0\002_Inheritance_Interface.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\refint\002_Inheritance_Interface.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\002_Inheritance_Interface.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Inheritance_Interface\obj\Debug\net8.0\ref\002_Inheritance_Interface.dll

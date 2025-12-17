@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\bin\Debug\net8.0\002_Day_OOp_Inheritance.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\bin\Debug\net8.0\002_Day_OOp_Inheritance.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\bin\Debug\net8.0\002_Day_OOp_Inheritance.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\bin\Debug\net8.0\002_Day_OOp_Inheritance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\bin\Debug\net8.0\002_Day_OOp_Inheritance.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\refint\002_Day_OOp_Inheritance.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\002_Day_OOp_Inheritance.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\002_Day_OOp_Inheritance\obj\Debug\net8.0\ref\002_Day_OOp_Inheritance.dll
