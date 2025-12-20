@@ -1,0 +1,10 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\bin\Debug\004_Day_WindowsDemo.exe.config
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\bin\Debug\004_Day_WindowsDemo.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\bin\Debug\004_Day_WindowsDemo.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\004_Day_WindowsDemo.csproj.AssemblyReference.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\_004_Day_WindowsDemo.Form1.resources
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\_004_Day_WindowsDemo.Properties.Resources.resources
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\004_Day_WindowsDemo.csproj.GenerateResource.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\004_Day_WindowsDemo.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\004_Day_WindowsDemo.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\004_Day_WindowsDemo\obj\Debug\004_Day_WindowsDemo.pdb

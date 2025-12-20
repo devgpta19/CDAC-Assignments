@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\bin\Debug\net8.0\06_Day_FileIO.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\bin\Debug\net8.0\06_Day_FileIO.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\bin\Debug\net8.0\06_Day_FileIO.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\bin\Debug\net8.0\06_Day_FileIO.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\bin\Debug\net8.0\06_Day_FileIO.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\refint\06_Day_FileIO.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\06_Day_FileIO.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\06_Day_FileIO\obj\Debug\net8.0\ref\06_Day_FileIO.dll
