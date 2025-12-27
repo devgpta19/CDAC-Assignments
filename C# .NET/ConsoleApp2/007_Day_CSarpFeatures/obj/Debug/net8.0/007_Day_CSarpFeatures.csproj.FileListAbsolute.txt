@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\bin\Debug\net8.0\007_Day_CSarpFeatures.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\bin\Debug\net8.0\007_Day_CSarpFeatures.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\bin\Debug\net8.0\007_Day_CSarpFeatures.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\bin\Debug\net8.0\007_Day_CSarpFeatures.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\bin\Debug\net8.0\007_Day_CSarpFeatures.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\refint\007_Day_CSarpFeatures.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\007_Day_CSarpFeatures.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_CSarpFeatures\obj\Debug\net8.0\ref\007_Day_CSarpFeatures.dll

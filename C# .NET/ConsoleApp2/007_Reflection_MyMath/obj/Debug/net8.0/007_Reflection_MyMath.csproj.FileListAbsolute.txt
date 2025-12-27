@@ -1,0 +1,4 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Reflection_MyMath\obj\Debug\net8.0\007_Reflection_MyMath.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Reflection_MyMath\obj\Debug\net8.0\007_Reflection_MyMath.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Reflection_MyMath\obj\Debug\net8.0\007_Reflection_MyMath.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Reflection_MyMath\obj\Debug\net8.0\007_Reflection_MyMath.csproj.CoreCompileInputs.cache

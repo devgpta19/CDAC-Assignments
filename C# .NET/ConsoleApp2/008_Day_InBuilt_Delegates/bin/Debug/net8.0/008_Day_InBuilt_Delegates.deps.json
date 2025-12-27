@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "008_Day_InBuilt_Delegates/1.0.0": {
+        "runtime": {
+          "008_Day_InBuilt_Delegates.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "008_Day_InBuilt_Delegates/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

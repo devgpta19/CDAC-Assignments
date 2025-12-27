@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "007_Day_Reflection/1.0.0": {
+        "runtime": {
+          "007_Day_Reflection.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "007_Day_Reflection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

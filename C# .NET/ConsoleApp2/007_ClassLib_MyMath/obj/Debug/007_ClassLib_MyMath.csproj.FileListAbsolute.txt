@@ -1,0 +1,6 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\bin\Debug\007_ClassLib_MyMath.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\bin\Debug\007_ClassLib_MyMath.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\obj\Debug\007_ClassLib_MyMath.csproj.AssemblyReference.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\obj\Debug\007_ClassLib_MyMath.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\obj\Debug\007_ClassLib_MyMath.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_ClassLib_MyMath\obj\Debug\007_ClassLib_MyMath.pdb

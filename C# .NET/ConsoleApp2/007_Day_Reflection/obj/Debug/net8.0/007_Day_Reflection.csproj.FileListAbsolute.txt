@@ -1,0 +1,14 @@
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.AssemblyInfo.cs
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\bin\Debug\net8.0\007_Day_Reflection.exe
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\bin\Debug\net8.0\007_Day_Reflection.deps.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\bin\Debug\net8.0\007_Day_Reflection.runtimeconfig.json
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\bin\Debug\net8.0\007_Day_Reflection.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\bin\Debug\net8.0\007_Day_Reflection.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\refint\007_Day_Reflection.dll
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.pdb
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\007_Day_Reflection.genruntimeconfig.cache
+C:\Users\IET\Desktop\CDAC Assignments\Devansh0018\C#_.NET_0018\ConsoleApp2\007_Day_Reflection\obj\Debug\net8.0\ref\007_Day_Reflection.dll
