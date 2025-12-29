@@ -16,7 +16,7 @@ namespace _09_Day_LinqWithLayeredArchitecture
             {
                 Console.WriteLine("1. Login\n" +
                     "2. Register\n" +
-                    "3. Forgot Password" +
+                    "3. Forgot Password\n" +
                     "4. EXIT" +
                     "\n\n" +
                     "Enter Your Choice");
@@ -43,6 +43,16 @@ namespace _09_Day_LinqWithLayeredArchitecture
                         bool status = userservice.AddUserToDB();
                         if (status) Console.WriteLine("User Updated Successfully...");
                         else Console.WriteLine("Something went Wrong...");
+
+                            break;
+
+                    case 3:
+                        Console.WriteLine("Update User\n");
+
+                        status  = userservice.UpdateUser();
+
+                        if(status) Console.WriteLine("User Updated SuccessFuly");
+                        else Console.WriteLine("Something Went Wrong...");
 
                             break;
 

@@ -26,6 +26,17 @@ namespace _09_Day_LinqWithLayeredArchitecture.BLL
                 return false;
         }
 
+        internal bool UpdateUser()
+        { 
+            Console.WriteLine("Enter UserName : ");
+            string? uname = Console.ReadLine().ToString();
+            Console.WriteLine("Enter Password : ");
+            string? pwd = Console.ReadLine().ToString();
+            
+            int n = udal.UpdateUser(uname, pwd);
+            return n > 0;
+        }
+
         internal User ValidateUser(string snm, string pass)
         {
 

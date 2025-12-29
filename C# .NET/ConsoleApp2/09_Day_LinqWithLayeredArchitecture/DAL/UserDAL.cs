@@ -60,10 +60,24 @@ namespace _09_Day_LinqWithLayeredArchitecture.DAL
             SqlConnection conn = DB();
             conn.Open();
             SqlCommand cmd = new SqlCommand($"INSERT INTO USERAUTH(username, password, email) VALUES ('{user.username}','{user.password}','{user.email}')", conn);
-
             int n = cmd.ExecuteNonQuery();
             conn.Close();
             connection.Close();
+            return n;
+        }
+
+        internal int UpdateUser(string name, string email)
+        {
+
+            SqlConnection conn = DB();
+            conn.Open();
+            Console.WriteLine("Enter New Password : ");
+            string newpass = Console.ReadLine().ToString();
+            SqlCommand cmd = new SqlCommand($"UPDATE USERAUTH SET PASSWORD = '{newpass}' WHERE USERNAME = '{name}' AND EMAIL = '{email}'", conn);
+            int n = cmd.ExecuteNonQuery();
+            conn.Close();
+            connection.Close();
+
             return n;
         }
     }
